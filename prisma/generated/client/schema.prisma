@@ -1,0 +1,222 @@
+generator client {
+  provider        = "prisma-client-js"
+  output          = "./generated/client"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  extensions = [pgcrypto(schema: "public")]
+}
+
+model exercise_logs {
+  id            String     @id @default(uuid()) @db.Uuid
+  user_id       String     @db.Uuid
+  exercise_id   String?    @db.Uuid
+  exercise_name String?    @db.VarChar(255)
+  sets          Int?
+  reps          Int?
+  weight        Decimal?   @db.Decimal(6, 2)
+  duration      Int?
+  intensity     String?    @db.VarChar(50)
+  notes         String?
+  completed_at  DateTime   @default(dbgenerated("CURRENT_DATE")) @db.Date
+  created_at    DateTime?  @default(now()) @db.Timestamptz(6)
+  exercises     exercises? @relation(fields: [exercise_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  users         users      @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+model exercises {
+  id                     String                   @id @default(uuid()) @db.Uuid
+  name                   String                   @db.VarChar(255)
+  category               String                   @db.VarChar(50)
+  description            String?
+  muscle_groups          String[]
+  equipment              String[]
+  difficulty             String?                  @db.VarChar(50)
+  created_at             DateTime?                @default(now()) @db.Timestamptz(6)
+  exercise_logs          exercise_logs[]
+  workout_plan_exercises workout_plan_exercises[]
+}
+
+model meal_logs {
+  id          String    @id @default(uuid()) @db.Uuid
+  user_id     String    @db.Uuid
+  meal_id     String?   @db.Uuid
+  meal_name   String?   @db.VarChar(255)
+  portion     Decimal?  @db.Decimal(4, 2)
+  calories    Int?
+  protein     Decimal?  @db.Decimal(6, 2)
+  carbs       Decimal?  @db.Decimal(6, 2)
+  fats        Decimal?  @db.Decimal(6, 2)
+  meal_time   String?   @db.VarChar(50)
+  notes       String?
+  consumed_at DateTime  @default(dbgenerated("CURRENT_DATE")) @db.Date
+  created_at  DateTime? @default(now()) @db.Timestamptz(6)
+  meals       meals?    @relation(fields: [meal_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  users       users     @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+model meal_plan_items {
+  id              String     @id @default(uuid()) @db.Uuid
+  meal_plan_id    String     @db.Uuid
+  meal_id         String?    @db.Uuid
+  name            String     @db.VarChar(255)
+  meal_time       String     @db.VarChar(50)
+  calories        Int?
+  protein         Decimal?   @db.Decimal(6, 2)
+  carbs           Decimal?   @db.Decimal(6, 2)
+  fats            Decimal?   @db.Decimal(6, 2)
+  completed       Boolean?   @default(false)
+  completion_date DateTime?  @db.Timestamptz(6)
+  day_number      Int?
+  portion         Decimal?   @db.Decimal(4, 2)
+  notes           String?
+  created_at      DateTime?  @default(now()) @db.Timestamptz(6)
+  updated_at      DateTime?  @default(now()) @db.Timestamptz(6)
+  meal_plans      meal_plans @relation(fields: [meal_plan_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  meals           meals?     @relation(fields: [meal_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@index([meal_plan_id], map: "idx_meal_plan_items_meal_plan_id")
+  @@index([meal_id], map: "idx_meal_plan_items_meal_id")
+}
+
+model meal_plans {
+  id              String            @id @default(uuid()) @db.Uuid
+  user_id         String            @db.Uuid
+  name            String            @db.VarChar(255)
+  description     String?
+  date            DateTime?         @db.Date
+  workout_plan_id String?           @db.Uuid
+  created_at      DateTime?         @default(now()) @db.Timestamptz(6)
+  updated_at      DateTime?         @default(now()) @db.Timestamptz(6)
+  daily_calories  Int?              @default(2000)
+  meal_plan_items meal_plan_items[]
+  users           users             @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  workout_plans   workout_plans?    @relation(fields: [workout_plan_id], references: [id], onUpdate: NoAction)
+
+  @@index([workout_plan_id], map: "idx_meal_plans_workout_plan_id")
+}
+
+model meals {
+  id              String            @id @default(uuid()) @db.Uuid
+  name            String            @db.VarChar(255)
+  category        String?           @db.VarChar(50)
+  calories        Int?
+  protein         Decimal?          @db.Decimal(6, 2)
+  carbs           Decimal?          @db.Decimal(6, 2)
+  fats            Decimal?          @db.Decimal(6, 2)
+  image_url       String?
+  description     String?
+  food_items      Json?
+  created_at      DateTime?         @default(now()) @db.Timestamptz(6)
+  meal_logs       meal_logs[]
+  meal_plan_items meal_plan_items[]
+}
+
+model progress_tracking {
+  id                  String         @id @default(uuid()) @db.Uuid
+  user_id             String         @db.Uuid
+  workout_plan_id     String?        @db.Uuid
+  week_number         Int
+  exercises_completed Int?           @default(0)
+  exercises_total     Int?           @default(0)
+  meals_completed     Int?           @default(0)
+  meals_total         Int?           @default(0)
+  start_date          DateTime       @db.Date
+  end_date            DateTime       @db.Date
+  created_at          DateTime?      @default(now()) @db.Timestamptz(6)
+  updated_at          DateTime?      @default(now()) @db.Timestamptz(6)
+  users               users          @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  workout_plans       workout_plans? @relation(fields: [workout_plan_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([user_id], map: "idx_progress_tracking_user_id")
+  @@index([workout_plan_id], map: "idx_progress_tracking_workout_plan_id")
+}
+
+model users {
+  id                   String              @id @default(uuid()) @db.Uuid
+  name                 String              @db.VarChar(255)
+  email                String              @unique @db.VarChar(255)
+  password             String              @db.VarChar(255)
+  age                  Int?
+  gender               String?             @db.VarChar(50)
+  weight               Decimal?            @db.Decimal(5, 2)
+  height               Decimal?            @db.Decimal(5, 2)
+  bmi                  Decimal?            @db.Decimal(4, 2)
+  fitness_goal         String?             @db.VarChar(50)
+  dietary_preference   String?             @db.VarChar(255)
+  dietary_restrictions String[]
+  avatar_url           String?
+  created_at           DateTime?           @default(now()) @db.Timestamptz(6)
+  updated_at           DateTime?           @default(now()) @db.Timestamptz(6)
+  age_range            String              @default("adult") @db.VarChar(20)
+  exercise_logs        exercise_logs[]
+  meal_logs            meal_logs[]
+  meal_plans           meal_plans[]
+  progress_tracking    progress_tracking[]
+  water_logs           water_logs[]
+  weight_logs          weight_logs[]
+  workout_plans        workout_plans[]
+}
+
+model water_logs {
+  id         String    @id @default(uuid()) @db.Uuid
+  user_id    String    @db.Uuid
+  amount_ml  Int
+  logged_at  DateTime  @default(dbgenerated("CURRENT_DATE")) @db.Date
+  created_at DateTime? @default(now()) @db.Timestamptz(6)
+  users      users     @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+model weight_logs {
+  id         String    @id @default(uuid()) @db.Uuid
+  user_id    String    @db.Uuid
+  weight     Decimal   @db.Decimal(5, 2)
+  logged_at  DateTime  @default(dbgenerated("CURRENT_DATE")) @db.Date
+  created_at DateTime? @default(now()) @db.Timestamptz(6)
+  users      users     @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+model workout_plan_exercises {
+  id              String        @id @default(uuid()) @db.Uuid
+  workout_plan_id String        @db.Uuid
+  exercise_id     String?       @db.Uuid
+  exercise_name   String?       @db.VarChar(255)
+  day_of_week     Int?
+  sets            Int?
+  reps            Int?
+  weight          Decimal?      @db.Decimal(6, 2)
+  duration        Int?
+  created_at      DateTime?     @default(now()) @db.Timestamptz(6)
+  completed       Boolean?      @default(false)
+  completion_date DateTime?     @db.Timestamptz(6)
+  actual_sets     Int?
+  actual_reps     Int?
+  actual_weight   Decimal?      @db.Decimal(6, 2)
+  actual_duration Int?
+  notes           String?
+  updated_at      DateTime?     @default(now()) @db.Timestamptz(6)
+  exercises       exercises?    @relation(fields: [exercise_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  workout_plans   workout_plans @relation(fields: [workout_plan_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([workout_plan_id], map: "idx_workout_plan_exercises_workout_plan_id")
+}
+
+model workout_plans {
+  id                     String                   @id @default(uuid()) @db.Uuid
+  user_id                String                   @db.Uuid
+  name                   String                   @db.VarChar(255)
+  description            String?
+  goal                   String?                  @db.VarChar(50)
+  frequency              Int?
+  duration_weeks         Int?
+  active                 Boolean?                 @default(true)
+  created_at             DateTime?                @default(now()) @db.Timestamptz(6)
+  updated_at             DateTime?                @default(now()) @db.Timestamptz(6)
+  meal_plans             meal_plans[]
+  progress_tracking      progress_tracking[]
+  workout_plan_exercises workout_plan_exercises[]
+  users                  users                    @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+}

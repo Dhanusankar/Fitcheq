@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50;
+  }
+  
+  input {
+    @apply w-full px-4 py-2 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent text-black;
+  }
+}
+
+/* Fitness-specific styling */
+.fitness-gradient {
+  @apply bg-gradient-to-r from-blue-600 to-green-500;
+}
+
+.card-workout {
+  @apply border-l-4 border-l-blue-600;
+}
+
+.card-nutrition {
+  @apply border-l-4 border-l-green-500;
+}
+
+.card-progress {
+  @apply border-l-4 border-l-orange-500;
+}
+
+/* Progress indicators */
+.progress-low {
+  @apply bg-red-500;
+}
+
+.progress-medium {
+  @apply bg-amber-500;
+}
+
+.progress-high {
+  @apply bg-green-500;
+}
+
+/* Dashboard stat cards */
+.stat-card {
+  @apply p-4 bg-white rounded-lg border shadow-sm hover:shadow-md transition-all;
+}
+
+/* Dashboard metrics */
+.metric-up {
+  @apply text-green-500;
+}
+
+.metric-down {
+  @apply text-red-500;
+}
+
+.metric-neutral {
+  @apply text-gray-500;
+}
+
+/* Animation utilities */
+.hover-scale {
+  @apply transition-transform hover:scale-105;
+}
+
+.hover-lift {
+  @apply transition-all hover:-translate-y-1 hover:shadow-md;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
