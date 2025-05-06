@@ -27,7 +27,7 @@ export async function GET(req: NextRequest) {
       LEFT JOIN workout_plans wp ON mp.workout_plan_id = wp.id
       WHERE mp.user_id = $1
     `;
-    let queryParams = [userId];
+    const queryParams = [userId];
     
     // Add workout plan filter if provided
     if (workoutPlanId) {
@@ -401,7 +401,7 @@ export async function generateMealPlan(
     const dailyCalories = calculateDailyCalories(bmr, goal, workoutIntensity);
     
     // Build diet condition based on user preferences
-    let whereClause: any = {};
+    const whereClause: any = {};
     if (user.dietary_preference) {
       // Add dietary preference conditions
       switch (user.dietary_preference.toLowerCase()) {

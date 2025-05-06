@@ -44,8 +44,8 @@ export async function PATCH(req: NextRequest) {
     }
     
     // Build the update query dynamically based on provided fields
-    let updateFields = [];
-    let queryParams = [];
+    const updateFields = [];
+    const queryParams = [];
     let paramIndex = 1;
     
     if (completed !== undefined) {
