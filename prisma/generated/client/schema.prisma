@@ -72,7 +72,7 @@ model meals {
   meal_logs   meal_logs[]
 }
 
-model meal_plan_items {
+model mealPlanItems {
   id              String     @id @default(uuid()) @db.Uuid
   meal_plan_id    String     @db.Uuid
   meal_id         String?    @db.Uuid
