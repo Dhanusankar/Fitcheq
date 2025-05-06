@@ -180,7 +180,7 @@ export async function PATCH(req: NextRequest) {
 
     await prisma.$transaction(async (tx) => {
       // Get meal plan item with its associated meal plan
-      const mealPlanItem = await tx.meal_plan_items.findFirst({
+      const mealPlanItem = await tx.mealPlanItems.findFirst({
         where: {
           id: meal_plan_item_id,
           meal_plans: {
@@ -198,7 +198,7 @@ export async function PATCH(req: NextRequest) {
       }
 
       // Update meal plan item completion status
-      const updatedMealPlanItem = await tx.meal_plan_items.update({
+      const updatedMealPlanItem = await tx.mealPlanItems.update({
         where: { id: meal_plan_item_id },
         data: {
           completed
