@@ -159,37 +159,6 @@ exports.Prisma.Meal_logsScalarFieldEnum = {
   created_at: 'created_at'
 };
 
-exports.Prisma.Meal_plan_itemsScalarFieldEnum = {
-  id: 'id',
-  meal_plan_id: 'meal_plan_id',
-  meal_id: 'meal_id',
-  name: 'name',
-  meal_time: 'meal_time',
-  calories: 'calories',
-  protein: 'protein',
-  carbs: 'carbs',
-  fats: 'fats',
-  completed: 'completed',
-  completion_date: 'completion_date',
-  day_number: 'day_number',
-  portion: 'portion',
-  notes: 'notes',
-  created_at: 'created_at',
-  updated_at: 'updated_at'
-};
-
-exports.Prisma.Meal_plansScalarFieldEnum = {
-  id: 'id',
-  user_id: 'user_id',
-  name: 'name',
-  description: 'description',
-  date: 'date',
-  workout_plan_id: 'workout_plan_id',
-  created_at: 'created_at',
-  updated_at: 'updated_at',
-  daily_calories: 'daily_calories'
-};
-
 exports.Prisma.MealsScalarFieldEnum = {
   id: 'id',
   name: 'name',
@@ -200,23 +169,7 @@ exports.Prisma.MealsScalarFieldEnum = {
   fats: 'fats',
   image_url: 'image_url',
   description: 'description',
-  food_items: 'food_items',
   created_at: 'created_at'
-};
-
-exports.Prisma.Progress_trackingScalarFieldEnum = {
-  id: 'id',
-  user_id: 'user_id',
-  workout_plan_id: 'workout_plan_id',
-  week_number: 'week_number',
-  exercises_completed: 'exercises_completed',
-  exercises_total: 'exercises_total',
-  meals_completed: 'meals_completed',
-  meals_total: 'meals_total',
-  start_date: 'start_date',
-  end_date: 'end_date',
-  created_at: 'created_at',
-  updated_at: 'updated_at'
 };
 
 exports.Prisma.UsersScalarFieldEnum = {
@@ -264,7 +217,6 @@ exports.Prisma.Workout_plan_exercisesScalarFieldEnum = {
   reps: 'reps',
   weight: 'weight',
   duration: 'duration',
-  created_at: 'created_at',
   completed: 'completed',
   completion_date: 'completion_date',
   actual_sets: 'actual_sets',
@@ -272,6 +224,7 @@ exports.Prisma.Workout_plan_exercisesScalarFieldEnum = {
   actual_weight: 'actual_weight',
   actual_duration: 'actual_duration',
   notes: 'notes',
+  created_at: 'created_at',
   updated_at: 'updated_at'
 };
 
@@ -293,11 +246,6 @@ exports.Prisma.SortOrder = {
   desc: 'desc'
 };
 
-exports.Prisma.NullableJsonNullValueInput = {
-  DbNull: Prisma.DbNull,
-  JsonNull: Prisma.JsonNull
-};
-
 exports.Prisma.QueryMode = {
   default: 'default',
   insensitive: 'insensitive'
@@ -308,21 +256,12 @@ exports.Prisma.NullsOrder = {
   last: 'last'
 };
 
-exports.Prisma.JsonNullValueFilter = {
-  DbNull: Prisma.DbNull,
-  JsonNull: Prisma.JsonNull,
-  AnyNull: Prisma.AnyNull
-};
-
 
 exports.Prisma.ModelName = {
   exercise_logs: 'exercise_logs',
   exercises: 'exercises',
   meal_logs: 'meal_logs',
-  meal_plan_items: 'meal_plan_items',
-  meal_plans: 'meal_plans',
   meals: 'meals',
-  progress_tracking: 'progress_tracking',
   users: 'users',
   water_logs: 'water_logs',
   weight_logs: 'weight_logs',

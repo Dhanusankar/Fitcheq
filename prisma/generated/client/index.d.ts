@@ -29,25 +29,10 @@ export type exercises = $Result.DefaultSelection<Prisma.$exercisesPayload>
  */
 export type meal_logs = $Result.DefaultSelection<Prisma.$meal_logsPayload>
 /**
- * Model meal_plan_items
- * 
- */
-export type meal_plan_items = $Result.DefaultSelection<Prisma.$meal_plan_itemsPayload>
-/**
- * Model meal_plans
- * 
- */
-export type meal_plans = $Result.DefaultSelection<Prisma.$meal_plansPayload>
-/**
  * Model meals
  * 
  */
 export type meals = $Result.DefaultSelection<Prisma.$mealsPayload>
-/**
- * Model progress_tracking
- * 
- */
-export type progress_tracking = $Result.DefaultSelection<Prisma.$progress_trackingPayload>
 /**
  * Model users
  * 
@@ -230,26 +215,6 @@ export class PrismaClient<
   get meal_logs(): Prisma.meal_logsDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.meal_plan_items`: Exposes CRUD operations for the **meal_plan_items** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more Meal_plan_items
-    * const meal_plan_items = await prisma.meal_plan_items.findMany()
-    * ```
-    */
-  get meal_plan_items(): Prisma.meal_plan_itemsDelegate<ExtArgs, ClientOptions>;
-
-  /**
-   * `prisma.meal_plans`: Exposes CRUD operations for the **meal_plans** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more Meal_plans
-    * const meal_plans = await prisma.meal_plans.findMany()
-    * ```
-    */
-  get meal_plans(): Prisma.meal_plansDelegate<ExtArgs, ClientOptions>;
-
-  /**
    * `prisma.meals`: Exposes CRUD operations for the **meals** model.
     * Example usage:
     * ```ts
@@ -258,16 +223,6 @@ export class PrismaClient<
     * ```
     */
   get meals(): Prisma.mealsDelegate<ExtArgs, ClientOptions>;
-
-  /**
-   * `prisma.progress_tracking`: Exposes CRUD operations for the **progress_tracking** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more Progress_trackings
-    * const progress_trackings = await prisma.progress_tracking.findMany()
-    * ```
-    */
-  get progress_tracking(): Prisma.progress_trackingDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.users`: Exposes CRUD operations for the **users** model.
@@ -554,7 +509,7 @@ export namespace Prisma {
   ? False
   : T extends Uint8Array
   ? False
-  : T extends bigint
+  : T extends BigInt
   ? False
   : T extends object
   ? True
@@ -761,10 +716,7 @@ export namespace Prisma {
     exercise_logs: 'exercise_logs',
     exercises: 'exercises',
     meal_logs: 'meal_logs',
-    meal_plan_items: 'meal_plan_items',
-    meal_plans: 'meal_plans',
     meals: 'meals',
-    progress_tracking: 'progress_tracking',
     users: 'users',
     water_logs: 'water_logs',
     weight_logs: 'weight_logs',
@@ -788,7 +740,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "exercise_logs" | "exercises" | "meal_logs" | "meal_plan_items" | "meal_plans" | "meals" | "progress_tracking" | "users" | "water_logs" | "weight_logs" | "workout_plan_exercises" | "workout_plans"
+      modelProps: "exercise_logs" | "exercises" | "meal_logs" | "meals" | "users" | "water_logs" | "weight_logs" | "workout_plan_exercises" | "workout_plans"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1014,154 +966,6 @@ export namespace Prisma {
           }
         }
       }
-      meal_plan_items: {
-        payload: Prisma.$meal_plan_itemsPayload<ExtArgs>
-        fields: Prisma.meal_plan_itemsFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.meal_plan_itemsFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$meal_plan_itemsPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.meal_plan_itemsFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$meal_plan_itemsPayload>
-          }
-          findFirst: {
-            args: Prisma.meal_plan_itemsFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$meal_plan_itemsPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.meal_plan_itemsFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$meal_plan_itemsPayload>
-          }
-          findMany: {
-            args: Prisma.meal_plan_itemsFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$meal_plan_itemsPayload>[]
-          }
-          create: {
-            args: Prisma.meal_plan_itemsCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$meal_plan_itemsPayload>
-          }
-          createMany: {
-            args: Prisma.meal_plan_itemsCreateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          createManyAndReturn: {
-            args: Prisma.meal_plan_itemsCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$meal_plan_itemsPayload>[]
-          }
-          delete: {
-            args: Prisma.meal_plan_itemsDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$meal_plan_itemsPayload>
-          }
-          update: {
-            args: Prisma.meal_plan_itemsUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$meal_plan_itemsPayload>
-          }
-          deleteMany: {
-            args: Prisma.meal_plan_itemsDeleteManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateMany: {
-            args: Prisma.meal_plan_itemsUpdateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateManyAndReturn: {
-            args: Prisma.meal_plan_itemsUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$meal_plan_itemsPayload>[]
-          }
-          upsert: {
-            args: Prisma.meal_plan_itemsUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$meal_plan_itemsPayload>
-          }
-          aggregate: {
-            args: Prisma.Meal_plan_itemsAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateMeal_plan_items>
-          }
-          groupBy: {
-            args: Prisma.meal_plan_itemsGroupByArgs<ExtArgs>
-            result: $Utils.Optional<Meal_plan_itemsGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.meal_plan_itemsCountArgs<ExtArgs>
-            result: $Utils.Optional<Meal_plan_itemsCountAggregateOutputType> | number
-          }
-        }
-      }
-      meal_plans: {
-        payload: Prisma.$meal_plansPayload<ExtArgs>
-        fields: Prisma.meal_plansFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.meal_plansFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$meal_plansPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.meal_plansFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$meal_plansPayload>
-          }
-          findFirst: {
-            args: Prisma.meal_plansFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$meal_plansPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.meal_plansFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$meal_plansPayload>
-          }
-          findMany: {
-            args: Prisma.meal_plansFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$meal_plansPayload>[]
-          }
-          create: {
-            args: Prisma.meal_plansCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$meal_plansPayload>
-          }
-          createMany: {
-            args: Prisma.meal_plansCreateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          createManyAndReturn: {
-            args: Prisma.meal_plansCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$meal_plansPayload>[]
-          }
-          delete: {
-            args: Prisma.meal_plansDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$meal_plansPayload>
-          }
-          update: {
-            args: Prisma.meal_plansUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$meal_plansPayload>
-          }
-          deleteMany: {
-            args: Prisma.meal_plansDeleteManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateMany: {
-            args: Prisma.meal_plansUpdateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateManyAndReturn: {
-            args: Prisma.meal_plansUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$meal_plansPayload>[]
-          }
-          upsert: {
-            args: Prisma.meal_plansUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$meal_plansPayload>
-          }
-          aggregate: {
-            args: Prisma.Meal_plansAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateMeal_plans>
-          }
-          groupBy: {
-            args: Prisma.meal_plansGroupByArgs<ExtArgs>
-            result: $Utils.Optional<Meal_plansGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.meal_plansCountArgs<ExtArgs>
-            result: $Utils.Optional<Meal_plansCountAggregateOutputType> | number
-          }
-        }
-      }
       meals: {
         payload: Prisma.$mealsPayload<ExtArgs>
         fields: Prisma.mealsFieldRefs
@@ -1233,80 +1037,6 @@ export namespace Prisma {
           count: {
             args: Prisma.mealsCountArgs<ExtArgs>
             result: $Utils.Optional<MealsCountAggregateOutputType> | number
-          }
-        }
-      }
-      progress_tracking: {
-        payload: Prisma.$progress_trackingPayload<ExtArgs>
-        fields: Prisma.progress_trackingFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.progress_trackingFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$progress_trackingPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.progress_trackingFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$progress_trackingPayload>
-          }
-          findFirst: {
-            args: Prisma.progress_trackingFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$progress_trackingPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.progress_trackingFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$progress_trackingPayload>
-          }
-          findMany: {
-            args: Prisma.progress_trackingFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$progress_trackingPayload>[]
-          }
-          create: {
-            args: Prisma.progress_trackingCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$progress_trackingPayload>
-          }
-          createMany: {
-            args: Prisma.progress_trackingCreateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          createManyAndReturn: {
-            args: Prisma.progress_trackingCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$progress_trackingPayload>[]
-          }
-          delete: {
-            args: Prisma.progress_trackingDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$progress_trackingPayload>
-          }
-          update: {
-            args: Prisma.progress_trackingUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$progress_trackingPayload>
-          }
-          deleteMany: {
-            args: Prisma.progress_trackingDeleteManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateMany: {
-            args: Prisma.progress_trackingUpdateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateManyAndReturn: {
-            args: Prisma.progress_trackingUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$progress_trackingPayload>[]
-          }
-          upsert: {
-            args: Prisma.progress_trackingUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$progress_trackingPayload>
-          }
-          aggregate: {
-            args: Prisma.Progress_trackingAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateProgress_tracking>
-          }
-          groupBy: {
-            args: Prisma.progress_trackingGroupByArgs<ExtArgs>
-            result: $Utils.Optional<Progress_trackingGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.progress_trackingCountArgs<ExtArgs>
-            result: $Utils.Optional<Progress_trackingCountAggregateOutputType> | number
           }
         }
       }
@@ -1767,10 +1497,7 @@ export namespace Prisma {
     exercise_logs?: exercise_logsOmit
     exercises?: exercisesOmit
     meal_logs?: meal_logsOmit
-    meal_plan_items?: meal_plan_itemsOmit
-    meal_plans?: meal_plansOmit
     meals?: mealsOmit
-    progress_tracking?: progress_trackingOmit
     users?: usersOmit
     water_logs?: water_logsOmit
     weight_logs?: weight_logsOmit
@@ -1906,48 +1633,15 @@ export namespace Prisma {
 
 
   /**
-   * Count Type Meal_plansCountOutputType
-   */
-
-  export type Meal_plansCountOutputType = {
-    meal_plan_items: number
-  }
-
-  export type Meal_plansCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    meal_plan_items?: boolean | Meal_plansCountOutputTypeCountMeal_plan_itemsArgs
-  }
-
-  // Custom InputTypes
-  /**
-   * Meal_plansCountOutputType without action
-   */
-  export type Meal_plansCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Meal_plansCountOutputType
-     */
-    select?: Meal_plansCountOutputTypeSelect<ExtArgs> | null
-  }
-
-  /**
-   * Meal_plansCountOutputType without action
-   */
-  export type Meal_plansCountOutputTypeCountMeal_plan_itemsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: meal_plan_itemsWhereInput
-  }
-
-
-  /**
    * Count Type MealsCountOutputType
    */
 
   export type MealsCountOutputType = {
     meal_logs: number
-    meal_plan_items: number
   }
 
   export type MealsCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     meal_logs?: boolean | MealsCountOutputTypeCountMeal_logsArgs
-    meal_plan_items?: boolean | MealsCountOutputTypeCountMeal_plan_itemsArgs
   }
 
   // Custom InputTypes
@@ -1968,13 +1662,6 @@ export namespace Prisma {
     where?: meal_logsWhereInput
   }
 
-  /**
-   * MealsCountOutputType without action
-   */
-  export type MealsCountOutputTypeCountMeal_plan_itemsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: meal_plan_itemsWhereInput
-  }
-
 
   /**
    * Count Type UsersCountOutputType
@@ -1983,8 +1670,6 @@ export namespace Prisma {
   export type UsersCountOutputType = {
     exercise_logs: number
     meal_logs: number
-    meal_plans: number
-    progress_tracking: number
     water_logs: number
     weight_logs: number
     workout_plans: number
@@ -1993,8 +1678,6 @@ export namespace Prisma {
   export type UsersCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     exercise_logs?: boolean | UsersCountOutputTypeCountExercise_logsArgs
     meal_logs?: boolean | UsersCountOutputTypeCountMeal_logsArgs
-    meal_plans?: boolean | UsersCountOutputTypeCountMeal_plansArgs
-    progress_tracking?: boolean | UsersCountOutputTypeCountProgress_trackingArgs
     water_logs?: boolean | UsersCountOutputTypeCountWater_logsArgs
     weight_logs?: boolean | UsersCountOutputTypeCountWeight_logsArgs
     workout_plans?: boolean | UsersCountOutputTypeCountWorkout_plansArgs
@@ -2028,20 +1711,6 @@ export namespace Prisma {
   /**
    * UsersCountOutputType without action
    */
-  export type UsersCountOutputTypeCountMeal_plansArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: meal_plansWhereInput
-  }
-
-  /**
-   * UsersCountOutputType without action
-   */
-  export type UsersCountOutputTypeCountProgress_trackingArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: progress_trackingWhereInput
-  }
-
-  /**
-   * UsersCountOutputType without action
-   */
   export type UsersCountOutputTypeCountWater_logsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: water_logsWhereInput
   }
@@ -2066,14 +1735,10 @@ export namespace Prisma {
    */
 
   export type Workout_plansCountOutputType = {
-    meal_plans: number
-    progress_tracking: number
     workout_plan_exercises: number
   }
 
   export type Workout_plansCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    meal_plans?: boolean | Workout_plansCountOutputTypeCountMeal_plansArgs
-    progress_tracking?: boolean | Workout_plansCountOutputTypeCountProgress_trackingArgs
     workout_plan_exercises?: boolean | Workout_plansCountOutputTypeCountWorkout_plan_exercisesArgs
   }
 
@@ -2086,20 +1751,6 @@ export namespace Prisma {
      * Select specific fields to fetch from the Workout_plansCountOutputType
      */
     select?: Workout_plansCountOutputTypeSelect<ExtArgs> | null
-  }
-
-  /**
-   * Workout_plansCountOutputType without action
-   */
-  export type Workout_plansCountOutputTypeCountMeal_plansArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: meal_plansWhereInput
-  }
-
-  /**
-   * Workout_plansCountOutputType without action
-   */
-  export type Workout_plansCountOutputTypeCountProgress_trackingArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: progress_trackingWhereInput
   }
 
   /**
@@ -5705,2489 +5356,6 @@ export namespace Prisma {
 
 
   /**
-   * Model meal_plan_items
-   */
-
-  export type AggregateMeal_plan_items = {
-    _count: Meal_plan_itemsCountAggregateOutputType | null
-    _avg: Meal_plan_itemsAvgAggregateOutputType | null
-    _sum: Meal_plan_itemsSumAggregateOutputType | null
-    _min: Meal_plan_itemsMinAggregateOutputType | null
-    _max: Meal_plan_itemsMaxAggregateOutputType | null
-  }
-
-  export type Meal_plan_itemsAvgAggregateOutputType = {
-    calories: number | null
-    protein: Decimal | null
-    carbs: Decimal | null
-    fats: Decimal | null
-    day_number: number | null
-    portion: Decimal | null
-  }
-
-  export type Meal_plan_itemsSumAggregateOutputType = {
-    calories: number | null
-    protein: Decimal | null
-    carbs: Decimal | null
-    fats: Decimal | null
-    day_number: number | null
-    portion: Decimal | null
-  }
-
-  export type Meal_plan_itemsMinAggregateOutputType = {
-    id: string | null
-    meal_plan_id: string | null
-    meal_id: string | null
-    name: string | null
-    meal_time: string | null
-    calories: number | null
-    protein: Decimal | null
-    carbs: Decimal | null
-    fats: Decimal | null
-    completed: boolean | null
-    completion_date: Date | null
-    day_number: number | null
-    portion: Decimal | null
-    notes: string | null
-    created_at: Date | null
-    updated_at: Date | null
-  }
-
-  export type Meal_plan_itemsMaxAggregateOutputType = {
-    id: string | null
-    meal_plan_id: string | null
-    meal_id: string | null
-    name: string | null
-    meal_time: string | null
-    calories: number | null
-    protein: Decimal | null
-    carbs: Decimal | null
-    fats: Decimal | null
-    completed: boolean | null
-    completion_date: Date | null
-    day_number: number | null
-    portion: Decimal | null
-    notes: string | null
-    created_at: Date | null
-    updated_at: Date | null
-  }
-
-  export type Meal_plan_itemsCountAggregateOutputType = {
-    id: number
-    meal_plan_id: number
-    meal_id: number
-    name: number
-    meal_time: number
-    calories: number
-    protein: number
-    carbs: number
-    fats: number
-    completed: number
-    completion_date: number
-    day_number: number
-    portion: number
-    notes: number
-    created_at: number
-    updated_at: number
-    _all: number
-  }
-
-
-  export type Meal_plan_itemsAvgAggregateInputType = {
-    calories?: true
-    protein?: true
-    carbs?: true
-    fats?: true
-    day_number?: true
-    portion?: true
-  }
-
-  export type Meal_plan_itemsSumAggregateInputType = {
-    calories?: true
-    protein?: true
-    carbs?: true
-    fats?: true
-    day_number?: true
-    portion?: true
-  }
-
-  export type Meal_plan_itemsMinAggregateInputType = {
-    id?: true
-    meal_plan_id?: true
-    meal_id?: true
-    name?: true
-    meal_time?: true
-    calories?: true
-    protein?: true
-    carbs?: true
-    fats?: true
-    completed?: true
-    completion_date?: true
-    day_number?: true
-    portion?: true
-    notes?: true
-    created_at?: true
-    updated_at?: true
-  }
-
-  export type Meal_plan_itemsMaxAggregateInputType = {
-    id?: true
-    meal_plan_id?: true
-    meal_id?: true
-    name?: true
-    meal_time?: true
-    calories?: true
-    protein?: true
-    carbs?: true
-    fats?: true
-    completed?: true
-    completion_date?: true
-    day_number?: true
-    portion?: true
-    notes?: true
-    created_at?: true
-    updated_at?: true
-  }
-
-  export type Meal_plan_itemsCountAggregateInputType = {
-    id?: true
-    meal_plan_id?: true
-    meal_id?: true
-    name?: true
-    meal_time?: true
-    calories?: true
-    protein?: true
-    carbs?: true
-    fats?: true
-    completed?: true
-    completion_date?: true
-    day_number?: true
-    portion?: true
-    notes?: true
-    created_at?: true
-    updated_at?: true
-    _all?: true
-  }
-
-  export type Meal_plan_itemsAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which meal_plan_items to aggregate.
-     */
-    where?: meal_plan_itemsWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of meal_plan_items to fetch.
-     */
-    orderBy?: meal_plan_itemsOrderByWithRelationInput | meal_plan_itemsOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: meal_plan_itemsWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` meal_plan_items from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` meal_plan_items.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned meal_plan_items
-    **/
-    _count?: true | Meal_plan_itemsCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to average
-    **/
-    _avg?: Meal_plan_itemsAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: Meal_plan_itemsSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: Meal_plan_itemsMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: Meal_plan_itemsMaxAggregateInputType
-  }
-
-  export type GetMeal_plan_itemsAggregateType<T extends Meal_plan_itemsAggregateArgs> = {
-        [P in keyof T & keyof AggregateMeal_plan_items]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateMeal_plan_items[P]>
-      : GetScalarType<T[P], AggregateMeal_plan_items[P]>
-  }
-
-
-
-
-  export type meal_plan_itemsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: meal_plan_itemsWhereInput
-    orderBy?: meal_plan_itemsOrderByWithAggregationInput | meal_plan_itemsOrderByWithAggregationInput[]
-    by: Meal_plan_itemsScalarFieldEnum[] | Meal_plan_itemsScalarFieldEnum
-    having?: meal_plan_itemsScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: Meal_plan_itemsCountAggregateInputType | true
-    _avg?: Meal_plan_itemsAvgAggregateInputType
-    _sum?: Meal_plan_itemsSumAggregateInputType
-    _min?: Meal_plan_itemsMinAggregateInputType
-    _max?: Meal_plan_itemsMaxAggregateInputType
-  }
-
-  export type Meal_plan_itemsGroupByOutputType = {
-    id: string
-    meal_plan_id: string
-    meal_id: string | null
-    name: string
-    meal_time: string
-    calories: number | null
-    protein: Decimal | null
-    carbs: Decimal | null
-    fats: Decimal | null
-    completed: boolean | null
-    completion_date: Date | null
-    day_number: number | null
-    portion: Decimal | null
-    notes: string | null
-    created_at: Date | null
-    updated_at: Date | null
-    _count: Meal_plan_itemsCountAggregateOutputType | null
-    _avg: Meal_plan_itemsAvgAggregateOutputType | null
-    _sum: Meal_plan_itemsSumAggregateOutputType | null
-    _min: Meal_plan_itemsMinAggregateOutputType | null
-    _max: Meal_plan_itemsMaxAggregateOutputType | null
-  }
-
-  type GetMeal_plan_itemsGroupByPayload<T extends meal_plan_itemsGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<Meal_plan_itemsGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof Meal_plan_itemsGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], Meal_plan_itemsGroupByOutputType[P]>
-            : GetScalarType<T[P], Meal_plan_itemsGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type meal_plan_itemsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    meal_plan_id?: boolean
-    meal_id?: boolean
-    name?: boolean
-    meal_time?: boolean
-    calories?: boolean
-    protein?: boolean
-    carbs?: boolean
-    fats?: boolean
-    completed?: boolean
-    completion_date?: boolean
-    day_number?: boolean
-    portion?: boolean
-    notes?: boolean
-    created_at?: boolean
-    updated_at?: boolean
-    meal_plans?: boolean | meal_plansDefaultArgs<ExtArgs>
-    meals?: boolean | meal_plan_items$mealsArgs<ExtArgs>
-  }, ExtArgs["result"]["meal_plan_items"]>
-
-  export type meal_plan_itemsSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    meal_plan_id?: boolean
-    meal_id?: boolean
-    name?: boolean
-    meal_time?: boolean
-    calories?: boolean
-    protein?: boolean
-    carbs?: boolean
-    fats?: boolean
-    completed?: boolean
-    completion_date?: boolean
-    day_number?: boolean
-    portion?: boolean
-    notes?: boolean
-    created_at?: boolean
-    updated_at?: boolean
-    meal_plans?: boolean | meal_plansDefaultArgs<ExtArgs>
-    meals?: boolean | meal_plan_items$mealsArgs<ExtArgs>
-  }, ExtArgs["result"]["meal_plan_items"]>
-
-  export type meal_plan_itemsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    meal_plan_id?: boolean
-    meal_id?: boolean
-    name?: boolean
-    meal_time?: boolean
-    calories?: boolean
-    protein?: boolean
-    carbs?: boolean
-    fats?: boolean
-    completed?: boolean
-    completion_date?: boolean
-    day_number?: boolean
-    portion?: boolean
-    notes?: boolean
-    created_at?: boolean
-    updated_at?: boolean
-    meal_plans?: boolean | meal_plansDefaultArgs<ExtArgs>
-    meals?: boolean | meal_plan_items$mealsArgs<ExtArgs>
-  }, ExtArgs["result"]["meal_plan_items"]>
-
-  export type meal_plan_itemsSelectScalar = {
-    id?: boolean
-    meal_plan_id?: boolean
-    meal_id?: boolean
-    name?: boolean
-    meal_time?: boolean
-    calories?: boolean
-    protein?: boolean
-    carbs?: boolean
-    fats?: boolean
-    completed?: boolean
-    completion_date?: boolean
-    day_number?: boolean
-    portion?: boolean
-    notes?: boolean
-    created_at?: boolean
-    updated_at?: boolean
-  }
-
-  export type meal_plan_itemsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "meal_plan_id" | "meal_id" | "name" | "meal_time" | "calories" | "protein" | "carbs" | "fats" | "completed" | "completion_date" | "day_number" | "portion" | "notes" | "created_at" | "updated_at", ExtArgs["result"]["meal_plan_items"]>
-  export type meal_plan_itemsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    meal_plans?: boolean | meal_plansDefaultArgs<ExtArgs>
-    meals?: boolean | meal_plan_items$mealsArgs<ExtArgs>
-  }
-  export type meal_plan_itemsIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    meal_plans?: boolean | meal_plansDefaultArgs<ExtArgs>
-    meals?: boolean | meal_plan_items$mealsArgs<ExtArgs>
-  }
-  export type meal_plan_itemsIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    meal_plans?: boolean | meal_plansDefaultArgs<ExtArgs>
-    meals?: boolean | meal_plan_items$mealsArgs<ExtArgs>
-  }
-
-  export type $meal_plan_itemsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "meal_plan_items"
-    objects: {
-      meal_plans: Prisma.$meal_plansPayload<ExtArgs>
-      meals: Prisma.$mealsPayload<ExtArgs> | null
-    }
-    scalars: $Extensions.GetPayloadResult<{
-      id: string
-      meal_plan_id: string
-      meal_id: string | null
-      name: string
-      meal_time: string
-      calories: number | null
-      protein: Prisma.Decimal | null
-      carbs: Prisma.Decimal | null
-      fats: Prisma.Decimal | null
-      completed: boolean | null
-      completion_date: Date | null
-      day_number: number | null
-      portion: Prisma.Decimal | null
-      notes: string | null
-      created_at: Date | null
-      updated_at: Date | null
-    }, ExtArgs["result"]["meal_plan_items"]>
-    composites: {}
-  }
-
-  type meal_plan_itemsGetPayload<S extends boolean | null | undefined | meal_plan_itemsDefaultArgs> = $Result.GetResult<Prisma.$meal_plan_itemsPayload, S>
-
-  type meal_plan_itemsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<meal_plan_itemsFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: Meal_plan_itemsCountAggregateInputType | true
-    }
-
-  export interface meal_plan_itemsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['meal_plan_items'], meta: { name: 'meal_plan_items' } }
-    /**
-     * Find zero or one Meal_plan_items that matches the filter.
-     * @param {meal_plan_itemsFindUniqueArgs} args - Arguments to find a Meal_plan_items
-     * @example
-     * // Get one Meal_plan_items
-     * const meal_plan_items = await prisma.meal_plan_items.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUnique<T extends meal_plan_itemsFindUniqueArgs>(args: SelectSubset<T, meal_plan_itemsFindUniqueArgs<ExtArgs>>): Prisma__meal_plan_itemsClient<$Result.GetResult<Prisma.$meal_plan_itemsPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find one Meal_plan_items that matches the filter or throw an error with `error.code='P2025'`
-     * if no matches were found.
-     * @param {meal_plan_itemsFindUniqueOrThrowArgs} args - Arguments to find a Meal_plan_items
-     * @example
-     * // Get one Meal_plan_items
-     * const meal_plan_items = await prisma.meal_plan_items.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUniqueOrThrow<T extends meal_plan_itemsFindUniqueOrThrowArgs>(args: SelectSubset<T, meal_plan_itemsFindUniqueOrThrowArgs<ExtArgs>>): Prisma__meal_plan_itemsClient<$Result.GetResult<Prisma.$meal_plan_itemsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first Meal_plan_items that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {meal_plan_itemsFindFirstArgs} args - Arguments to find a Meal_plan_items
-     * @example
-     * // Get one Meal_plan_items
-     * const meal_plan_items = await prisma.meal_plan_items.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirst<T extends meal_plan_itemsFindFirstArgs>(args?: SelectSubset<T, meal_plan_itemsFindFirstArgs<ExtArgs>>): Prisma__meal_plan_itemsClient<$Result.GetResult<Prisma.$meal_plan_itemsPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first Meal_plan_items that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {meal_plan_itemsFindFirstOrThrowArgs} args - Arguments to find a Meal_plan_items
-     * @example
-     * // Get one Meal_plan_items
-     * const meal_plan_items = await prisma.meal_plan_items.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirstOrThrow<T extends meal_plan_itemsFindFirstOrThrowArgs>(args?: SelectSubset<T, meal_plan_itemsFindFirstOrThrowArgs<ExtArgs>>): Prisma__meal_plan_itemsClient<$Result.GetResult<Prisma.$meal_plan_itemsPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find zero or more Meal_plan_items that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {meal_plan_itemsFindManyArgs} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all Meal_plan_items
-     * const meal_plan_items = await prisma.meal_plan_items.findMany()
-     * 
-     * // Get first 10 Meal_plan_items
-     * const meal_plan_items = await prisma.meal_plan_items.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const meal_plan_itemsWithIdOnly = await prisma.meal_plan_items.findMany({ select: { id: true } })
-     * 
-     */
-    findMany<T extends meal_plan_itemsFindManyArgs>(args?: SelectSubset<T, meal_plan_itemsFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$meal_plan_itemsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
-
-    /**
-     * Create a Meal_plan_items.
-     * @param {meal_plan_itemsCreateArgs} args - Arguments to create a Meal_plan_items.
-     * @example
-     * // Create one Meal_plan_items
-     * const Meal_plan_items = await prisma.meal_plan_items.create({
-     *   data: {
-     *     // ... data to create a Meal_plan_items
-     *   }
-     * })
-     * 
-     */
-    create<T extends meal_plan_itemsCreateArgs>(args: SelectSubset<T, meal_plan_itemsCreateArgs<ExtArgs>>): Prisma__meal_plan_itemsClient<$Result.GetResult<Prisma.$meal_plan_itemsPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Create many Meal_plan_items.
-     * @param {meal_plan_itemsCreateManyArgs} args - Arguments to create many Meal_plan_items.
-     * @example
-     * // Create many Meal_plan_items
-     * const meal_plan_items = await prisma.meal_plan_items.createMany({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     *     
-     */
-    createMany<T extends meal_plan_itemsCreateManyArgs>(args?: SelectSubset<T, meal_plan_itemsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create many Meal_plan_items and returns the data saved in the database.
-     * @param {meal_plan_itemsCreateManyAndReturnArgs} args - Arguments to create many Meal_plan_items.
-     * @example
-     * // Create many Meal_plan_items
-     * const meal_plan_items = await prisma.meal_plan_items.createManyAndReturn({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Create many Meal_plan_items and only return the `id`
-     * const meal_plan_itemsWithIdOnly = await prisma.meal_plan_items.createManyAndReturn({
-     *   select: { id: true },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    createManyAndReturn<T extends meal_plan_itemsCreateManyAndReturnArgs>(args?: SelectSubset<T, meal_plan_itemsCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$meal_plan_itemsPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Delete a Meal_plan_items.
-     * @param {meal_plan_itemsDeleteArgs} args - Arguments to delete one Meal_plan_items.
-     * @example
-     * // Delete one Meal_plan_items
-     * const Meal_plan_items = await prisma.meal_plan_items.delete({
-     *   where: {
-     *     // ... filter to delete one Meal_plan_items
-     *   }
-     * })
-     * 
-     */
-    delete<T extends meal_plan_itemsDeleteArgs>(args: SelectSubset<T, meal_plan_itemsDeleteArgs<ExtArgs>>): Prisma__meal_plan_itemsClient<$Result.GetResult<Prisma.$meal_plan_itemsPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Update one Meal_plan_items.
-     * @param {meal_plan_itemsUpdateArgs} args - Arguments to update one Meal_plan_items.
-     * @example
-     * // Update one Meal_plan_items
-     * const meal_plan_items = await prisma.meal_plan_items.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    update<T extends meal_plan_itemsUpdateArgs>(args: SelectSubset<T, meal_plan_itemsUpdateArgs<ExtArgs>>): Prisma__meal_plan_itemsClient<$Result.GetResult<Prisma.$meal_plan_itemsPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Delete zero or more Meal_plan_items.
-     * @param {meal_plan_itemsDeleteManyArgs} args - Arguments to filter Meal_plan_items to delete.
-     * @example
-     * // Delete a few Meal_plan_items
-     * const { count } = await prisma.meal_plan_items.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-     */
-    deleteMany<T extends meal_plan_itemsDeleteManyArgs>(args?: SelectSubset<T, meal_plan_itemsDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Meal_plan_items.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {meal_plan_itemsUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many Meal_plan_items
-     * const meal_plan_items = await prisma.meal_plan_items.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    updateMany<T extends meal_plan_itemsUpdateManyArgs>(args: SelectSubset<T, meal_plan_itemsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Meal_plan_items and returns the data updated in the database.
-     * @param {meal_plan_itemsUpdateManyAndReturnArgs} args - Arguments to update many Meal_plan_items.
-     * @example
-     * // Update many Meal_plan_items
-     * const meal_plan_items = await prisma.meal_plan_items.updateManyAndReturn({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Update zero or more Meal_plan_items and only return the `id`
-     * const meal_plan_itemsWithIdOnly = await prisma.meal_plan_items.updateManyAndReturn({
-     *   select: { id: true },
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    updateManyAndReturn<T extends meal_plan_itemsUpdateManyAndReturnArgs>(args: SelectSubset<T, meal_plan_itemsUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$meal_plan_itemsPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Create or update one Meal_plan_items.
-     * @param {meal_plan_itemsUpsertArgs} args - Arguments to update or create a Meal_plan_items.
-     * @example
-     * // Update or create a Meal_plan_items
-     * const meal_plan_items = await prisma.meal_plan_items.upsert({
-     *   create: {
-     *     // ... data to create a Meal_plan_items
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the Meal_plan_items we want to update
-     *   }
-     * })
-     */
-    upsert<T extends meal_plan_itemsUpsertArgs>(args: SelectSubset<T, meal_plan_itemsUpsertArgs<ExtArgs>>): Prisma__meal_plan_itemsClient<$Result.GetResult<Prisma.$meal_plan_itemsPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-
-    /**
-     * Count the number of Meal_plan_items.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {meal_plan_itemsCountArgs} args - Arguments to filter Meal_plan_items to count.
-     * @example
-     * // Count the number of Meal_plan_items
-     * const count = await prisma.meal_plan_items.count({
-     *   where: {
-     *     // ... the filter for the Meal_plan_items we want to count
-     *   }
-     * })
-    **/
-    count<T extends meal_plan_itemsCountArgs>(
-      args?: Subset<T, meal_plan_itemsCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], Meal_plan_itemsCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a Meal_plan_items.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {Meal_plan_itemsAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends Meal_plan_itemsAggregateArgs>(args: Subset<T, Meal_plan_itemsAggregateArgs>): Prisma.PrismaPromise<GetMeal_plan_itemsAggregateType<T>>
-
-    /**
-     * Group by Meal_plan_items.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {meal_plan_itemsGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends meal_plan_itemsGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: meal_plan_itemsGroupByArgs['orderBy'] }
-        : { orderBy?: meal_plan_itemsGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, meal_plan_itemsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetMeal_plan_itemsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the meal_plan_items model
-   */
-  readonly fields: meal_plan_itemsFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for meal_plan_items.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__meal_plan_itemsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: "PrismaPromise"
-    meal_plans<T extends meal_plansDefaultArgs<ExtArgs> = {}>(args?: Subset<T, meal_plansDefaultArgs<ExtArgs>>): Prisma__meal_plansClient<$Result.GetResult<Prisma.$meal_plansPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    meals<T extends meal_plan_items$mealsArgs<ExtArgs> = {}>(args?: Subset<T, meal_plan_items$mealsArgs<ExtArgs>>): Prisma__mealsClient<$Result.GetResult<Prisma.$mealsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
-  }
-
-
-
-
-  /**
-   * Fields of the meal_plan_items model
-   */
-  interface meal_plan_itemsFieldRefs {
-    readonly id: FieldRef<"meal_plan_items", 'String'>
-    readonly meal_plan_id: FieldRef<"meal_plan_items", 'String'>
-    readonly meal_id: FieldRef<"meal_plan_items", 'String'>
-    readonly name: FieldRef<"meal_plan_items", 'String'>
-    readonly meal_time: FieldRef<"meal_plan_items", 'String'>
-    readonly calories: FieldRef<"meal_plan_items", 'Int'>
-    readonly protein: FieldRef<"meal_plan_items", 'Decimal'>
-    readonly carbs: FieldRef<"meal_plan_items", 'Decimal'>
-    readonly fats: FieldRef<"meal_plan_items", 'Decimal'>
-    readonly completed: FieldRef<"meal_plan_items", 'Boolean'>
-    readonly completion_date: FieldRef<"meal_plan_items", 'DateTime'>
-    readonly day_number: FieldRef<"meal_plan_items", 'Int'>
-    readonly portion: FieldRef<"meal_plan_items", 'Decimal'>
-    readonly notes: FieldRef<"meal_plan_items", 'String'>
-    readonly created_at: FieldRef<"meal_plan_items", 'DateTime'>
-    readonly updated_at: FieldRef<"meal_plan_items", 'DateTime'>
-  }
-    
-
-  // Custom InputTypes
-  /**
-   * meal_plan_items findUnique
-   */
-  export type meal_plan_itemsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the meal_plan_items
-     */
-    select?: meal_plan_itemsSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the meal_plan_items
-     */
-    omit?: meal_plan_itemsOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: meal_plan_itemsInclude<ExtArgs> | null
-    /**
-     * Filter, which meal_plan_items to fetch.
-     */
-    where: meal_plan_itemsWhereUniqueInput
-  }
-
-  /**
-   * meal_plan_items findUniqueOrThrow
-   */
-  export type meal_plan_itemsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the meal_plan_items
-     */
-    select?: meal_plan_itemsSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the meal_plan_items
-     */
-    omit?: meal_plan_itemsOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: meal_plan_itemsInclude<ExtArgs> | null
-    /**
-     * Filter, which meal_plan_items to fetch.
-     */
-    where: meal_plan_itemsWhereUniqueInput
-  }
-
-  /**
-   * meal_plan_items findFirst
-   */
-  export type meal_plan_itemsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the meal_plan_items
-     */
-    select?: meal_plan_itemsSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the meal_plan_items
-     */
-    omit?: meal_plan_itemsOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: meal_plan_itemsInclude<ExtArgs> | null
-    /**
-     * Filter, which meal_plan_items to fetch.
-     */
-    where?: meal_plan_itemsWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of meal_plan_items to fetch.
-     */
-    orderBy?: meal_plan_itemsOrderByWithRelationInput | meal_plan_itemsOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for meal_plan_items.
-     */
-    cursor?: meal_plan_itemsWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` meal_plan_items from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` meal_plan_items.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of meal_plan_items.
-     */
-    distinct?: Meal_plan_itemsScalarFieldEnum | Meal_plan_itemsScalarFieldEnum[]
-  }
-
-  /**
-   * meal_plan_items findFirstOrThrow
-   */
-  export type meal_plan_itemsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the meal_plan_items
-     */
-    select?: meal_plan_itemsSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the meal_plan_items
-     */
-    omit?: meal_plan_itemsOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: meal_plan_itemsInclude<ExtArgs> | null
-    /**
-     * Filter, which meal_plan_items to fetch.
-     */
-    where?: meal_plan_itemsWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of meal_plan_items to fetch.
-     */
-    orderBy?: meal_plan_itemsOrderByWithRelationInput | meal_plan_itemsOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for meal_plan_items.
-     */
-    cursor?: meal_plan_itemsWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` meal_plan_items from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` meal_plan_items.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of meal_plan_items.
-     */
-    distinct?: Meal_plan_itemsScalarFieldEnum | Meal_plan_itemsScalarFieldEnum[]
-  }
-
-  /**
-   * meal_plan_items findMany
-   */
-  export type meal_plan_itemsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the meal_plan_items
-     */
-    select?: meal_plan_itemsSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the meal_plan_items
-     */
-    omit?: meal_plan_itemsOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: meal_plan_itemsInclude<ExtArgs> | null
-    /**
-     * Filter, which meal_plan_items to fetch.
-     */
-    where?: meal_plan_itemsWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of meal_plan_items to fetch.
-     */
-    orderBy?: meal_plan_itemsOrderByWithRelationInput | meal_plan_itemsOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing meal_plan_items.
-     */
-    cursor?: meal_plan_itemsWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` meal_plan_items from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` meal_plan_items.
-     */
-    skip?: number
-    distinct?: Meal_plan_itemsScalarFieldEnum | Meal_plan_itemsScalarFieldEnum[]
-  }
-
-  /**
-   * meal_plan_items create
-   */
-  export type meal_plan_itemsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the meal_plan_items
-     */
-    select?: meal_plan_itemsSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the meal_plan_items
-     */
-    omit?: meal_plan_itemsOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: meal_plan_itemsInclude<ExtArgs> | null
-    /**
-     * The data needed to create a meal_plan_items.
-     */
-    data: XOR<meal_plan_itemsCreateInput, meal_plan_itemsUncheckedCreateInput>
-  }
-
-  /**
-   * meal_plan_items createMany
-   */
-  export type meal_plan_itemsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many meal_plan_items.
-     */
-    data: meal_plan_itemsCreateManyInput | meal_plan_itemsCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * meal_plan_items createManyAndReturn
-   */
-  export type meal_plan_itemsCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the meal_plan_items
-     */
-    select?: meal_plan_itemsSelectCreateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the meal_plan_items
-     */
-    omit?: meal_plan_itemsOmit<ExtArgs> | null
-    /**
-     * The data used to create many meal_plan_items.
-     */
-    data: meal_plan_itemsCreateManyInput | meal_plan_itemsCreateManyInput[]
-    skipDuplicates?: boolean
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: meal_plan_itemsIncludeCreateManyAndReturn<ExtArgs> | null
-  }
-
-  /**
-   * meal_plan_items update
-   */
-  export type meal_plan_itemsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the meal_plan_items
-     */
-    select?: meal_plan_itemsSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the meal_plan_items
-     */
-    omit?: meal_plan_itemsOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: meal_plan_itemsInclude<ExtArgs> | null
-    /**
-     * The data needed to update a meal_plan_items.
-     */
-    data: XOR<meal_plan_itemsUpdateInput, meal_plan_itemsUncheckedUpdateInput>
-    /**
-     * Choose, which meal_plan_items to update.
-     */
-    where: meal_plan_itemsWhereUniqueInput
-  }
-
-  /**
-   * meal_plan_items updateMany
-   */
-  export type meal_plan_itemsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update meal_plan_items.
-     */
-    data: XOR<meal_plan_itemsUpdateManyMutationInput, meal_plan_itemsUncheckedUpdateManyInput>
-    /**
-     * Filter which meal_plan_items to update
-     */
-    where?: meal_plan_itemsWhereInput
-    /**
-     * Limit how many meal_plan_items to update.
-     */
-    limit?: number
-  }
-
-  /**
-   * meal_plan_items updateManyAndReturn
-   */
-  export type meal_plan_itemsUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the meal_plan_items
-     */
-    select?: meal_plan_itemsSelectUpdateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the meal_plan_items
-     */
-    omit?: meal_plan_itemsOmit<ExtArgs> | null
-    /**
-     * The data used to update meal_plan_items.
-     */
-    data: XOR<meal_plan_itemsUpdateManyMutationInput, meal_plan_itemsUncheckedUpdateManyInput>
-    /**
-     * Filter which meal_plan_items to update
-     */
-    where?: meal_plan_itemsWhereInput
-    /**
-     * Limit how many meal_plan_items to update.
-     */
-    limit?: number
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: meal_plan_itemsIncludeUpdateManyAndReturn<ExtArgs> | null
-  }
-
-  /**
-   * meal_plan_items upsert
-   */
-  export type meal_plan_itemsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the meal_plan_items
-     */
-    select?: meal_plan_itemsSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the meal_plan_items
-     */
-    omit?: meal_plan_itemsOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: meal_plan_itemsInclude<ExtArgs> | null
-    /**
-     * The filter to search for the meal_plan_items to update in case it exists.
-     */
-    where: meal_plan_itemsWhereUniqueInput
-    /**
-     * In case the meal_plan_items found by the `where` argument doesn't exist, create a new meal_plan_items with this data.
-     */
-    create: XOR<meal_plan_itemsCreateInput, meal_plan_itemsUncheckedCreateInput>
-    /**
-     * In case the meal_plan_items was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<meal_plan_itemsUpdateInput, meal_plan_itemsUncheckedUpdateInput>
-  }
-
-  /**
-   * meal_plan_items delete
-   */
-  export type meal_plan_itemsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the meal_plan_items
-     */
-    select?: meal_plan_itemsSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the meal_plan_items
-     */
-    omit?: meal_plan_itemsOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: meal_plan_itemsInclude<ExtArgs> | null
-    /**
-     * Filter which meal_plan_items to delete.
-     */
-    where: meal_plan_itemsWhereUniqueInput
-  }
-
-  /**
-   * meal_plan_items deleteMany
-   */
-  export type meal_plan_itemsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which meal_plan_items to delete
-     */
-    where?: meal_plan_itemsWhereInput
-    /**
-     * Limit how many meal_plan_items to delete.
-     */
-    limit?: number
-  }
-
-  /**
-   * meal_plan_items.meals
-   */
-  export type meal_plan_items$mealsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the meals
-     */
-    select?: mealsSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the meals
-     */
-    omit?: mealsOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: mealsInclude<ExtArgs> | null
-    where?: mealsWhereInput
-  }
-
-  /**
-   * meal_plan_items without action
-   */
-  export type meal_plan_itemsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the meal_plan_items
-     */
-    select?: meal_plan_itemsSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the meal_plan_items
-     */
-    omit?: meal_plan_itemsOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: meal_plan_itemsInclude<ExtArgs> | null
-  }
-
-
-  /**
-   * Model meal_plans
-   */
-
-  export type AggregateMeal_plans = {
-    _count: Meal_plansCountAggregateOutputType | null
-    _avg: Meal_plansAvgAggregateOutputType | null
-    _sum: Meal_plansSumAggregateOutputType | null
-    _min: Meal_plansMinAggregateOutputType | null
-    _max: Meal_plansMaxAggregateOutputType | null
-  }
-
-  export type Meal_plansAvgAggregateOutputType = {
-    daily_calories: number | null
-  }
-
-  export type Meal_plansSumAggregateOutputType = {
-    daily_calories: number | null
-  }
-
-  export type Meal_plansMinAggregateOutputType = {
-    id: string | null
-    user_id: string | null
-    name: string | null
-    description: string | null
-    date: Date | null
-    workout_plan_id: string | null
-    created_at: Date | null
-    updated_at: Date | null
-    daily_calories: number | null
-  }
-
-  export type Meal_plansMaxAggregateOutputType = {
-    id: string | null
-    user_id: string | null
-    name: string | null
-    description: string | null
-    date: Date | null
-    workout_plan_id: string | null
-    created_at: Date | null
-    updated_at: Date | null
-    daily_calories: number | null
-  }
-
-  export type Meal_plansCountAggregateOutputType = {
-    id: number
-    user_id: number
-    name: number
-    description: number
-    date: number
-    workout_plan_id: number
-    created_at: number
-    updated_at: number
-    daily_calories: number
-    _all: number
-  }
-
-
-  export type Meal_plansAvgAggregateInputType = {
-    daily_calories?: true
-  }
-
-  export type Meal_plansSumAggregateInputType = {
-    daily_calories?: true
-  }
-
-  export type Meal_plansMinAggregateInputType = {
-    id?: true
-    user_id?: true
-    name?: true
-    description?: true
-    date?: true
-    workout_plan_id?: true
-    created_at?: true
-    updated_at?: true
-    daily_calories?: true
-  }
-
-  export type Meal_plansMaxAggregateInputType = {
-    id?: true
-    user_id?: true
-    name?: true
-    description?: true
-    date?: true
-    workout_plan_id?: true
-    created_at?: true
-    updated_at?: true
-    daily_calories?: true
-  }
-
-  export type Meal_plansCountAggregateInputType = {
-    id?: true
-    user_id?: true
-    name?: true
-    description?: true
-    date?: true
-    workout_plan_id?: true
-    created_at?: true
-    updated_at?: true
-    daily_calories?: true
-    _all?: true
-  }
-
-  export type Meal_plansAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which meal_plans to aggregate.
-     */
-    where?: meal_plansWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of meal_plans to fetch.
-     */
-    orderBy?: meal_plansOrderByWithRelationInput | meal_plansOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: meal_plansWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` meal_plans from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` meal_plans.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned meal_plans
-    **/
-    _count?: true | Meal_plansCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to average
-    **/
-    _avg?: Meal_plansAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: Meal_plansSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: Meal_plansMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: Meal_plansMaxAggregateInputType
-  }
-
-  export type GetMeal_plansAggregateType<T extends Meal_plansAggregateArgs> = {
-        [P in keyof T & keyof AggregateMeal_plans]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateMeal_plans[P]>
-      : GetScalarType<T[P], AggregateMeal_plans[P]>
-  }
-
-
-
-
-  export type meal_plansGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: meal_plansWhereInput
-    orderBy?: meal_plansOrderByWithAggregationInput | meal_plansOrderByWithAggregationInput[]
-    by: Meal_plansScalarFieldEnum[] | Meal_plansScalarFieldEnum
-    having?: meal_plansScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: Meal_plansCountAggregateInputType | true
-    _avg?: Meal_plansAvgAggregateInputType
-    _sum?: Meal_plansSumAggregateInputType
-    _min?: Meal_plansMinAggregateInputType
-    _max?: Meal_plansMaxAggregateInputType
-  }
-
-  export type Meal_plansGroupByOutputType = {
-    id: string
-    user_id: string
-    name: string
-    description: string | null
-    date: Date | null
-    workout_plan_id: string | null
-    created_at: Date | null
-    updated_at: Date | null
-    daily_calories: number | null
-    _count: Meal_plansCountAggregateOutputType | null
-    _avg: Meal_plansAvgAggregateOutputType | null
-    _sum: Meal_plansSumAggregateOutputType | null
-    _min: Meal_plansMinAggregateOutputType | null
-    _max: Meal_plansMaxAggregateOutputType | null
-  }
-
-  type GetMeal_plansGroupByPayload<T extends meal_plansGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<Meal_plansGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof Meal_plansGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], Meal_plansGroupByOutputType[P]>
-            : GetScalarType<T[P], Meal_plansGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type meal_plansSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    user_id?: boolean
-    name?: boolean
-    description?: boolean
-    date?: boolean
-    workout_plan_id?: boolean
-    created_at?: boolean
-    updated_at?: boolean
-    daily_calories?: boolean
-    meal_plan_items?: boolean | meal_plans$meal_plan_itemsArgs<ExtArgs>
-    users?: boolean | usersDefaultArgs<ExtArgs>
-    workout_plans?: boolean | meal_plans$workout_plansArgs<ExtArgs>
-    _count?: boolean | Meal_plansCountOutputTypeDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["meal_plans"]>
-
-  export type meal_plansSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    user_id?: boolean
-    name?: boolean
-    description?: boolean
-    date?: boolean
-    workout_plan_id?: boolean
-    created_at?: boolean
-    updated_at?: boolean
-    daily_calories?: boolean
-    users?: boolean | usersDefaultArgs<ExtArgs>
-    workout_plans?: boolean | meal_plans$workout_plansArgs<ExtArgs>
-  }, ExtArgs["result"]["meal_plans"]>
-
-  export type meal_plansSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    user_id?: boolean
-    name?: boolean
-    description?: boolean
-    date?: boolean
-    workout_plan_id?: boolean
-    created_at?: boolean
-    updated_at?: boolean
-    daily_calories?: boolean
-    users?: boolean | usersDefaultArgs<ExtArgs>
-    workout_plans?: boolean | meal_plans$workout_plansArgs<ExtArgs>
-  }, ExtArgs["result"]["meal_plans"]>
-
-  export type meal_plansSelectScalar = {
-    id?: boolean
-    user_id?: boolean
-    name?: boolean
-    description?: boolean
-    date?: boolean
-    workout_plan_id?: boolean
-    created_at?: boolean
-    updated_at?: boolean
-    daily_calories?: boolean
-  }
-
-  export type meal_plansOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "user_id" | "name" | "description" | "date" | "workout_plan_id" | "created_at" | "updated_at" | "daily_calories", ExtArgs["result"]["meal_plans"]>
-  export type meal_plansInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    meal_plan_items?: boolean | meal_plans$meal_plan_itemsArgs<ExtArgs>
-    users?: boolean | usersDefaultArgs<ExtArgs>
-    workout_plans?: boolean | meal_plans$workout_plansArgs<ExtArgs>
-    _count?: boolean | Meal_plansCountOutputTypeDefaultArgs<ExtArgs>
-  }
-  export type meal_plansIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    users?: boolean | usersDefaultArgs<ExtArgs>
-    workout_plans?: boolean | meal_plans$workout_plansArgs<ExtArgs>
-  }
-  export type meal_plansIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    users?: boolean | usersDefaultArgs<ExtArgs>
-    workout_plans?: boolean | meal_plans$workout_plansArgs<ExtArgs>
-  }
-
-  export type $meal_plansPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "meal_plans"
-    objects: {
-      meal_plan_items: Prisma.$meal_plan_itemsPayload<ExtArgs>[]
-      users: Prisma.$usersPayload<ExtArgs>
-      workout_plans: Prisma.$workout_plansPayload<ExtArgs> | null
-    }
-    scalars: $Extensions.GetPayloadResult<{
-      id: string
-      user_id: string
-      name: string
-      description: string | null
-      date: Date | null
-      workout_plan_id: string | null
-      created_at: Date | null
-      updated_at: Date | null
-      daily_calories: number | null
-    }, ExtArgs["result"]["meal_plans"]>
-    composites: {}
-  }
-
-  type meal_plansGetPayload<S extends boolean | null | undefined | meal_plansDefaultArgs> = $Result.GetResult<Prisma.$meal_plansPayload, S>
-
-  type meal_plansCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<meal_plansFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: Meal_plansCountAggregateInputType | true
-    }
-
-  export interface meal_plansDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['meal_plans'], meta: { name: 'meal_plans' } }
-    /**
-     * Find zero or one Meal_plans that matches the filter.
-     * @param {meal_plansFindUniqueArgs} args - Arguments to find a Meal_plans
-     * @example
-     * // Get one Meal_plans
-     * const meal_plans = await prisma.meal_plans.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUnique<T extends meal_plansFindUniqueArgs>(args: SelectSubset<T, meal_plansFindUniqueArgs<ExtArgs>>): Prisma__meal_plansClient<$Result.GetResult<Prisma.$meal_plansPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find one Meal_plans that matches the filter or throw an error with `error.code='P2025'`
-     * if no matches were found.
-     * @param {meal_plansFindUniqueOrThrowArgs} args - Arguments to find a Meal_plans
-     * @example
-     * // Get one Meal_plans
-     * const meal_plans = await prisma.meal_plans.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUniqueOrThrow<T extends meal_plansFindUniqueOrThrowArgs>(args: SelectSubset<T, meal_plansFindUniqueOrThrowArgs<ExtArgs>>): Prisma__meal_plansClient<$Result.GetResult<Prisma.$meal_plansPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first Meal_plans that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {meal_plansFindFirstArgs} args - Arguments to find a Meal_plans
-     * @example
-     * // Get one Meal_plans
-     * const meal_plans = await prisma.meal_plans.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirst<T extends meal_plansFindFirstArgs>(args?: SelectSubset<T, meal_plansFindFirstArgs<ExtArgs>>): Prisma__meal_plansClient<$Result.GetResult<Prisma.$meal_plansPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first Meal_plans that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {meal_plansFindFirstOrThrowArgs} args - Arguments to find a Meal_plans
-     * @example
-     * // Get one Meal_plans
-     * const meal_plans = await prisma.meal_plans.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirstOrThrow<T extends meal_plansFindFirstOrThrowArgs>(args?: SelectSubset<T, meal_plansFindFirstOrThrowArgs<ExtArgs>>): Prisma__meal_plansClient<$Result.GetResult<Prisma.$meal_plansPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find zero or more Meal_plans that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {meal_plansFindManyArgs} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all Meal_plans
-     * const meal_plans = await prisma.meal_plans.findMany()
-     * 
-     * // Get first 10 Meal_plans
-     * const meal_plans = await prisma.meal_plans.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const meal_plansWithIdOnly = await prisma.meal_plans.findMany({ select: { id: true } })
-     * 
-     */
-    findMany<T extends meal_plansFindManyArgs>(args?: SelectSubset<T, meal_plansFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$meal_plansPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
-
-    /**
-     * Create a Meal_plans.
-     * @param {meal_plansCreateArgs} args - Arguments to create a Meal_plans.
-     * @example
-     * // Create one Meal_plans
-     * const Meal_plans = await prisma.meal_plans.create({
-     *   data: {
-     *     // ... data to create a Meal_plans
-     *   }
-     * })
-     * 
-     */
-    create<T extends meal_plansCreateArgs>(args: SelectSubset<T, meal_plansCreateArgs<ExtArgs>>): Prisma__meal_plansClient<$Result.GetResult<Prisma.$meal_plansPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Create many Meal_plans.
-     * @param {meal_plansCreateManyArgs} args - Arguments to create many Meal_plans.
-     * @example
-     * // Create many Meal_plans
-     * const meal_plans = await prisma.meal_plans.createMany({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     *     
-     */
-    createMany<T extends meal_plansCreateManyArgs>(args?: SelectSubset<T, meal_plansCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create many Meal_plans and returns the data saved in the database.
-     * @param {meal_plansCreateManyAndReturnArgs} args - Arguments to create many Meal_plans.
-     * @example
-     * // Create many Meal_plans
-     * const meal_plans = await prisma.meal_plans.createManyAndReturn({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Create many Meal_plans and only return the `id`
-     * const meal_plansWithIdOnly = await prisma.meal_plans.createManyAndReturn({
-     *   select: { id: true },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    createManyAndReturn<T extends meal_plansCreateManyAndReturnArgs>(args?: SelectSubset<T, meal_plansCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$meal_plansPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Delete a Meal_plans.
-     * @param {meal_plansDeleteArgs} args - Arguments to delete one Meal_plans.
-     * @example
-     * // Delete one Meal_plans
-     * const Meal_plans = await prisma.meal_plans.delete({
-     *   where: {
-     *     // ... filter to delete one Meal_plans
-     *   }
-     * })
-     * 
-     */
-    delete<T extends meal_plansDeleteArgs>(args: SelectSubset<T, meal_plansDeleteArgs<ExtArgs>>): Prisma__meal_plansClient<$Result.GetResult<Prisma.$meal_plansPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Update one Meal_plans.
-     * @param {meal_plansUpdateArgs} args - Arguments to update one Meal_plans.
-     * @example
-     * // Update one Meal_plans
-     * const meal_plans = await prisma.meal_plans.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    update<T extends meal_plansUpdateArgs>(args: SelectSubset<T, meal_plansUpdateArgs<ExtArgs>>): Prisma__meal_plansClient<$Result.GetResult<Prisma.$meal_plansPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Delete zero or more Meal_plans.
-     * @param {meal_plansDeleteManyArgs} args - Arguments to filter Meal_plans to delete.
-     * @example
-     * // Delete a few Meal_plans
-     * const { count } = await prisma.meal_plans.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-     */
-    deleteMany<T extends meal_plansDeleteManyArgs>(args?: SelectSubset<T, meal_plansDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Meal_plans.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {meal_plansUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many Meal_plans
-     * const meal_plans = await prisma.meal_plans.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    updateMany<T extends meal_plansUpdateManyArgs>(args: SelectSubset<T, meal_plansUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Meal_plans and returns the data updated in the database.
-     * @param {meal_plansUpdateManyAndReturnArgs} args - Arguments to update many Meal_plans.
-     * @example
-     * // Update many Meal_plans
-     * const meal_plans = await prisma.meal_plans.updateManyAndReturn({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Update zero or more Meal_plans and only return the `id`
-     * const meal_plansWithIdOnly = await prisma.meal_plans.updateManyAndReturn({
-     *   select: { id: true },
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    updateManyAndReturn<T extends meal_plansUpdateManyAndReturnArgs>(args: SelectSubset<T, meal_plansUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$meal_plansPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Create or update one Meal_plans.
-     * @param {meal_plansUpsertArgs} args - Arguments to update or create a Meal_plans.
-     * @example
-     * // Update or create a Meal_plans
-     * const meal_plans = await prisma.meal_plans.upsert({
-     *   create: {
-     *     // ... data to create a Meal_plans
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the Meal_plans we want to update
-     *   }
-     * })
-     */
-    upsert<T extends meal_plansUpsertArgs>(args: SelectSubset<T, meal_plansUpsertArgs<ExtArgs>>): Prisma__meal_plansClient<$Result.GetResult<Prisma.$meal_plansPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-
-    /**
-     * Count the number of Meal_plans.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {meal_plansCountArgs} args - Arguments to filter Meal_plans to count.
-     * @example
-     * // Count the number of Meal_plans
-     * const count = await prisma.meal_plans.count({
-     *   where: {
-     *     // ... the filter for the Meal_plans we want to count
-     *   }
-     * })
-    **/
-    count<T extends meal_plansCountArgs>(
-      args?: Subset<T, meal_plansCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], Meal_plansCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a Meal_plans.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {Meal_plansAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends Meal_plansAggregateArgs>(args: Subset<T, Meal_plansAggregateArgs>): Prisma.PrismaPromise<GetMeal_plansAggregateType<T>>
-
-    /**
-     * Group by Meal_plans.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {meal_plansGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends meal_plansGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: meal_plansGroupByArgs['orderBy'] }
-        : { orderBy?: meal_plansGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, meal_plansGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetMeal_plansGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the meal_plans model
-   */
-  readonly fields: meal_plansFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for meal_plans.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__meal_plansClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: "PrismaPromise"
-    meal_plan_items<T extends meal_plans$meal_plan_itemsArgs<ExtArgs> = {}>(args?: Subset<T, meal_plans$meal_plan_itemsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$meal_plan_itemsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    users<T extends usersDefaultArgs<ExtArgs> = {}>(args?: Subset<T, usersDefaultArgs<ExtArgs>>): Prisma__usersClient<$Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    workout_plans<T extends meal_plans$workout_plansArgs<ExtArgs> = {}>(args?: Subset<T, meal_plans$workout_plansArgs<ExtArgs>>): Prisma__workout_plansClient<$Result.GetResult<Prisma.$workout_plansPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
-  }
-
-
-
-
-  /**
-   * Fields of the meal_plans model
-   */
-  interface meal_plansFieldRefs {
-    readonly id: FieldRef<"meal_plans", 'String'>
-    readonly user_id: FieldRef<"meal_plans", 'String'>
-    readonly name: FieldRef<"meal_plans", 'String'>
-    readonly description: FieldRef<"meal_plans", 'String'>
-    readonly date: FieldRef<"meal_plans", 'DateTime'>
-    readonly workout_plan_id: FieldRef<"meal_plans", 'String'>
-    readonly created_at: FieldRef<"meal_plans", 'DateTime'>
-    readonly updated_at: FieldRef<"meal_plans", 'DateTime'>
-    readonly daily_calories: FieldRef<"meal_plans", 'Int'>
-  }
-    
-
-  // Custom InputTypes
-  /**
-   * meal_plans findUnique
-   */
-  export type meal_plansFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the meal_plans
-     */
-    select?: meal_plansSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the meal_plans
-     */
-    omit?: meal_plansOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: meal_plansInclude<ExtArgs> | null
-    /**
-     * Filter, which meal_plans to fetch.
-     */
-    where: meal_plansWhereUniqueInput
-  }
-
-  /**
-   * meal_plans findUniqueOrThrow
-   */
-  export type meal_plansFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the meal_plans
-     */
-    select?: meal_plansSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the meal_plans
-     */
-    omit?: meal_plansOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: meal_plansInclude<ExtArgs> | null
-    /**
-     * Filter, which meal_plans to fetch.
-     */
-    where: meal_plansWhereUniqueInput
-  }
-
-  /**
-   * meal_plans findFirst
-   */
-  export type meal_plansFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the meal_plans
-     */
-    select?: meal_plansSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the meal_plans
-     */
-    omit?: meal_plansOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: meal_plansInclude<ExtArgs> | null
-    /**
-     * Filter, which meal_plans to fetch.
-     */
-    where?: meal_plansWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of meal_plans to fetch.
-     */
-    orderBy?: meal_plansOrderByWithRelationInput | meal_plansOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for meal_plans.
-     */
-    cursor?: meal_plansWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` meal_plans from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` meal_plans.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of meal_plans.
-     */
-    distinct?: Meal_plansScalarFieldEnum | Meal_plansScalarFieldEnum[]
-  }
-
-  /**
-   * meal_plans findFirstOrThrow
-   */
-  export type meal_plansFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the meal_plans
-     */
-    select?: meal_plansSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the meal_plans
-     */
-    omit?: meal_plansOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: meal_plansInclude<ExtArgs> | null
-    /**
-     * Filter, which meal_plans to fetch.
-     */
-    where?: meal_plansWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of meal_plans to fetch.
-     */
-    orderBy?: meal_plansOrderByWithRelationInput | meal_plansOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for meal_plans.
-     */
-    cursor?: meal_plansWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` meal_plans from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` meal_plans.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of meal_plans.
-     */
-    distinct?: Meal_plansScalarFieldEnum | Meal_plansScalarFieldEnum[]
-  }
-
-  /**
-   * meal_plans findMany
-   */
-  export type meal_plansFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the meal_plans
-     */
-    select?: meal_plansSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the meal_plans
-     */
-    omit?: meal_plansOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: meal_plansInclude<ExtArgs> | null
-    /**
-     * Filter, which meal_plans to fetch.
-     */
-    where?: meal_plansWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of meal_plans to fetch.
-     */
-    orderBy?: meal_plansOrderByWithRelationInput | meal_plansOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing meal_plans.
-     */
-    cursor?: meal_plansWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` meal_plans from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` meal_plans.
-     */
-    skip?: number
-    distinct?: Meal_plansScalarFieldEnum | Meal_plansScalarFieldEnum[]
-  }
-
-  /**
-   * meal_plans create
-   */
-  export type meal_plansCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the meal_plans
-     */
-    select?: meal_plansSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the meal_plans
-     */
-    omit?: meal_plansOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: meal_plansInclude<ExtArgs> | null
-    /**
-     * The data needed to create a meal_plans.
-     */
-    data: XOR<meal_plansCreateInput, meal_plansUncheckedCreateInput>
-  }
-
-  /**
-   * meal_plans createMany
-   */
-  export type meal_plansCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many meal_plans.
-     */
-    data: meal_plansCreateManyInput | meal_plansCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * meal_plans createManyAndReturn
-   */
-  export type meal_plansCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the meal_plans
-     */
-    select?: meal_plansSelectCreateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the meal_plans
-     */
-    omit?: meal_plansOmit<ExtArgs> | null
-    /**
-     * The data used to create many meal_plans.
-     */
-    data: meal_plansCreateManyInput | meal_plansCreateManyInput[]
-    skipDuplicates?: boolean
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: meal_plansIncludeCreateManyAndReturn<ExtArgs> | null
-  }
-
-  /**
-   * meal_plans update
-   */
-  export type meal_plansUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the meal_plans
-     */
-    select?: meal_plansSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the meal_plans
-     */
-    omit?: meal_plansOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: meal_plansInclude<ExtArgs> | null
-    /**
-     * The data needed to update a meal_plans.
-     */
-    data: XOR<meal_plansUpdateInput, meal_plansUncheckedUpdateInput>
-    /**
-     * Choose, which meal_plans to update.
-     */
-    where: meal_plansWhereUniqueInput
-  }
-
-  /**
-   * meal_plans updateMany
-   */
-  export type meal_plansUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update meal_plans.
-     */
-    data: XOR<meal_plansUpdateManyMutationInput, meal_plansUncheckedUpdateManyInput>
-    /**
-     * Filter which meal_plans to update
-     */
-    where?: meal_plansWhereInput
-    /**
-     * Limit how many meal_plans to update.
-     */
-    limit?: number
-  }
-
-  /**
-   * meal_plans updateManyAndReturn
-   */
-  export type meal_plansUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the meal_plans
-     */
-    select?: meal_plansSelectUpdateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the meal_plans
-     */
-    omit?: meal_plansOmit<ExtArgs> | null
-    /**
-     * The data used to update meal_plans.
-     */
-    data: XOR<meal_plansUpdateManyMutationInput, meal_plansUncheckedUpdateManyInput>
-    /**
-     * Filter which meal_plans to update
-     */
-    where?: meal_plansWhereInput
-    /**
-     * Limit how many meal_plans to update.
-     */
-    limit?: number
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: meal_plansIncludeUpdateManyAndReturn<ExtArgs> | null
-  }
-
-  /**
-   * meal_plans upsert
-   */
-  export type meal_plansUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the meal_plans
-     */
-    select?: meal_plansSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the meal_plans
-     */
-    omit?: meal_plansOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: meal_plansInclude<ExtArgs> | null
-    /**
-     * The filter to search for the meal_plans to update in case it exists.
-     */
-    where: meal_plansWhereUniqueInput
-    /**
-     * In case the meal_plans found by the `where` argument doesn't exist, create a new meal_plans with this data.
-     */
-    create: XOR<meal_plansCreateInput, meal_plansUncheckedCreateInput>
-    /**
-     * In case the meal_plans was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<meal_plansUpdateInput, meal_plansUncheckedUpdateInput>
-  }
-
-  /**
-   * meal_plans delete
-   */
-  export type meal_plansDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the meal_plans
-     */
-    select?: meal_plansSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the meal_plans
-     */
-    omit?: meal_plansOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: meal_plansInclude<ExtArgs> | null
-    /**
-     * Filter which meal_plans to delete.
-     */
-    where: meal_plansWhereUniqueInput
-  }
-
-  /**
-   * meal_plans deleteMany
-   */
-  export type meal_plansDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which meal_plans to delete
-     */
-    where?: meal_plansWhereInput
-    /**
-     * Limit how many meal_plans to delete.
-     */
-    limit?: number
-  }
-
-  /**
-   * meal_plans.meal_plan_items
-   */
-  export type meal_plans$meal_plan_itemsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the meal_plan_items
-     */
-    select?: meal_plan_itemsSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the meal_plan_items
-     */
-    omit?: meal_plan_itemsOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: meal_plan_itemsInclude<ExtArgs> | null
-    where?: meal_plan_itemsWhereInput
-    orderBy?: meal_plan_itemsOrderByWithRelationInput | meal_plan_itemsOrderByWithRelationInput[]
-    cursor?: meal_plan_itemsWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: Meal_plan_itemsScalarFieldEnum | Meal_plan_itemsScalarFieldEnum[]
-  }
-
-  /**
-   * meal_plans.workout_plans
-   */
-  export type meal_plans$workout_plansArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the workout_plans
-     */
-    select?: workout_plansSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the workout_plans
-     */
-    omit?: workout_plansOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: workout_plansInclude<ExtArgs> | null
-    where?: workout_plansWhereInput
-  }
-
-  /**
-   * meal_plans without action
-   */
-  export type meal_plansDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the meal_plans
-     */
-    select?: meal_plansSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the meal_plans
-     */
-    omit?: meal_plansOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: meal_plansInclude<ExtArgs> | null
-  }
-
-
-  /**
    * Model meals
    */
 
@@ -8249,7 +5417,6 @@ export namespace Prisma {
     fats: number
     image_url: number
     description: number
-    food_items: number
     created_at: number
     _all: number
   }
@@ -8305,7 +5472,6 @@ export namespace Prisma {
     fats?: true
     image_url?: true
     description?: true
-    food_items?: true
     created_at?: true
     _all?: true
   }
@@ -8406,7 +5572,6 @@ export namespace Prisma {
     fats: Decimal | null
     image_url: string | null
     description: string | null
-    food_items: JsonValue | null
     created_at: Date | null
     _count: MealsCountAggregateOutputType | null
     _avg: MealsAvgAggregateOutputType | null
@@ -8439,10 +5604,8 @@ export namespace Prisma {
     fats?: boolean
     image_url?: boolean
     description?: boolean
-    food_items?: boolean
     created_at?: boolean
     meal_logs?: boolean | meals$meal_logsArgs<ExtArgs>
-    meal_plan_items?: boolean | meals$meal_plan_itemsArgs<ExtArgs>
     _count?: boolean | MealsCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["meals"]>
 
@@ -8456,7 +5619,6 @@ export namespace Prisma {
     fats?: boolean
     image_url?: boolean
     description?: boolean
-    food_items?: boolean
     created_at?: boolean
   }, ExtArgs["result"]["meals"]>
 
@@ -8470,7 +5632,6 @@ export namespace Prisma {
     fats?: boolean
     image_url?: boolean
     description?: boolean
-    food_items?: boolean
     created_at?: boolean
   }, ExtArgs["result"]["meals"]>
 
@@ -8484,14 +5645,12 @@ export namespace Prisma {
     fats?: boolean
     image_url?: boolean
     description?: boolean
-    food_items?: boolean
     created_at?: boolean
   }
 
-  export type mealsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "category" | "calories" | "protein" | "carbs" | "fats" | "image_url" | "description" | "food_items" | "created_at", ExtArgs["result"]["meals"]>
+  export type mealsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "category" | "calories" | "protein" | "carbs" | "fats" | "image_url" | "description" | "created_at", ExtArgs["result"]["meals"]>
   export type mealsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     meal_logs?: boolean | meals$meal_logsArgs<ExtArgs>
-    meal_plan_items?: boolean | meals$meal_plan_itemsArgs<ExtArgs>
     _count?: boolean | MealsCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type mealsIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -8501,7 +5660,6 @@ export namespace Prisma {
     name: "meals"
     objects: {
       meal_logs: Prisma.$meal_logsPayload<ExtArgs>[]
-      meal_plan_items: Prisma.$meal_plan_itemsPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -8513,7 +5671,6 @@ export namespace Prisma {
       fats: Prisma.Decimal | null
       image_url: string | null
       description: string | null
-      food_items: Prisma.JsonValue | null
       created_at: Date | null
     }, ExtArgs["result"]["meals"]>
     composites: {}
@@ -8910,7 +6067,6 @@ export namespace Prisma {
   export interface Prisma__mealsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     meal_logs<T extends meals$meal_logsArgs<ExtArgs> = {}>(args?: Subset<T, meals$meal_logsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$meal_logsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    meal_plan_items<T extends meals$meal_plan_itemsArgs<ExtArgs> = {}>(args?: Subset<T, meals$meal_plan_itemsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$meal_plan_itemsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -8949,7 +6105,6 @@ export namespace Prisma {
     readonly fats: FieldRef<"meals", 'Decimal'>
     readonly image_url: FieldRef<"meals", 'String'>
     readonly description: FieldRef<"meals", 'String'>
-    readonly food_items: FieldRef<"meals", 'Json'>
     readonly created_at: FieldRef<"meals", 'DateTime'>
   }
     
@@ -9363,30 +6518,6 @@ export namespace Prisma {
   }
 
   /**
-   * meals.meal_plan_items
-   */
-  export type meals$meal_plan_itemsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the meal_plan_items
-     */
-    select?: meal_plan_itemsSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the meal_plan_items
-     */
-    omit?: meal_plan_itemsOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: meal_plan_itemsInclude<ExtArgs> | null
-    where?: meal_plan_itemsWhereInput
-    orderBy?: meal_plan_itemsOrderByWithRelationInput | meal_plan_itemsOrderByWithRelationInput[]
-    cursor?: meal_plan_itemsWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: Meal_plan_itemsScalarFieldEnum | Meal_plan_itemsScalarFieldEnum[]
-  }
-
-  /**
    * meals without action
    */
   export type mealsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -9402,1232 +6533,6 @@ export namespace Prisma {
      * Choose, which related nodes to fetch as well
      */
     include?: mealsInclude<ExtArgs> | null
-  }
-
-
-  /**
-   * Model progress_tracking
-   */
-
-  export type AggregateProgress_tracking = {
-    _count: Progress_trackingCountAggregateOutputType | null
-    _avg: Progress_trackingAvgAggregateOutputType | null
-    _sum: Progress_trackingSumAggregateOutputType | null
-    _min: Progress_trackingMinAggregateOutputType | null
-    _max: Progress_trackingMaxAggregateOutputType | null
-  }
-
-  export type Progress_trackingAvgAggregateOutputType = {
-    week_number: number | null
-    exercises_completed: number | null
-    exercises_total: number | null
-    meals_completed: number | null
-    meals_total: number | null
-  }
-
-  export type Progress_trackingSumAggregateOutputType = {
-    week_number: number | null
-    exercises_completed: number | null
-    exercises_total: number | null
-    meals_completed: number | null
-    meals_total: number | null
-  }
-
-  export type Progress_trackingMinAggregateOutputType = {
-    id: string | null
-    user_id: string | null
-    workout_plan_id: string | null
-    week_number: number | null
-    exercises_completed: number | null
-    exercises_total: number | null
-    meals_completed: number | null
-    meals_total: number | null
-    start_date: Date | null
-    end_date: Date | null
-    created_at: Date | null
-    updated_at: Date | null
-  }
-
-  export type Progress_trackingMaxAggregateOutputType = {
-    id: string | null
-    user_id: string | null
-    workout_plan_id: string | null
-    week_number: number | null
-    exercises_completed: number | null
-    exercises_total: number | null
-    meals_completed: number | null
-    meals_total: number | null
-    start_date: Date | null
-    end_date: Date | null
-    created_at: Date | null
-    updated_at: Date | null
-  }
-
-  export type Progress_trackingCountAggregateOutputType = {
-    id: number
-    user_id: number
-    workout_plan_id: number
-    week_number: number
-    exercises_completed: number
-    exercises_total: number
-    meals_completed: number
-    meals_total: number
-    start_date: number
-    end_date: number
-    created_at: number
-    updated_at: number
-    _all: number
-  }
-
-
-  export type Progress_trackingAvgAggregateInputType = {
-    week_number?: true
-    exercises_completed?: true
-    exercises_total?: true
-    meals_completed?: true
-    meals_total?: true
-  }
-
-  export type Progress_trackingSumAggregateInputType = {
-    week_number?: true
-    exercises_completed?: true
-    exercises_total?: true
-    meals_completed?: true
-    meals_total?: true
-  }
-
-  export type Progress_trackingMinAggregateInputType = {
-    id?: true
-    user_id?: true
-    workout_plan_id?: true
-    week_number?: true
-    exercises_completed?: true
-    exercises_total?: true
-    meals_completed?: true
-    meals_total?: true
-    start_date?: true
-    end_date?: true
-    created_at?: true
-    updated_at?: true
-  }
-
-  export type Progress_trackingMaxAggregateInputType = {
-    id?: true
-    user_id?: true
-    workout_plan_id?: true
-    week_number?: true
-    exercises_completed?: true
-    exercises_total?: true
-    meals_completed?: true
-    meals_total?: true
-    start_date?: true
-    end_date?: true
-    created_at?: true
-    updated_at?: true
-  }
-
-  export type Progress_trackingCountAggregateInputType = {
-    id?: true
-    user_id?: true
-    workout_plan_id?: true
-    week_number?: true
-    exercises_completed?: true
-    exercises_total?: true
-    meals_completed?: true
-    meals_total?: true
-    start_date?: true
-    end_date?: true
-    created_at?: true
-    updated_at?: true
-    _all?: true
-  }
-
-  export type Progress_trackingAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which progress_tracking to aggregate.
-     */
-    where?: progress_trackingWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of progress_trackings to fetch.
-     */
-    orderBy?: progress_trackingOrderByWithRelationInput | progress_trackingOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: progress_trackingWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` progress_trackings from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` progress_trackings.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned progress_trackings
-    **/
-    _count?: true | Progress_trackingCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to average
-    **/
-    _avg?: Progress_trackingAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: Progress_trackingSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: Progress_trackingMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: Progress_trackingMaxAggregateInputType
-  }
-
-  export type GetProgress_trackingAggregateType<T extends Progress_trackingAggregateArgs> = {
-        [P in keyof T & keyof AggregateProgress_tracking]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateProgress_tracking[P]>
-      : GetScalarType<T[P], AggregateProgress_tracking[P]>
-  }
-
-
-
-
-  export type progress_trackingGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: progress_trackingWhereInput
-    orderBy?: progress_trackingOrderByWithAggregationInput | progress_trackingOrderByWithAggregationInput[]
-    by: Progress_trackingScalarFieldEnum[] | Progress_trackingScalarFieldEnum
-    having?: progress_trackingScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: Progress_trackingCountAggregateInputType | true
-    _avg?: Progress_trackingAvgAggregateInputType
-    _sum?: Progress_trackingSumAggregateInputType
-    _min?: Progress_trackingMinAggregateInputType
-    _max?: Progress_trackingMaxAggregateInputType
-  }
-
-  export type Progress_trackingGroupByOutputType = {
-    id: string
-    user_id: string
-    workout_plan_id: string | null
-    week_number: number
-    exercises_completed: number | null
-    exercises_total: number | null
-    meals_completed: number | null
-    meals_total: number | null
-    start_date: Date
-    end_date: Date
-    created_at: Date | null
-    updated_at: Date | null
-    _count: Progress_trackingCountAggregateOutputType | null
-    _avg: Progress_trackingAvgAggregateOutputType | null
-    _sum: Progress_trackingSumAggregateOutputType | null
-    _min: Progress_trackingMinAggregateOutputType | null
-    _max: Progress_trackingMaxAggregateOutputType | null
-  }
-
-  type GetProgress_trackingGroupByPayload<T extends progress_trackingGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<Progress_trackingGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof Progress_trackingGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], Progress_trackingGroupByOutputType[P]>
-            : GetScalarType<T[P], Progress_trackingGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type progress_trackingSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    user_id?: boolean
-    workout_plan_id?: boolean
-    week_number?: boolean
-    exercises_completed?: boolean
-    exercises_total?: boolean
-    meals_completed?: boolean
-    meals_total?: boolean
-    start_date?: boolean
-    end_date?: boolean
-    created_at?: boolean
-    updated_at?: boolean
-    users?: boolean | usersDefaultArgs<ExtArgs>
-    workout_plans?: boolean | progress_tracking$workout_plansArgs<ExtArgs>
-  }, ExtArgs["result"]["progress_tracking"]>
-
-  export type progress_trackingSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    user_id?: boolean
-    workout_plan_id?: boolean
-    week_number?: boolean
-    exercises_completed?: boolean
-    exercises_total?: boolean
-    meals_completed?: boolean
-    meals_total?: boolean
-    start_date?: boolean
-    end_date?: boolean
-    created_at?: boolean
-    updated_at?: boolean
-    users?: boolean | usersDefaultArgs<ExtArgs>
-    workout_plans?: boolean | progress_tracking$workout_plansArgs<ExtArgs>
-  }, ExtArgs["result"]["progress_tracking"]>
-
-  export type progress_trackingSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    user_id?: boolean
-    workout_plan_id?: boolean
-    week_number?: boolean
-    exercises_completed?: boolean
-    exercises_total?: boolean
-    meals_completed?: boolean
-    meals_total?: boolean
-    start_date?: boolean
-    end_date?: boolean
-    created_at?: boolean
-    updated_at?: boolean
-    users?: boolean | usersDefaultArgs<ExtArgs>
-    workout_plans?: boolean | progress_tracking$workout_plansArgs<ExtArgs>
-  }, ExtArgs["result"]["progress_tracking"]>
-
-  export type progress_trackingSelectScalar = {
-    id?: boolean
-    user_id?: boolean
-    workout_plan_id?: boolean
-    week_number?: boolean
-    exercises_completed?: boolean
-    exercises_total?: boolean
-    meals_completed?: boolean
-    meals_total?: boolean
-    start_date?: boolean
-    end_date?: boolean
-    created_at?: boolean
-    updated_at?: boolean
-  }
-
-  export type progress_trackingOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "user_id" | "workout_plan_id" | "week_number" | "exercises_completed" | "exercises_total" | "meals_completed" | "meals_total" | "start_date" | "end_date" | "created_at" | "updated_at", ExtArgs["result"]["progress_tracking"]>
-  export type progress_trackingInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    users?: boolean | usersDefaultArgs<ExtArgs>
-    workout_plans?: boolean | progress_tracking$workout_plansArgs<ExtArgs>
-  }
-  export type progress_trackingIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    users?: boolean | usersDefaultArgs<ExtArgs>
-    workout_plans?: boolean | progress_tracking$workout_plansArgs<ExtArgs>
-  }
-  export type progress_trackingIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    users?: boolean | usersDefaultArgs<ExtArgs>
-    workout_plans?: boolean | progress_tracking$workout_plansArgs<ExtArgs>
-  }
-
-  export type $progress_trackingPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "progress_tracking"
-    objects: {
-      users: Prisma.$usersPayload<ExtArgs>
-      workout_plans: Prisma.$workout_plansPayload<ExtArgs> | null
-    }
-    scalars: $Extensions.GetPayloadResult<{
-      id: string
-      user_id: string
-      workout_plan_id: string | null
-      week_number: number
-      exercises_completed: number | null
-      exercises_total: number | null
-      meals_completed: number | null
-      meals_total: number | null
-      start_date: Date
-      end_date: Date
-      created_at: Date | null
-      updated_at: Date | null
-    }, ExtArgs["result"]["progress_tracking"]>
-    composites: {}
-  }
-
-  type progress_trackingGetPayload<S extends boolean | null | undefined | progress_trackingDefaultArgs> = $Result.GetResult<Prisma.$progress_trackingPayload, S>
-
-  type progress_trackingCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<progress_trackingFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: Progress_trackingCountAggregateInputType | true
-    }
-
-  export interface progress_trackingDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['progress_tracking'], meta: { name: 'progress_tracking' } }
-    /**
-     * Find zero or one Progress_tracking that matches the filter.
-     * @param {progress_trackingFindUniqueArgs} args - Arguments to find a Progress_tracking
-     * @example
-     * // Get one Progress_tracking
-     * const progress_tracking = await prisma.progress_tracking.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUnique<T extends progress_trackingFindUniqueArgs>(args: SelectSubset<T, progress_trackingFindUniqueArgs<ExtArgs>>): Prisma__progress_trackingClient<$Result.GetResult<Prisma.$progress_trackingPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find one Progress_tracking that matches the filter or throw an error with `error.code='P2025'`
-     * if no matches were found.
-     * @param {progress_trackingFindUniqueOrThrowArgs} args - Arguments to find a Progress_tracking
-     * @example
-     * // Get one Progress_tracking
-     * const progress_tracking = await prisma.progress_tracking.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUniqueOrThrow<T extends progress_trackingFindUniqueOrThrowArgs>(args: SelectSubset<T, progress_trackingFindUniqueOrThrowArgs<ExtArgs>>): Prisma__progress_trackingClient<$Result.GetResult<Prisma.$progress_trackingPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first Progress_tracking that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {progress_trackingFindFirstArgs} args - Arguments to find a Progress_tracking
-     * @example
-     * // Get one Progress_tracking
-     * const progress_tracking = await prisma.progress_tracking.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirst<T extends progress_trackingFindFirstArgs>(args?: SelectSubset<T, progress_trackingFindFirstArgs<ExtArgs>>): Prisma__progress_trackingClient<$Result.GetResult<Prisma.$progress_trackingPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first Progress_tracking that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {progress_trackingFindFirstOrThrowArgs} args - Arguments to find a Progress_tracking
-     * @example
-     * // Get one Progress_tracking
-     * const progress_tracking = await prisma.progress_tracking.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirstOrThrow<T extends progress_trackingFindFirstOrThrowArgs>(args?: SelectSubset<T, progress_trackingFindFirstOrThrowArgs<ExtArgs>>): Prisma__progress_trackingClient<$Result.GetResult<Prisma.$progress_trackingPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find zero or more Progress_trackings that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {progress_trackingFindManyArgs} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all Progress_trackings
-     * const progress_trackings = await prisma.progress_tracking.findMany()
-     * 
-     * // Get first 10 Progress_trackings
-     * const progress_trackings = await prisma.progress_tracking.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const progress_trackingWithIdOnly = await prisma.progress_tracking.findMany({ select: { id: true } })
-     * 
-     */
-    findMany<T extends progress_trackingFindManyArgs>(args?: SelectSubset<T, progress_trackingFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$progress_trackingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
-
-    /**
-     * Create a Progress_tracking.
-     * @param {progress_trackingCreateArgs} args - Arguments to create a Progress_tracking.
-     * @example
-     * // Create one Progress_tracking
-     * const Progress_tracking = await prisma.progress_tracking.create({
-     *   data: {
-     *     // ... data to create a Progress_tracking
-     *   }
-     * })
-     * 
-     */
-    create<T extends progress_trackingCreateArgs>(args: SelectSubset<T, progress_trackingCreateArgs<ExtArgs>>): Prisma__progress_trackingClient<$Result.GetResult<Prisma.$progress_trackingPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Create many Progress_trackings.
-     * @param {progress_trackingCreateManyArgs} args - Arguments to create many Progress_trackings.
-     * @example
-     * // Create many Progress_trackings
-     * const progress_tracking = await prisma.progress_tracking.createMany({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     *     
-     */
-    createMany<T extends progress_trackingCreateManyArgs>(args?: SelectSubset<T, progress_trackingCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create many Progress_trackings and returns the data saved in the database.
-     * @param {progress_trackingCreateManyAndReturnArgs} args - Arguments to create many Progress_trackings.
-     * @example
-     * // Create many Progress_trackings
-     * const progress_tracking = await prisma.progress_tracking.createManyAndReturn({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Create many Progress_trackings and only return the `id`
-     * const progress_trackingWithIdOnly = await prisma.progress_tracking.createManyAndReturn({
-     *   select: { id: true },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    createManyAndReturn<T extends progress_trackingCreateManyAndReturnArgs>(args?: SelectSubset<T, progress_trackingCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$progress_trackingPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Delete a Progress_tracking.
-     * @param {progress_trackingDeleteArgs} args - Arguments to delete one Progress_tracking.
-     * @example
-     * // Delete one Progress_tracking
-     * const Progress_tracking = await prisma.progress_tracking.delete({
-     *   where: {
-     *     // ... filter to delete one Progress_tracking
-     *   }
-     * })
-     * 
-     */
-    delete<T extends progress_trackingDeleteArgs>(args: SelectSubset<T, progress_trackingDeleteArgs<ExtArgs>>): Prisma__progress_trackingClient<$Result.GetResult<Prisma.$progress_trackingPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Update one Progress_tracking.
-     * @param {progress_trackingUpdateArgs} args - Arguments to update one Progress_tracking.
-     * @example
-     * // Update one Progress_tracking
-     * const progress_tracking = await prisma.progress_tracking.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    update<T extends progress_trackingUpdateArgs>(args: SelectSubset<T, progress_trackingUpdateArgs<ExtArgs>>): Prisma__progress_trackingClient<$Result.GetResult<Prisma.$progress_trackingPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Delete zero or more Progress_trackings.
-     * @param {progress_trackingDeleteManyArgs} args - Arguments to filter Progress_trackings to delete.
-     * @example
-     * // Delete a few Progress_trackings
-     * const { count } = await prisma.progress_tracking.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-     */
-    deleteMany<T extends progress_trackingDeleteManyArgs>(args?: SelectSubset<T, progress_trackingDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Progress_trackings.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {progress_trackingUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many Progress_trackings
-     * const progress_tracking = await prisma.progress_tracking.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    updateMany<T extends progress_trackingUpdateManyArgs>(args: SelectSubset<T, progress_trackingUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Progress_trackings and returns the data updated in the database.
-     * @param {progress_trackingUpdateManyAndReturnArgs} args - Arguments to update many Progress_trackings.
-     * @example
-     * // Update many Progress_trackings
-     * const progress_tracking = await prisma.progress_tracking.updateManyAndReturn({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Update zero or more Progress_trackings and only return the `id`
-     * const progress_trackingWithIdOnly = await prisma.progress_tracking.updateManyAndReturn({
-     *   select: { id: true },
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    updateManyAndReturn<T extends progress_trackingUpdateManyAndReturnArgs>(args: SelectSubset<T, progress_trackingUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$progress_trackingPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Create or update one Progress_tracking.
-     * @param {progress_trackingUpsertArgs} args - Arguments to update or create a Progress_tracking.
-     * @example
-     * // Update or create a Progress_tracking
-     * const progress_tracking = await prisma.progress_tracking.upsert({
-     *   create: {
-     *     // ... data to create a Progress_tracking
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the Progress_tracking we want to update
-     *   }
-     * })
-     */
-    upsert<T extends progress_trackingUpsertArgs>(args: SelectSubset<T, progress_trackingUpsertArgs<ExtArgs>>): Prisma__progress_trackingClient<$Result.GetResult<Prisma.$progress_trackingPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-
-    /**
-     * Count the number of Progress_trackings.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {progress_trackingCountArgs} args - Arguments to filter Progress_trackings to count.
-     * @example
-     * // Count the number of Progress_trackings
-     * const count = await prisma.progress_tracking.count({
-     *   where: {
-     *     // ... the filter for the Progress_trackings we want to count
-     *   }
-     * })
-    **/
-    count<T extends progress_trackingCountArgs>(
-      args?: Subset<T, progress_trackingCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], Progress_trackingCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a Progress_tracking.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {Progress_trackingAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends Progress_trackingAggregateArgs>(args: Subset<T, Progress_trackingAggregateArgs>): Prisma.PrismaPromise<GetProgress_trackingAggregateType<T>>
-
-    /**
-     * Group by Progress_tracking.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {progress_trackingGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends progress_trackingGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: progress_trackingGroupByArgs['orderBy'] }
-        : { orderBy?: progress_trackingGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, progress_trackingGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetProgress_trackingGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the progress_tracking model
-   */
-  readonly fields: progress_trackingFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for progress_tracking.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__progress_trackingClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: "PrismaPromise"
-    users<T extends usersDefaultArgs<ExtArgs> = {}>(args?: Subset<T, usersDefaultArgs<ExtArgs>>): Prisma__usersClient<$Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    workout_plans<T extends progress_tracking$workout_plansArgs<ExtArgs> = {}>(args?: Subset<T, progress_tracking$workout_plansArgs<ExtArgs>>): Prisma__workout_plansClient<$Result.GetResult<Prisma.$workout_plansPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
-  }
-
-
-
-
-  /**
-   * Fields of the progress_tracking model
-   */
-  interface progress_trackingFieldRefs {
-    readonly id: FieldRef<"progress_tracking", 'String'>
-    readonly user_id: FieldRef<"progress_tracking", 'String'>
-    readonly workout_plan_id: FieldRef<"progress_tracking", 'String'>
-    readonly week_number: FieldRef<"progress_tracking", 'Int'>
-    readonly exercises_completed: FieldRef<"progress_tracking", 'Int'>
-    readonly exercises_total: FieldRef<"progress_tracking", 'Int'>
-    readonly meals_completed: FieldRef<"progress_tracking", 'Int'>
-    readonly meals_total: FieldRef<"progress_tracking", 'Int'>
-    readonly start_date: FieldRef<"progress_tracking", 'DateTime'>
-    readonly end_date: FieldRef<"progress_tracking", 'DateTime'>
-    readonly created_at: FieldRef<"progress_tracking", 'DateTime'>
-    readonly updated_at: FieldRef<"progress_tracking", 'DateTime'>
-  }
-    
-
-  // Custom InputTypes
-  /**
-   * progress_tracking findUnique
-   */
-  export type progress_trackingFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the progress_tracking
-     */
-    select?: progress_trackingSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the progress_tracking
-     */
-    omit?: progress_trackingOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: progress_trackingInclude<ExtArgs> | null
-    /**
-     * Filter, which progress_tracking to fetch.
-     */
-    where: progress_trackingWhereUniqueInput
-  }
-
-  /**
-   * progress_tracking findUniqueOrThrow
-   */
-  export type progress_trackingFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the progress_tracking
-     */
-    select?: progress_trackingSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the progress_tracking
-     */
-    omit?: progress_trackingOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: progress_trackingInclude<ExtArgs> | null
-    /**
-     * Filter, which progress_tracking to fetch.
-     */
-    where: progress_trackingWhereUniqueInput
-  }
-
-  /**
-   * progress_tracking findFirst
-   */
-  export type progress_trackingFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the progress_tracking
-     */
-    select?: progress_trackingSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the progress_tracking
-     */
-    omit?: progress_trackingOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: progress_trackingInclude<ExtArgs> | null
-    /**
-     * Filter, which progress_tracking to fetch.
-     */
-    where?: progress_trackingWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of progress_trackings to fetch.
-     */
-    orderBy?: progress_trackingOrderByWithRelationInput | progress_trackingOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for progress_trackings.
-     */
-    cursor?: progress_trackingWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` progress_trackings from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` progress_trackings.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of progress_trackings.
-     */
-    distinct?: Progress_trackingScalarFieldEnum | Progress_trackingScalarFieldEnum[]
-  }
-
-  /**
-   * progress_tracking findFirstOrThrow
-   */
-  export type progress_trackingFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the progress_tracking
-     */
-    select?: progress_trackingSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the progress_tracking
-     */
-    omit?: progress_trackingOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: progress_trackingInclude<ExtArgs> | null
-    /**
-     * Filter, which progress_tracking to fetch.
-     */
-    where?: progress_trackingWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of progress_trackings to fetch.
-     */
-    orderBy?: progress_trackingOrderByWithRelationInput | progress_trackingOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for progress_trackings.
-     */
-    cursor?: progress_trackingWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` progress_trackings from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` progress_trackings.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of progress_trackings.
-     */
-    distinct?: Progress_trackingScalarFieldEnum | Progress_trackingScalarFieldEnum[]
-  }
-
-  /**
-   * progress_tracking findMany
-   */
-  export type progress_trackingFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the progress_tracking
-     */
-    select?: progress_trackingSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the progress_tracking
-     */
-    omit?: progress_trackingOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: progress_trackingInclude<ExtArgs> | null
-    /**
-     * Filter, which progress_trackings to fetch.
-     */
-    where?: progress_trackingWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of progress_trackings to fetch.
-     */
-    orderBy?: progress_trackingOrderByWithRelationInput | progress_trackingOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing progress_trackings.
-     */
-    cursor?: progress_trackingWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` progress_trackings from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` progress_trackings.
-     */
-    skip?: number
-    distinct?: Progress_trackingScalarFieldEnum | Progress_trackingScalarFieldEnum[]
-  }
-
-  /**
-   * progress_tracking create
-   */
-  export type progress_trackingCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the progress_tracking
-     */
-    select?: progress_trackingSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the progress_tracking
-     */
-    omit?: progress_trackingOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: progress_trackingInclude<ExtArgs> | null
-    /**
-     * The data needed to create a progress_tracking.
-     */
-    data: XOR<progress_trackingCreateInput, progress_trackingUncheckedCreateInput>
-  }
-
-  /**
-   * progress_tracking createMany
-   */
-  export type progress_trackingCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many progress_trackings.
-     */
-    data: progress_trackingCreateManyInput | progress_trackingCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * progress_tracking createManyAndReturn
-   */
-  export type progress_trackingCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the progress_tracking
-     */
-    select?: progress_trackingSelectCreateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the progress_tracking
-     */
-    omit?: progress_trackingOmit<ExtArgs> | null
-    /**
-     * The data used to create many progress_trackings.
-     */
-    data: progress_trackingCreateManyInput | progress_trackingCreateManyInput[]
-    skipDuplicates?: boolean
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: progress_trackingIncludeCreateManyAndReturn<ExtArgs> | null
-  }
-
-  /**
-   * progress_tracking update
-   */
-  export type progress_trackingUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the progress_tracking
-     */
-    select?: progress_trackingSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the progress_tracking
-     */
-    omit?: progress_trackingOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: progress_trackingInclude<ExtArgs> | null
-    /**
-     * The data needed to update a progress_tracking.
-     */
-    data: XOR<progress_trackingUpdateInput, progress_trackingUncheckedUpdateInput>
-    /**
-     * Choose, which progress_tracking to update.
-     */
-    where: progress_trackingWhereUniqueInput
-  }
-
-  /**
-   * progress_tracking updateMany
-   */
-  export type progress_trackingUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update progress_trackings.
-     */
-    data: XOR<progress_trackingUpdateManyMutationInput, progress_trackingUncheckedUpdateManyInput>
-    /**
-     * Filter which progress_trackings to update
-     */
-    where?: progress_trackingWhereInput
-    /**
-     * Limit how many progress_trackings to update.
-     */
-    limit?: number
-  }
-
-  /**
-   * progress_tracking updateManyAndReturn
-   */
-  export type progress_trackingUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the progress_tracking
-     */
-    select?: progress_trackingSelectUpdateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the progress_tracking
-     */
-    omit?: progress_trackingOmit<ExtArgs> | null
-    /**
-     * The data used to update progress_trackings.
-     */
-    data: XOR<progress_trackingUpdateManyMutationInput, progress_trackingUncheckedUpdateManyInput>
-    /**
-     * Filter which progress_trackings to update
-     */
-    where?: progress_trackingWhereInput
-    /**
-     * Limit how many progress_trackings to update.
-     */
-    limit?: number
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: progress_trackingIncludeUpdateManyAndReturn<ExtArgs> | null
-  }
-
-  /**
-   * progress_tracking upsert
-   */
-  export type progress_trackingUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the progress_tracking
-     */
-    select?: progress_trackingSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the progress_tracking
-     */
-    omit?: progress_trackingOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: progress_trackingInclude<ExtArgs> | null
-    /**
-     * The filter to search for the progress_tracking to update in case it exists.
-     */
-    where: progress_trackingWhereUniqueInput
-    /**
-     * In case the progress_tracking found by the `where` argument doesn't exist, create a new progress_tracking with this data.
-     */
-    create: XOR<progress_trackingCreateInput, progress_trackingUncheckedCreateInput>
-    /**
-     * In case the progress_tracking was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<progress_trackingUpdateInput, progress_trackingUncheckedUpdateInput>
-  }
-
-  /**
-   * progress_tracking delete
-   */
-  export type progress_trackingDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the progress_tracking
-     */
-    select?: progress_trackingSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the progress_tracking
-     */
-    omit?: progress_trackingOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: progress_trackingInclude<ExtArgs> | null
-    /**
-     * Filter which progress_tracking to delete.
-     */
-    where: progress_trackingWhereUniqueInput
-  }
-
-  /**
-   * progress_tracking deleteMany
-   */
-  export type progress_trackingDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which progress_trackings to delete
-     */
-    where?: progress_trackingWhereInput
-    /**
-     * Limit how many progress_trackings to delete.
-     */
-    limit?: number
-  }
-
-  /**
-   * progress_tracking.workout_plans
-   */
-  export type progress_tracking$workout_plansArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the workout_plans
-     */
-    select?: workout_plansSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the workout_plans
-     */
-    omit?: workout_plansOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: workout_plansInclude<ExtArgs> | null
-    where?: workout_plansWhereInput
-  }
-
-  /**
-   * progress_tracking without action
-   */
-  export type progress_trackingDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the progress_tracking
-     */
-    select?: progress_trackingSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the progress_tracking
-     */
-    omit?: progress_trackingOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: progress_trackingInclude<ExtArgs> | null
   }
 
 
@@ -10927,8 +6832,6 @@ export namespace Prisma {
     age_range?: boolean
     exercise_logs?: boolean | users$exercise_logsArgs<ExtArgs>
     meal_logs?: boolean | users$meal_logsArgs<ExtArgs>
-    meal_plans?: boolean | users$meal_plansArgs<ExtArgs>
-    progress_tracking?: boolean | users$progress_trackingArgs<ExtArgs>
     water_logs?: boolean | users$water_logsArgs<ExtArgs>
     weight_logs?: boolean | users$weight_logsArgs<ExtArgs>
     workout_plans?: boolean | users$workout_plansArgs<ExtArgs>
@@ -10996,8 +6899,6 @@ export namespace Prisma {
   export type usersInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     exercise_logs?: boolean | users$exercise_logsArgs<ExtArgs>
     meal_logs?: boolean | users$meal_logsArgs<ExtArgs>
-    meal_plans?: boolean | users$meal_plansArgs<ExtArgs>
-    progress_tracking?: boolean | users$progress_trackingArgs<ExtArgs>
     water_logs?: boolean | users$water_logsArgs<ExtArgs>
     weight_logs?: boolean | users$weight_logsArgs<ExtArgs>
     workout_plans?: boolean | users$workout_plansArgs<ExtArgs>
@@ -11011,8 +6912,6 @@ export namespace Prisma {
     objects: {
       exercise_logs: Prisma.$exercise_logsPayload<ExtArgs>[]
       meal_logs: Prisma.$meal_logsPayload<ExtArgs>[]
-      meal_plans: Prisma.$meal_plansPayload<ExtArgs>[]
-      progress_tracking: Prisma.$progress_trackingPayload<ExtArgs>[]
       water_logs: Prisma.$water_logsPayload<ExtArgs>[]
       weight_logs: Prisma.$weight_logsPayload<ExtArgs>[]
       workout_plans: Prisma.$workout_plansPayload<ExtArgs>[]
@@ -11430,8 +7329,6 @@ export namespace Prisma {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     exercise_logs<T extends users$exercise_logsArgs<ExtArgs> = {}>(args?: Subset<T, users$exercise_logsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$exercise_logsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     meal_logs<T extends users$meal_logsArgs<ExtArgs> = {}>(args?: Subset<T, users$meal_logsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$meal_logsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    meal_plans<T extends users$meal_plansArgs<ExtArgs> = {}>(args?: Subset<T, users$meal_plansArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$meal_plansPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    progress_tracking<T extends users$progress_trackingArgs<ExtArgs> = {}>(args?: Subset<T, users$progress_trackingArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$progress_trackingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     water_logs<T extends users$water_logsArgs<ExtArgs> = {}>(args?: Subset<T, users$water_logsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$water_logsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     weight_logs<T extends users$weight_logsArgs<ExtArgs> = {}>(args?: Subset<T, users$weight_logsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$weight_logsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     workout_plans<T extends users$workout_plansArgs<ExtArgs> = {}>(args?: Subset<T, users$workout_plansArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$workout_plansPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
@@ -11913,54 +7810,6 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: Meal_logsScalarFieldEnum | Meal_logsScalarFieldEnum[]
-  }
-
-  /**
-   * users.meal_plans
-   */
-  export type users$meal_plansArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the meal_plans
-     */
-    select?: meal_plansSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the meal_plans
-     */
-    omit?: meal_plansOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: meal_plansInclude<ExtArgs> | null
-    where?: meal_plansWhereInput
-    orderBy?: meal_plansOrderByWithRelationInput | meal_plansOrderByWithRelationInput[]
-    cursor?: meal_plansWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: Meal_plansScalarFieldEnum | Meal_plansScalarFieldEnum[]
-  }
-
-  /**
-   * users.progress_tracking
-   */
-  export type users$progress_trackingArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the progress_tracking
-     */
-    select?: progress_trackingSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the progress_tracking
-     */
-    omit?: progress_trackingOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: progress_trackingInclude<ExtArgs> | null
-    where?: progress_trackingWhereInput
-    orderBy?: progress_trackingOrderByWithRelationInput | progress_trackingOrderByWithRelationInput[]
-    cursor?: progress_trackingWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: Progress_trackingScalarFieldEnum | Progress_trackingScalarFieldEnum[]
   }
 
   /**
@@ -14284,7 +10133,6 @@ export namespace Prisma {
     reps: number | null
     weight: Decimal | null
     duration: number | null
-    created_at: Date | null
     completed: boolean | null
     completion_date: Date | null
     actual_sets: number | null
@@ -14292,6 +10140,7 @@ export namespace Prisma {
     actual_weight: Decimal | null
     actual_duration: number | null
     notes: string | null
+    created_at: Date | null
     updated_at: Date | null
   }
 
@@ -14305,7 +10154,6 @@ export namespace Prisma {
     reps: number | null
     weight: Decimal | null
     duration: number | null
-    created_at: Date | null
     completed: boolean | null
     completion_date: Date | null
     actual_sets: number | null
@@ -14313,6 +10161,7 @@ export namespace Prisma {
     actual_weight: Decimal | null
     actual_duration: number | null
     notes: string | null
+    created_at: Date | null
     updated_at: Date | null
   }
 
@@ -14326,7 +10175,6 @@ export namespace Prisma {
     reps: number
     weight: number
     duration: number
-    created_at: number
     completed: number
     completion_date: number
     actual_sets: number
@@ -14334,6 +10182,7 @@ export namespace Prisma {
     actual_weight: number
     actual_duration: number
     notes: number
+    created_at: number
     updated_at: number
     _all: number
   }
@@ -14373,7 +10222,6 @@ export namespace Prisma {
     reps?: true
     weight?: true
     duration?: true
-    created_at?: true
     completed?: true
     completion_date?: true
     actual_sets?: true
@@ -14381,6 +10229,7 @@ export namespace Prisma {
     actual_weight?: true
     actual_duration?: true
     notes?: true
+    created_at?: true
     updated_at?: true
   }
 
@@ -14394,7 +10243,6 @@ export namespace Prisma {
     reps?: true
     weight?: true
     duration?: true
-    created_at?: true
     completed?: true
     completion_date?: true
     actual_sets?: true
@@ -14402,6 +10250,7 @@ export namespace Prisma {
     actual_weight?: true
     actual_duration?: true
     notes?: true
+    created_at?: true
     updated_at?: true
   }
 
@@ -14415,7 +10264,6 @@ export namespace Prisma {
     reps?: true
     weight?: true
     duration?: true
-    created_at?: true
     completed?: true
     completion_date?: true
     actual_sets?: true
@@ -14423,6 +10271,7 @@ export namespace Prisma {
     actual_weight?: true
     actual_duration?: true
     notes?: true
+    created_at?: true
     updated_at?: true
     _all?: true
   }
@@ -14523,7 +10372,6 @@ export namespace Prisma {
     reps: number | null
     weight: Decimal | null
     duration: number | null
-    created_at: Date | null
     completed: boolean | null
     completion_date: Date | null
     actual_sets: number | null
@@ -14531,6 +10379,7 @@ export namespace Prisma {
     actual_weight: Decimal | null
     actual_duration: number | null
     notes: string | null
+    created_at: Date | null
     updated_at: Date | null
     _count: Workout_plan_exercisesCountAggregateOutputType | null
     _avg: Workout_plan_exercisesAvgAggregateOutputType | null
@@ -14563,7 +10412,6 @@ export namespace Prisma {
     reps?: boolean
     weight?: boolean
     duration?: boolean
-    created_at?: boolean
     completed?: boolean
     completion_date?: boolean
     actual_sets?: boolean
@@ -14571,6 +10419,7 @@ export namespace Prisma {
     actual_weight?: boolean
     actual_duration?: boolean
     notes?: boolean
+    created_at?: boolean
     updated_at?: boolean
     exercises?: boolean | workout_plan_exercises$exercisesArgs<ExtArgs>
     workout_plans?: boolean | workout_plansDefaultArgs<ExtArgs>
@@ -14586,7 +10435,6 @@ export namespace Prisma {
     reps?: boolean
     weight?: boolean
     duration?: boolean
-    created_at?: boolean
     completed?: boolean
     completion_date?: boolean
     actual_sets?: boolean
@@ -14594,6 +10442,7 @@ export namespace Prisma {
     actual_weight?: boolean
     actual_duration?: boolean
     notes?: boolean
+    created_at?: boolean
     updated_at?: boolean
     exercises?: boolean | workout_plan_exercises$exercisesArgs<ExtArgs>
     workout_plans?: boolean | workout_plansDefaultArgs<ExtArgs>
@@ -14609,7 +10458,6 @@ export namespace Prisma {
     reps?: boolean
     weight?: boolean
     duration?: boolean
-    created_at?: boolean
     completed?: boolean
     completion_date?: boolean
     actual_sets?: boolean
@@ -14617,6 +10465,7 @@ export namespace Prisma {
     actual_weight?: boolean
     actual_duration?: boolean
     notes?: boolean
+    created_at?: boolean
     updated_at?: boolean
     exercises?: boolean | workout_plan_exercises$exercisesArgs<ExtArgs>
     workout_plans?: boolean | workout_plansDefaultArgs<ExtArgs>
@@ -14632,7 +10481,6 @@ export namespace Prisma {
     reps?: boolean
     weight?: boolean
     duration?: boolean
-    created_at?: boolean
     completed?: boolean
     completion_date?: boolean
     actual_sets?: boolean
@@ -14640,10 +10488,11 @@ export namespace Prisma {
     actual_weight?: boolean
     actual_duration?: boolean
     notes?: boolean
+    created_at?: boolean
     updated_at?: boolean
   }
 
-  export type workout_plan_exercisesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "workout_plan_id" | "exercise_id" | "exercise_name" | "day_of_week" | "sets" | "reps" | "weight" | "duration" | "created_at" | "completed" | "completion_date" | "actual_sets" | "actual_reps" | "actual_weight" | "actual_duration" | "notes" | "updated_at", ExtArgs["result"]["workout_plan_exercises"]>
+  export type workout_plan_exercisesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "workout_plan_id" | "exercise_id" | "exercise_name" | "day_of_week" | "sets" | "reps" | "weight" | "duration" | "completed" | "completion_date" | "actual_sets" | "actual_reps" | "actual_weight" | "actual_duration" | "notes" | "created_at" | "updated_at", ExtArgs["result"]["workout_plan_exercises"]>
   export type workout_plan_exercisesInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     exercises?: boolean | workout_plan_exercises$exercisesArgs<ExtArgs>
     workout_plans?: boolean | workout_plansDefaultArgs<ExtArgs>
@@ -14673,7 +10522,6 @@ export namespace Prisma {
       reps: number | null
       weight: Prisma.Decimal | null
       duration: number | null
-      created_at: Date | null
       completed: boolean | null
       completion_date: Date | null
       actual_sets: number | null
@@ -14681,6 +10529,7 @@ export namespace Prisma {
       actual_weight: Prisma.Decimal | null
       actual_duration: number | null
       notes: string | null
+      created_at: Date | null
       updated_at: Date | null
     }, ExtArgs["result"]["workout_plan_exercises"]>
     composites: {}
@@ -15116,7 +10965,6 @@ export namespace Prisma {
     readonly reps: FieldRef<"workout_plan_exercises", 'Int'>
     readonly weight: FieldRef<"workout_plan_exercises", 'Decimal'>
     readonly duration: FieldRef<"workout_plan_exercises", 'Int'>
-    readonly created_at: FieldRef<"workout_plan_exercises", 'DateTime'>
     readonly completed: FieldRef<"workout_plan_exercises", 'Boolean'>
     readonly completion_date: FieldRef<"workout_plan_exercises", 'DateTime'>
     readonly actual_sets: FieldRef<"workout_plan_exercises", 'Int'>
@@ -15124,6 +10972,7 @@ export namespace Prisma {
     readonly actual_weight: FieldRef<"workout_plan_exercises", 'Decimal'>
     readonly actual_duration: FieldRef<"workout_plan_exercises", 'Int'>
     readonly notes: FieldRef<"workout_plan_exercises", 'String'>
+    readonly created_at: FieldRef<"workout_plan_exercises", 'DateTime'>
     readonly updated_at: FieldRef<"workout_plan_exercises", 'DateTime'>
   }
     
@@ -15800,8 +11649,6 @@ export namespace Prisma {
     active?: boolean
     created_at?: boolean
     updated_at?: boolean
-    meal_plans?: boolean | workout_plans$meal_plansArgs<ExtArgs>
-    progress_tracking?: boolean | workout_plans$progress_trackingArgs<ExtArgs>
     workout_plan_exercises?: boolean | workout_plans$workout_plan_exercisesArgs<ExtArgs>
     users?: boolean | usersDefaultArgs<ExtArgs>
     _count?: boolean | Workout_plansCountOutputTypeDefaultArgs<ExtArgs>
@@ -15850,8 +11697,6 @@ export namespace Prisma {
 
   export type workout_plansOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "user_id" | "name" | "description" | "goal" | "frequency" | "duration_weeks" | "active" | "created_at" | "updated_at", ExtArgs["result"]["workout_plans"]>
   export type workout_plansInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    meal_plans?: boolean | workout_plans$meal_plansArgs<ExtArgs>
-    progress_tracking?: boolean | workout_plans$progress_trackingArgs<ExtArgs>
     workout_plan_exercises?: boolean | workout_plans$workout_plan_exercisesArgs<ExtArgs>
     users?: boolean | usersDefaultArgs<ExtArgs>
     _count?: boolean | Workout_plansCountOutputTypeDefaultArgs<ExtArgs>
@@ -15866,8 +11711,6 @@ export namespace Prisma {
   export type $workout_plansPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "workout_plans"
     objects: {
-      meal_plans: Prisma.$meal_plansPayload<ExtArgs>[]
-      progress_tracking: Prisma.$progress_trackingPayload<ExtArgs>[]
       workout_plan_exercises: Prisma.$workout_plan_exercisesPayload<ExtArgs>[]
       users: Prisma.$usersPayload<ExtArgs>
     }
@@ -16276,8 +12119,6 @@ export namespace Prisma {
    */
   export interface Prisma__workout_plansClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    meal_plans<T extends workout_plans$meal_plansArgs<ExtArgs> = {}>(args?: Subset<T, workout_plans$meal_plansArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$meal_plansPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    progress_tracking<T extends workout_plans$progress_trackingArgs<ExtArgs> = {}>(args?: Subset<T, workout_plans$progress_trackingArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$progress_trackingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     workout_plan_exercises<T extends workout_plans$workout_plan_exercisesArgs<ExtArgs> = {}>(args?: Subset<T, workout_plans$workout_plan_exercisesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$workout_plan_exercisesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     users<T extends usersDefaultArgs<ExtArgs> = {}>(args?: Subset<T, usersDefaultArgs<ExtArgs>>): Prisma__usersClient<$Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
@@ -16715,54 +12556,6 @@ export namespace Prisma {
   }
 
   /**
-   * workout_plans.meal_plans
-   */
-  export type workout_plans$meal_plansArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the meal_plans
-     */
-    select?: meal_plansSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the meal_plans
-     */
-    omit?: meal_plansOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: meal_plansInclude<ExtArgs> | null
-    where?: meal_plansWhereInput
-    orderBy?: meal_plansOrderByWithRelationInput | meal_plansOrderByWithRelationInput[]
-    cursor?: meal_plansWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: Meal_plansScalarFieldEnum | Meal_plansScalarFieldEnum[]
-  }
-
-  /**
-   * workout_plans.progress_tracking
-   */
-  export type workout_plans$progress_trackingArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the progress_tracking
-     */
-    select?: progress_trackingSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the progress_tracking
-     */
-    omit?: progress_trackingOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: progress_trackingInclude<ExtArgs> | null
-    where?: progress_trackingWhereInput
-    orderBy?: progress_trackingOrderByWithRelationInput | progress_trackingOrderByWithRelationInput[]
-    cursor?: progress_trackingWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: Progress_trackingScalarFieldEnum | Progress_trackingScalarFieldEnum[]
-  }
-
-  /**
    * workout_plans.workout_plan_exercises
    */
   export type workout_plans$workout_plan_exercisesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -16870,43 +12663,6 @@ export namespace Prisma {
   export type Meal_logsScalarFieldEnum = (typeof Meal_logsScalarFieldEnum)[keyof typeof Meal_logsScalarFieldEnum]
 
 
-  export const Meal_plan_itemsScalarFieldEnum: {
-    id: 'id',
-    meal_plan_id: 'meal_plan_id',
-    meal_id: 'meal_id',
-    name: 'name',
-    meal_time: 'meal_time',
-    calories: 'calories',
-    protein: 'protein',
-    carbs: 'carbs',
-    fats: 'fats',
-    completed: 'completed',
-    completion_date: 'completion_date',
-    day_number: 'day_number',
-    portion: 'portion',
-    notes: 'notes',
-    created_at: 'created_at',
-    updated_at: 'updated_at'
-  };
-
-  export type Meal_plan_itemsScalarFieldEnum = (typeof Meal_plan_itemsScalarFieldEnum)[keyof typeof Meal_plan_itemsScalarFieldEnum]
-
-
-  export const Meal_plansScalarFieldEnum: {
-    id: 'id',
-    user_id: 'user_id',
-    name: 'name',
-    description: 'description',
-    date: 'date',
-    workout_plan_id: 'workout_plan_id',
-    created_at: 'created_at',
-    updated_at: 'updated_at',
-    daily_calories: 'daily_calories'
-  };
-
-  export type Meal_plansScalarFieldEnum = (typeof Meal_plansScalarFieldEnum)[keyof typeof Meal_plansScalarFieldEnum]
-
-
   export const MealsScalarFieldEnum: {
     id: 'id',
     name: 'name',
@@ -16917,29 +12673,10 @@ export namespace Prisma {
     fats: 'fats',
     image_url: 'image_url',
     description: 'description',
-    food_items: 'food_items',
     created_at: 'created_at'
   };
 
   export type MealsScalarFieldEnum = (typeof MealsScalarFieldEnum)[keyof typeof MealsScalarFieldEnum]
-
-
-  export const Progress_trackingScalarFieldEnum: {
-    id: 'id',
-    user_id: 'user_id',
-    workout_plan_id: 'workout_plan_id',
-    week_number: 'week_number',
-    exercises_completed: 'exercises_completed',
-    exercises_total: 'exercises_total',
-    meals_completed: 'meals_completed',
-    meals_total: 'meals_total',
-    start_date: 'start_date',
-    end_date: 'end_date',
-    created_at: 'created_at',
-    updated_at: 'updated_at'
-  };
-
-  export type Progress_trackingScalarFieldEnum = (typeof Progress_trackingScalarFieldEnum)[keyof typeof Progress_trackingScalarFieldEnum]
 
 
   export const UsersScalarFieldEnum: {
@@ -16996,7 +12733,6 @@ export namespace Prisma {
     reps: 'reps',
     weight: 'weight',
     duration: 'duration',
-    created_at: 'created_at',
     completed: 'completed',
     completion_date: 'completion_date',
     actual_sets: 'actual_sets',
@@ -17004,6 +12740,7 @@ export namespace Prisma {
     actual_weight: 'actual_weight',
     actual_duration: 'actual_duration',
     notes: 'notes',
+    created_at: 'created_at',
     updated_at: 'updated_at'
   };
 
@@ -17034,14 +12771,6 @@ export namespace Prisma {
   export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
 
 
-  export const NullableJsonNullValueInput: {
-    DbNull: typeof DbNull,
-    JsonNull: typeof JsonNull
-  };
-
-  export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
-
-
   export const QueryMode: {
     default: 'default',
     insensitive: 'insensitive'
@@ -17056,15 +12785,6 @@ export namespace Prisma {
   };
 
   export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
-
-
-  export const JsonNullValueFilter: {
-    DbNull: typeof DbNull,
-    JsonNull: typeof JsonNull,
-    AnyNull: typeof AnyNull
-  };
-
-  export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
 
 
   /**
@@ -17132,20 +12852,6 @@ export namespace Prisma {
    * Reference to a field of type 'Boolean'
    */
   export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
-    
-
-
-  /**
-   * Reference to a field of type 'Json'
-   */
-  export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json'>
-    
-
-
-  /**
-   * Reference to a field of type 'QueryMode'
-   */
-  export type EnumQueryModeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'QueryMode'>
     
 
 
@@ -17434,204 +13140,6 @@ export namespace Prisma {
     created_at?: DateTimeNullableWithAggregatesFilter<"meal_logs"> | Date | string | null
   }
 
-  export type meal_plan_itemsWhereInput = {
-    AND?: meal_plan_itemsWhereInput | meal_plan_itemsWhereInput[]
-    OR?: meal_plan_itemsWhereInput[]
-    NOT?: meal_plan_itemsWhereInput | meal_plan_itemsWhereInput[]
-    id?: UuidFilter<"meal_plan_items"> | string
-    meal_plan_id?: UuidFilter<"meal_plan_items"> | string
-    meal_id?: UuidNullableFilter<"meal_plan_items"> | string | null
-    name?: StringFilter<"meal_plan_items"> | string
-    meal_time?: StringFilter<"meal_plan_items"> | string
-    calories?: IntNullableFilter<"meal_plan_items"> | number | null
-    protein?: DecimalNullableFilter<"meal_plan_items"> | Decimal | DecimalJsLike | number | string | null
-    carbs?: DecimalNullableFilter<"meal_plan_items"> | Decimal | DecimalJsLike | number | string | null
-    fats?: DecimalNullableFilter<"meal_plan_items"> | Decimal | DecimalJsLike | number | string | null
-    completed?: BoolNullableFilter<"meal_plan_items"> | boolean | null
-    completion_date?: DateTimeNullableFilter<"meal_plan_items"> | Date | string | null
-    day_number?: IntNullableFilter<"meal_plan_items"> | number | null
-    portion?: DecimalNullableFilter<"meal_plan_items"> | Decimal | DecimalJsLike | number | string | null
-    notes?: StringNullableFilter<"meal_plan_items"> | string | null
-    created_at?: DateTimeNullableFilter<"meal_plan_items"> | Date | string | null
-    updated_at?: DateTimeNullableFilter<"meal_plan_items"> | Date | string | null
-    meal_plans?: XOR<Meal_plansScalarRelationFilter, meal_plansWhereInput>
-    meals?: XOR<MealsNullableScalarRelationFilter, mealsWhereInput> | null
-  }
-
-  export type meal_plan_itemsOrderByWithRelationInput = {
-    id?: SortOrder
-    meal_plan_id?: SortOrder
-    meal_id?: SortOrderInput | SortOrder
-    name?: SortOrder
-    meal_time?: SortOrder
-    calories?: SortOrderInput | SortOrder
-    protein?: SortOrderInput | SortOrder
-    carbs?: SortOrderInput | SortOrder
-    fats?: SortOrderInput | SortOrder
-    completed?: SortOrderInput | SortOrder
-    completion_date?: SortOrderInput | SortOrder
-    day_number?: SortOrderInput | SortOrder
-    portion?: SortOrderInput | SortOrder
-    notes?: SortOrderInput | SortOrder
-    created_at?: SortOrderInput | SortOrder
-    updated_at?: SortOrderInput | SortOrder
-    meal_plans?: meal_plansOrderByWithRelationInput
-    meals?: mealsOrderByWithRelationInput
-  }
-
-  export type meal_plan_itemsWhereUniqueInput = Prisma.AtLeast<{
-    id?: string
-    AND?: meal_plan_itemsWhereInput | meal_plan_itemsWhereInput[]
-    OR?: meal_plan_itemsWhereInput[]
-    NOT?: meal_plan_itemsWhereInput | meal_plan_itemsWhereInput[]
-    meal_plan_id?: UuidFilter<"meal_plan_items"> | string
-    meal_id?: UuidNullableFilter<"meal_plan_items"> | string | null
-    name?: StringFilter<"meal_plan_items"> | string
-    meal_time?: StringFilter<"meal_plan_items"> | string
-    calories?: IntNullableFilter<"meal_plan_items"> | number | null
-    protein?: DecimalNullableFilter<"meal_plan_items"> | Decimal | DecimalJsLike | number | string | null
-    carbs?: DecimalNullableFilter<"meal_plan_items"> | Decimal | DecimalJsLike | number | string | null
-    fats?: DecimalNullableFilter<"meal_plan_items"> | Decimal | DecimalJsLike | number | string | null
-    completed?: BoolNullableFilter<"meal_plan_items"> | boolean | null
-    completion_date?: DateTimeNullableFilter<"meal_plan_items"> | Date | string | null
-    day_number?: IntNullableFilter<"meal_plan_items"> | number | null
-    portion?: DecimalNullableFilter<"meal_plan_items"> | Decimal | DecimalJsLike | number | string | null
-    notes?: StringNullableFilter<"meal_plan_items"> | string | null
-    created_at?: DateTimeNullableFilter<"meal_plan_items"> | Date | string | null
-    updated_at?: DateTimeNullableFilter<"meal_plan_items"> | Date | string | null
-    meal_plans?: XOR<Meal_plansScalarRelationFilter, meal_plansWhereInput>
-    meals?: XOR<MealsNullableScalarRelationFilter, mealsWhereInput> | null
-  }, "id">
-
-  export type meal_plan_itemsOrderByWithAggregationInput = {
-    id?: SortOrder
-    meal_plan_id?: SortOrder
-    meal_id?: SortOrderInput | SortOrder
-    name?: SortOrder
-    meal_time?: SortOrder
-    calories?: SortOrderInput | SortOrder
-    protein?: SortOrderInput | SortOrder
-    carbs?: SortOrderInput | SortOrder
-    fats?: SortOrderInput | SortOrder
-    completed?: SortOrderInput | SortOrder
-    completion_date?: SortOrderInput | SortOrder
-    day_number?: SortOrderInput | SortOrder
-    portion?: SortOrderInput | SortOrder
-    notes?: SortOrderInput | SortOrder
-    created_at?: SortOrderInput | SortOrder
-    updated_at?: SortOrderInput | SortOrder
-    _count?: meal_plan_itemsCountOrderByAggregateInput
-    _avg?: meal_plan_itemsAvgOrderByAggregateInput
-    _max?: meal_plan_itemsMaxOrderByAggregateInput
-    _min?: meal_plan_itemsMinOrderByAggregateInput
-    _sum?: meal_plan_itemsSumOrderByAggregateInput
-  }
-
-  export type meal_plan_itemsScalarWhereWithAggregatesInput = {
-    AND?: meal_plan_itemsScalarWhereWithAggregatesInput | meal_plan_itemsScalarWhereWithAggregatesInput[]
-    OR?: meal_plan_itemsScalarWhereWithAggregatesInput[]
-    NOT?: meal_plan_itemsScalarWhereWithAggregatesInput | meal_plan_itemsScalarWhereWithAggregatesInput[]
-    id?: UuidWithAggregatesFilter<"meal_plan_items"> | string
-    meal_plan_id?: UuidWithAggregatesFilter<"meal_plan_items"> | string
-    meal_id?: UuidNullableWithAggregatesFilter<"meal_plan_items"> | string | null
-    name?: StringWithAggregatesFilter<"meal_plan_items"> | string
-    meal_time?: StringWithAggregatesFilter<"meal_plan_items"> | string
-    calories?: IntNullableWithAggregatesFilter<"meal_plan_items"> | number | null
-    protein?: DecimalNullableWithAggregatesFilter<"meal_plan_items"> | Decimal | DecimalJsLike | number | string | null
-    carbs?: DecimalNullableWithAggregatesFilter<"meal_plan_items"> | Decimal | DecimalJsLike | number | string | null
-    fats?: DecimalNullableWithAggregatesFilter<"meal_plan_items"> | Decimal | DecimalJsLike | number | string | null
-    completed?: BoolNullableWithAggregatesFilter<"meal_plan_items"> | boolean | null
-    completion_date?: DateTimeNullableWithAggregatesFilter<"meal_plan_items"> | Date | string | null
-    day_number?: IntNullableWithAggregatesFilter<"meal_plan_items"> | number | null
-    portion?: DecimalNullableWithAggregatesFilter<"meal_plan_items"> | Decimal | DecimalJsLike | number | string | null
-    notes?: StringNullableWithAggregatesFilter<"meal_plan_items"> | string | null
-    created_at?: DateTimeNullableWithAggregatesFilter<"meal_plan_items"> | Date | string | null
-    updated_at?: DateTimeNullableWithAggregatesFilter<"meal_plan_items"> | Date | string | null
-  }
-
-  export type meal_plansWhereInput = {
-    AND?: meal_plansWhereInput | meal_plansWhereInput[]
-    OR?: meal_plansWhereInput[]
-    NOT?: meal_plansWhereInput | meal_plansWhereInput[]
-    id?: UuidFilter<"meal_plans"> | string
-    user_id?: UuidFilter<"meal_plans"> | string
-    name?: StringFilter<"meal_plans"> | string
-    description?: StringNullableFilter<"meal_plans"> | string | null
-    date?: DateTimeNullableFilter<"meal_plans"> | Date | string | null
-    workout_plan_id?: UuidNullableFilter<"meal_plans"> | string | null
-    created_at?: DateTimeNullableFilter<"meal_plans"> | Date | string | null
-    updated_at?: DateTimeNullableFilter<"meal_plans"> | Date | string | null
-    daily_calories?: IntNullableFilter<"meal_plans"> | number | null
-    meal_plan_items?: Meal_plan_itemsListRelationFilter
-    users?: XOR<UsersScalarRelationFilter, usersWhereInput>
-    workout_plans?: XOR<Workout_plansNullableScalarRelationFilter, workout_plansWhereInput> | null
-  }
-
-  export type meal_plansOrderByWithRelationInput = {
-    id?: SortOrder
-    user_id?: SortOrder
-    name?: SortOrder
-    description?: SortOrderInput | SortOrder
-    date?: SortOrderInput | SortOrder
-    workout_plan_id?: SortOrderInput | SortOrder
-    created_at?: SortOrderInput | SortOrder
-    updated_at?: SortOrderInput | SortOrder
-    daily_calories?: SortOrderInput | SortOrder
-    meal_plan_items?: meal_plan_itemsOrderByRelationAggregateInput
-    users?: usersOrderByWithRelationInput
-    workout_plans?: workout_plansOrderByWithRelationInput
-  }
-
-  export type meal_plansWhereUniqueInput = Prisma.AtLeast<{
-    id?: string
-    AND?: meal_plansWhereInput | meal_plansWhereInput[]
-    OR?: meal_plansWhereInput[]
-    NOT?: meal_plansWhereInput | meal_plansWhereInput[]
-    user_id?: UuidFilter<"meal_plans"> | string
-    name?: StringFilter<"meal_plans"> | string
-    description?: StringNullableFilter<"meal_plans"> | string | null
-    date?: DateTimeNullableFilter<"meal_plans"> | Date | string | null
-    workout_plan_id?: UuidNullableFilter<"meal_plans"> | string | null
-    created_at?: DateTimeNullableFilter<"meal_plans"> | Date | string | null
-    updated_at?: DateTimeNullableFilter<"meal_plans"> | Date | string | null
-    daily_calories?: IntNullableFilter<"meal_plans"> | number | null
-    meal_plan_items?: Meal_plan_itemsListRelationFilter
-    users?: XOR<UsersScalarRelationFilter, usersWhereInput>
-    workout_plans?: XOR<Workout_plansNullableScalarRelationFilter, workout_plansWhereInput> | null
-  }, "id">
-
-  export type meal_plansOrderByWithAggregationInput = {
-    id?: SortOrder
-    user_id?: SortOrder
-    name?: SortOrder
-    description?: SortOrderInput | SortOrder
-    date?: SortOrderInput | SortOrder
-    workout_plan_id?: SortOrderInput | SortOrder
-    created_at?: SortOrderInput | SortOrder
-    updated_at?: SortOrderInput | SortOrder
-    daily_calories?: SortOrderInput | SortOrder
-    _count?: meal_plansCountOrderByAggregateInput
-    _avg?: meal_plansAvgOrderByAggregateInput
-    _max?: meal_plansMaxOrderByAggregateInput
-    _min?: meal_plansMinOrderByAggregateInput
-    _sum?: meal_plansSumOrderByAggregateInput
-  }
-
-  export type meal_plansScalarWhereWithAggregatesInput = {
-    AND?: meal_plansScalarWhereWithAggregatesInput | meal_plansScalarWhereWithAggregatesInput[]
-    OR?: meal_plansScalarWhereWithAggregatesInput[]
-    NOT?: meal_plansScalarWhereWithAggregatesInput | meal_plansScalarWhereWithAggregatesInput[]
-    id?: UuidWithAggregatesFilter<"meal_plans"> | string
-    user_id?: UuidWithAggregatesFilter<"meal_plans"> | string
-    name?: StringWithAggregatesFilter<"meal_plans"> | string
-    description?: StringNullableWithAggregatesFilter<"meal_plans"> | string | null
-    date?: DateTimeNullableWithAggregatesFilter<"meal_plans"> | Date | string | null
-    workout_plan_id?: UuidNullableWithAggregatesFilter<"meal_plans"> | string | null
-    created_at?: DateTimeNullableWithAggregatesFilter<"meal_plans"> | Date | string | null
-    updated_at?: DateTimeNullableWithAggregatesFilter<"meal_plans"> | Date | string | null
-    daily_calories?: IntNullableWithAggregatesFilter<"meal_plans"> | number | null
-  }
-
   export type mealsWhereInput = {
     AND?: mealsWhereInput | mealsWhereInput[]
     OR?: mealsWhereInput[]
@@ -17645,10 +13153,8 @@ export namespace Prisma {
     fats?: DecimalNullableFilter<"meals"> | Decimal | DecimalJsLike | number | string | null
     image_url?: StringNullableFilter<"meals"> | string | null
     description?: StringNullableFilter<"meals"> | string | null
-    food_items?: JsonNullableFilter<"meals">
     created_at?: DateTimeNullableFilter<"meals"> | Date | string | null
     meal_logs?: Meal_logsListRelationFilter
-    meal_plan_items?: Meal_plan_itemsListRelationFilter
   }
 
   export type mealsOrderByWithRelationInput = {
@@ -17661,10 +13167,8 @@ export namespace Prisma {
     fats?: SortOrderInput | SortOrder
     image_url?: SortOrderInput | SortOrder
     description?: SortOrderInput | SortOrder
-    food_items?: SortOrderInput | SortOrder
     created_at?: SortOrderInput | SortOrder
     meal_logs?: meal_logsOrderByRelationAggregateInput
-    meal_plan_items?: meal_plan_itemsOrderByRelationAggregateInput
   }
 
   export type mealsWhereUniqueInput = Prisma.AtLeast<{
@@ -17680,10 +13184,8 @@ export namespace Prisma {
     fats?: DecimalNullableFilter<"meals"> | Decimal | DecimalJsLike | number | string | null
     image_url?: StringNullableFilter<"meals"> | string | null
     description?: StringNullableFilter<"meals"> | string | null
-    food_items?: JsonNullableFilter<"meals">
     created_at?: DateTimeNullableFilter<"meals"> | Date | string | null
     meal_logs?: Meal_logsListRelationFilter
-    meal_plan_items?: Meal_plan_itemsListRelationFilter
   }, "id">
 
   export type mealsOrderByWithAggregationInput = {
@@ -17696,7 +13198,6 @@ export namespace Prisma {
     fats?: SortOrderInput | SortOrder
     image_url?: SortOrderInput | SortOrder
     description?: SortOrderInput | SortOrder
-    food_items?: SortOrderInput | SortOrder
     created_at?: SortOrderInput | SortOrder
     _count?: mealsCountOrderByAggregateInput
     _avg?: mealsAvgOrderByAggregateInput
@@ -17718,103 +13219,7 @@ export namespace Prisma {
     fats?: DecimalNullableWithAggregatesFilter<"meals"> | Decimal | DecimalJsLike | number | string | null
     image_url?: StringNullableWithAggregatesFilter<"meals"> | string | null
     description?: StringNullableWithAggregatesFilter<"meals"> | string | null
-    food_items?: JsonNullableWithAggregatesFilter<"meals">
     created_at?: DateTimeNullableWithAggregatesFilter<"meals"> | Date | string | null
-  }
-
-  export type progress_trackingWhereInput = {
-    AND?: progress_trackingWhereInput | progress_trackingWhereInput[]
-    OR?: progress_trackingWhereInput[]
-    NOT?: progress_trackingWhereInput | progress_trackingWhereInput[]
-    id?: UuidFilter<"progress_tracking"> | string
-    user_id?: UuidFilter<"progress_tracking"> | string
-    workout_plan_id?: UuidNullableFilter<"progress_tracking"> | string | null
-    week_number?: IntFilter<"progress_tracking"> | number
-    exercises_completed?: IntNullableFilter<"progress_tracking"> | number | null
-    exercises_total?: IntNullableFilter<"progress_tracking"> | number | null
-    meals_completed?: IntNullableFilter<"progress_tracking"> | number | null
-    meals_total?: IntNullableFilter<"progress_tracking"> | number | null
-    start_date?: DateTimeFilter<"progress_tracking"> | Date | string
-    end_date?: DateTimeFilter<"progress_tracking"> | Date | string
-    created_at?: DateTimeNullableFilter<"progress_tracking"> | Date | string | null
-    updated_at?: DateTimeNullableFilter<"progress_tracking"> | Date | string | null
-    users?: XOR<UsersScalarRelationFilter, usersWhereInput>
-    workout_plans?: XOR<Workout_plansNullableScalarRelationFilter, workout_plansWhereInput> | null
-  }
-
-  export type progress_trackingOrderByWithRelationInput = {
-    id?: SortOrder
-    user_id?: SortOrder
-    workout_plan_id?: SortOrderInput | SortOrder
-    week_number?: SortOrder
-    exercises_completed?: SortOrderInput | SortOrder
-    exercises_total?: SortOrderInput | SortOrder
-    meals_completed?: SortOrderInput | SortOrder
-    meals_total?: SortOrderInput | SortOrder
-    start_date?: SortOrder
-    end_date?: SortOrder
-    created_at?: SortOrderInput | SortOrder
-    updated_at?: SortOrderInput | SortOrder
-    users?: usersOrderByWithRelationInput
-    workout_plans?: workout_plansOrderByWithRelationInput
-  }
-
-  export type progress_trackingWhereUniqueInput = Prisma.AtLeast<{
-    id?: string
-    AND?: progress_trackingWhereInput | progress_trackingWhereInput[]
-    OR?: progress_trackingWhereInput[]
-    NOT?: progress_trackingWhereInput | progress_trackingWhereInput[]
-    user_id?: UuidFilter<"progress_tracking"> | string
-    workout_plan_id?: UuidNullableFilter<"progress_tracking"> | string | null
-    week_number?: IntFilter<"progress_tracking"> | number
-    exercises_completed?: IntNullableFilter<"progress_tracking"> | number | null
-    exercises_total?: IntNullableFilter<"progress_tracking"> | number | null
-    meals_completed?: IntNullableFilter<"progress_tracking"> | number | null
-    meals_total?: IntNullableFilter<"progress_tracking"> | number | null
-    start_date?: DateTimeFilter<"progress_tracking"> | Date | string
-    end_date?: DateTimeFilter<"progress_tracking"> | Date | string
-    created_at?: DateTimeNullableFilter<"progress_tracking"> | Date | string | null
-    updated_at?: DateTimeNullableFilter<"progress_tracking"> | Date | string | null
-    users?: XOR<UsersScalarRelationFilter, usersWhereInput>
-    workout_plans?: XOR<Workout_plansNullableScalarRelationFilter, workout_plansWhereInput> | null
-  }, "id">
-
-  export type progress_trackingOrderByWithAggregationInput = {
-    id?: SortOrder
-    user_id?: SortOrder
-    workout_plan_id?: SortOrderInput | SortOrder
-    week_number?: SortOrder
-    exercises_completed?: SortOrderInput | SortOrder
-    exercises_total?: SortOrderInput | SortOrder
-    meals_completed?: SortOrderInput | SortOrder
-    meals_total?: SortOrderInput | SortOrder
-    start_date?: SortOrder
-    end_date?: SortOrder
-    created_at?: SortOrderInput | SortOrder
-    updated_at?: SortOrderInput | SortOrder
-    _count?: progress_trackingCountOrderByAggregateInput
-    _avg?: progress_trackingAvgOrderByAggregateInput
-    _max?: progress_trackingMaxOrderByAggregateInput
-    _min?: progress_trackingMinOrderByAggregateInput
-    _sum?: progress_trackingSumOrderByAggregateInput
-  }
-
-  export type progress_trackingScalarWhereWithAggregatesInput = {
-    AND?: progress_trackingScalarWhereWithAggregatesInput | progress_trackingScalarWhereWithAggregatesInput[]
-    OR?: progress_trackingScalarWhereWithAggregatesInput[]
-    NOT?: progress_trackingScalarWhereWithAggregatesInput | progress_trackingScalarWhereWithAggregatesInput[]
-    id?: UuidWithAggregatesFilter<"progress_tracking"> | string
-    user_id?: UuidWithAggregatesFilter<"progress_tracking"> | string
-    workout_plan_id?: UuidNullableWithAggregatesFilter<"progress_tracking"> | string | null
-    week_number?: IntWithAggregatesFilter<"progress_tracking"> | number
-    exercises_completed?: IntNullableWithAggregatesFilter<"progress_tracking"> | number | null
-    exercises_total?: IntNullableWithAggregatesFilter<"progress_tracking"> | number | null
-    meals_completed?: IntNullableWithAggregatesFilter<"progress_tracking"> | number | null
-    meals_total?: IntNullableWithAggregatesFilter<"progress_tracking"> | number | null
-    start_date?: DateTimeWithAggregatesFilter<"progress_tracking"> | Date | string
-    end_date?: DateTimeWithAggregatesFilter<"progress_tracking"> | Date | string
-    created_at?: DateTimeNullableWithAggregatesFilter<"progress_tracking"> | Date | string | null
-    updated_at?: DateTimeNullableWithAggregatesFilter<"progress_tracking"> | Date | string | null
   }
 
   export type usersWhereInput = {
@@ -17839,8 +13244,6 @@ export namespace Prisma {
     age_range?: StringFilter<"users"> | string
     exercise_logs?: Exercise_logsListRelationFilter
     meal_logs?: Meal_logsListRelationFilter
-    meal_plans?: Meal_plansListRelationFilter
-    progress_tracking?: Progress_trackingListRelationFilter
     water_logs?: Water_logsListRelationFilter
     weight_logs?: Weight_logsListRelationFilter
     workout_plans?: Workout_plansListRelationFilter
@@ -17865,8 +13268,6 @@ export namespace Prisma {
     age_range?: SortOrder
     exercise_logs?: exercise_logsOrderByRelationAggregateInput
     meal_logs?: meal_logsOrderByRelationAggregateInput
-    meal_plans?: meal_plansOrderByRelationAggregateInput
-    progress_tracking?: progress_trackingOrderByRelationAggregateInput
     water_logs?: water_logsOrderByRelationAggregateInput
     weight_logs?: weight_logsOrderByRelationAggregateInput
     workout_plans?: workout_plansOrderByRelationAggregateInput
@@ -17894,8 +13295,6 @@ export namespace Prisma {
     age_range?: StringFilter<"users"> | string
     exercise_logs?: Exercise_logsListRelationFilter
     meal_logs?: Meal_logsListRelationFilter
-    meal_plans?: Meal_plansListRelationFilter
-    progress_tracking?: Progress_trackingListRelationFilter
     water_logs?: Water_logsListRelationFilter
     weight_logs?: Weight_logsListRelationFilter
     workout_plans?: Workout_plansListRelationFilter
@@ -18074,7 +13473,6 @@ export namespace Prisma {
     reps?: IntNullableFilter<"workout_plan_exercises"> | number | null
     weight?: DecimalNullableFilter<"workout_plan_exercises"> | Decimal | DecimalJsLike | number | string | null
     duration?: IntNullableFilter<"workout_plan_exercises"> | number | null
-    created_at?: DateTimeNullableFilter<"workout_plan_exercises"> | Date | string | null
     completed?: BoolNullableFilter<"workout_plan_exercises"> | boolean | null
     completion_date?: DateTimeNullableFilter<"workout_plan_exercises"> | Date | string | null
     actual_sets?: IntNullableFilter<"workout_plan_exercises"> | number | null
@@ -18082,6 +13480,7 @@ export namespace Prisma {
     actual_weight?: DecimalNullableFilter<"workout_plan_exercises"> | Decimal | DecimalJsLike | number | string | null
     actual_duration?: IntNullableFilter<"workout_plan_exercises"> | number | null
     notes?: StringNullableFilter<"workout_plan_exercises"> | string | null
+    created_at?: DateTimeNullableFilter<"workout_plan_exercises"> | Date | string | null
     updated_at?: DateTimeNullableFilter<"workout_plan_exercises"> | Date | string | null
     exercises?: XOR<ExercisesNullableScalarRelationFilter, exercisesWhereInput> | null
     workout_plans?: XOR<Workout_plansScalarRelationFilter, workout_plansWhereInput>
@@ -18097,7 +13496,6 @@ export namespace Prisma {
     reps?: SortOrderInput | SortOrder
     weight?: SortOrderInput | SortOrder
     duration?: SortOrderInput | SortOrder
-    created_at?: SortOrderInput | SortOrder
     completed?: SortOrderInput | SortOrder
     completion_date?: SortOrderInput | SortOrder
     actual_sets?: SortOrderInput | SortOrder
@@ -18105,6 +13503,7 @@ export namespace Prisma {
     actual_weight?: SortOrderInput | SortOrder
     actual_duration?: SortOrderInput | SortOrder
     notes?: SortOrderInput | SortOrder
+    created_at?: SortOrderInput | SortOrder
     updated_at?: SortOrderInput | SortOrder
     exercises?: exercisesOrderByWithRelationInput
     workout_plans?: workout_plansOrderByWithRelationInput
@@ -18123,7 +13522,6 @@ export namespace Prisma {
     reps?: IntNullableFilter<"workout_plan_exercises"> | number | null
     weight?: DecimalNullableFilter<"workout_plan_exercises"> | Decimal | DecimalJsLike | number | string | null
     duration?: IntNullableFilter<"workout_plan_exercises"> | number | null
-    created_at?: DateTimeNullableFilter<"workout_plan_exercises"> | Date | string | null
     completed?: BoolNullableFilter<"workout_plan_exercises"> | boolean | null
     completion_date?: DateTimeNullableFilter<"workout_plan_exercises"> | Date | string | null
     actual_sets?: IntNullableFilter<"workout_plan_exercises"> | number | null
@@ -18131,6 +13529,7 @@ export namespace Prisma {
     actual_weight?: DecimalNullableFilter<"workout_plan_exercises"> | Decimal | DecimalJsLike | number | string | null
     actual_duration?: IntNullableFilter<"workout_plan_exercises"> | number | null
     notes?: StringNullableFilter<"workout_plan_exercises"> | string | null
+    created_at?: DateTimeNullableFilter<"workout_plan_exercises"> | Date | string | null
     updated_at?: DateTimeNullableFilter<"workout_plan_exercises"> | Date | string | null
     exercises?: XOR<ExercisesNullableScalarRelationFilter, exercisesWhereInput> | null
     workout_plans?: XOR<Workout_plansScalarRelationFilter, workout_plansWhereInput>
@@ -18146,7 +13545,6 @@ export namespace Prisma {
     reps?: SortOrderInput | SortOrder
     weight?: SortOrderInput | SortOrder
     duration?: SortOrderInput | SortOrder
-    created_at?: SortOrderInput | SortOrder
     completed?: SortOrderInput | SortOrder
     completion_date?: SortOrderInput | SortOrder
     actual_sets?: SortOrderInput | SortOrder
@@ -18154,6 +13552,7 @@ export namespace Prisma {
     actual_weight?: SortOrderInput | SortOrder
     actual_duration?: SortOrderInput | SortOrder
     notes?: SortOrderInput | SortOrder
+    created_at?: SortOrderInput | SortOrder
     updated_at?: SortOrderInput | SortOrder
     _count?: workout_plan_exercisesCountOrderByAggregateInput
     _avg?: workout_plan_exercisesAvgOrderByAggregateInput
@@ -18175,7 +13574,6 @@ export namespace Prisma {
     reps?: IntNullableWithAggregatesFilter<"workout_plan_exercises"> | number | null
     weight?: DecimalNullableWithAggregatesFilter<"workout_plan_exercises"> | Decimal | DecimalJsLike | number | string | null
     duration?: IntNullableWithAggregatesFilter<"workout_plan_exercises"> | number | null
-    created_at?: DateTimeNullableWithAggregatesFilter<"workout_plan_exercises"> | Date | string | null
     completed?: BoolNullableWithAggregatesFilter<"workout_plan_exercises"> | boolean | null
     completion_date?: DateTimeNullableWithAggregatesFilter<"workout_plan_exercises"> | Date | string | null
     actual_sets?: IntNullableWithAggregatesFilter<"workout_plan_exercises"> | number | null
@@ -18183,6 +13581,7 @@ export namespace Prisma {
     actual_weight?: DecimalNullableWithAggregatesFilter<"workout_plan_exercises"> | Decimal | DecimalJsLike | number | string | null
     actual_duration?: IntNullableWithAggregatesFilter<"workout_plan_exercises"> | number | null
     notes?: StringNullableWithAggregatesFilter<"workout_plan_exercises"> | string | null
+    created_at?: DateTimeNullableWithAggregatesFilter<"workout_plan_exercises"> | Date | string | null
     updated_at?: DateTimeNullableWithAggregatesFilter<"workout_plan_exercises"> | Date | string | null
   }
 
@@ -18200,8 +13599,6 @@ export namespace Prisma {
     active?: BoolNullableFilter<"workout_plans"> | boolean | null
     created_at?: DateTimeNullableFilter<"workout_plans"> | Date | string | null
     updated_at?: DateTimeNullableFilter<"workout_plans"> | Date | string | null
-    meal_plans?: Meal_plansListRelationFilter
-    progress_tracking?: Progress_trackingListRelationFilter
     workout_plan_exercises?: Workout_plan_exercisesListRelationFilter
     users?: XOR<UsersScalarRelationFilter, usersWhereInput>
   }
@@ -18217,8 +13614,6 @@ export namespace Prisma {
     active?: SortOrderInput | SortOrder
     created_at?: SortOrderInput | SortOrder
     updated_at?: SortOrderInput | SortOrder
-    meal_plans?: meal_plansOrderByRelationAggregateInput
-    progress_tracking?: progress_trackingOrderByRelationAggregateInput
     workout_plan_exercises?: workout_plan_exercisesOrderByRelationAggregateInput
     users?: usersOrderByWithRelationInput
   }
@@ -18237,8 +13632,6 @@ export namespace Prisma {
     active?: BoolNullableFilter<"workout_plans"> | boolean | null
     created_at?: DateTimeNullableFilter<"workout_plans"> | Date | string | null
     updated_at?: DateTimeNullableFilter<"workout_plans"> | Date | string | null
-    meal_plans?: Meal_plansListRelationFilter
-    progress_tracking?: Progress_trackingListRelationFilter
     workout_plan_exercises?: Workout_plan_exercisesListRelationFilter
     users?: XOR<UsersScalarRelationFilter, usersWhereInput>
   }, "id">
@@ -18575,223 +13968,6 @@ export namespace Prisma {
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
-  export type meal_plan_itemsCreateInput = {
-    id?: string
-    name: string
-    meal_time: string
-    calories?: number | null
-    protein?: Decimal | DecimalJsLike | number | string | null
-    carbs?: Decimal | DecimalJsLike | number | string | null
-    fats?: Decimal | DecimalJsLike | number | string | null
-    completed?: boolean | null
-    completion_date?: Date | string | null
-    day_number?: number | null
-    portion?: Decimal | DecimalJsLike | number | string | null
-    notes?: string | null
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-    meal_plans: meal_plansCreateNestedOneWithoutMeal_plan_itemsInput
-    meals?: mealsCreateNestedOneWithoutMeal_plan_itemsInput
-  }
-
-  export type meal_plan_itemsUncheckedCreateInput = {
-    id?: string
-    meal_plan_id: string
-    meal_id?: string | null
-    name: string
-    meal_time: string
-    calories?: number | null
-    protein?: Decimal | DecimalJsLike | number | string | null
-    carbs?: Decimal | DecimalJsLike | number | string | null
-    fats?: Decimal | DecimalJsLike | number | string | null
-    completed?: boolean | null
-    completion_date?: Date | string | null
-    day_number?: number | null
-    portion?: Decimal | DecimalJsLike | number | string | null
-    notes?: string | null
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-  }
-
-  export type meal_plan_itemsUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    meal_time?: StringFieldUpdateOperationsInput | string
-    calories?: NullableIntFieldUpdateOperationsInput | number | null
-    protein?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    carbs?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    fats?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    completed?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    completion_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    day_number?: NullableIntFieldUpdateOperationsInput | number | null
-    portion?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    notes?: NullableStringFieldUpdateOperationsInput | string | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    meal_plans?: meal_plansUpdateOneRequiredWithoutMeal_plan_itemsNestedInput
-    meals?: mealsUpdateOneWithoutMeal_plan_itemsNestedInput
-  }
-
-  export type meal_plan_itemsUncheckedUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    meal_plan_id?: StringFieldUpdateOperationsInput | string
-    meal_id?: NullableStringFieldUpdateOperationsInput | string | null
-    name?: StringFieldUpdateOperationsInput | string
-    meal_time?: StringFieldUpdateOperationsInput | string
-    calories?: NullableIntFieldUpdateOperationsInput | number | null
-    protein?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    carbs?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    fats?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    completed?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    completion_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    day_number?: NullableIntFieldUpdateOperationsInput | number | null
-    portion?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    notes?: NullableStringFieldUpdateOperationsInput | string | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  }
-
-  export type meal_plan_itemsCreateManyInput = {
-    id?: string
-    meal_plan_id: string
-    meal_id?: string | null
-    name: string
-    meal_time: string
-    calories?: number | null
-    protein?: Decimal | DecimalJsLike | number | string | null
-    carbs?: Decimal | DecimalJsLike | number | string | null
-    fats?: Decimal | DecimalJsLike | number | string | null
-    completed?: boolean | null
-    completion_date?: Date | string | null
-    day_number?: number | null
-    portion?: Decimal | DecimalJsLike | number | string | null
-    notes?: string | null
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-  }
-
-  export type meal_plan_itemsUpdateManyMutationInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    meal_time?: StringFieldUpdateOperationsInput | string
-    calories?: NullableIntFieldUpdateOperationsInput | number | null
-    protein?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    carbs?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    fats?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    completed?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    completion_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    day_number?: NullableIntFieldUpdateOperationsInput | number | null
-    portion?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    notes?: NullableStringFieldUpdateOperationsInput | string | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  }
-
-  export type meal_plan_itemsUncheckedUpdateManyInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    meal_plan_id?: StringFieldUpdateOperationsInput | string
-    meal_id?: NullableStringFieldUpdateOperationsInput | string | null
-    name?: StringFieldUpdateOperationsInput | string
-    meal_time?: StringFieldUpdateOperationsInput | string
-    calories?: NullableIntFieldUpdateOperationsInput | number | null
-    protein?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    carbs?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    fats?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    completed?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    completion_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    day_number?: NullableIntFieldUpdateOperationsInput | number | null
-    portion?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    notes?: NullableStringFieldUpdateOperationsInput | string | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  }
-
-  export type meal_plansCreateInput = {
-    id?: string
-    name: string
-    description?: string | null
-    date?: Date | string | null
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-    daily_calories?: number | null
-    meal_plan_items?: meal_plan_itemsCreateNestedManyWithoutMeal_plansInput
-    users: usersCreateNestedOneWithoutMeal_plansInput
-    workout_plans?: workout_plansCreateNestedOneWithoutMeal_plansInput
-  }
-
-  export type meal_plansUncheckedCreateInput = {
-    id?: string
-    user_id: string
-    name: string
-    description?: string | null
-    date?: Date | string | null
-    workout_plan_id?: string | null
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-    daily_calories?: number | null
-    meal_plan_items?: meal_plan_itemsUncheckedCreateNestedManyWithoutMeal_plansInput
-  }
-
-  export type meal_plansUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    daily_calories?: NullableIntFieldUpdateOperationsInput | number | null
-    meal_plan_items?: meal_plan_itemsUpdateManyWithoutMeal_plansNestedInput
-    users?: usersUpdateOneRequiredWithoutMeal_plansNestedInput
-    workout_plans?: workout_plansUpdateOneWithoutMeal_plansNestedInput
-  }
-
-  export type meal_plansUncheckedUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    user_id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    workout_plan_id?: NullableStringFieldUpdateOperationsInput | string | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    daily_calories?: NullableIntFieldUpdateOperationsInput | number | null
-    meal_plan_items?: meal_plan_itemsUncheckedUpdateManyWithoutMeal_plansNestedInput
-  }
-
-  export type meal_plansCreateManyInput = {
-    id?: string
-    user_id: string
-    name: string
-    description?: string | null
-    date?: Date | string | null
-    workout_plan_id?: string | null
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-    daily_calories?: number | null
-  }
-
-  export type meal_plansUpdateManyMutationInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    daily_calories?: NullableIntFieldUpdateOperationsInput | number | null
-  }
-
-  export type meal_plansUncheckedUpdateManyInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    user_id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    workout_plan_id?: NullableStringFieldUpdateOperationsInput | string | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    daily_calories?: NullableIntFieldUpdateOperationsInput | number | null
-  }
-
   export type mealsCreateInput = {
     id?: string
     name: string
@@ -18802,10 +13978,8 @@ export namespace Prisma {
     fats?: Decimal | DecimalJsLike | number | string | null
     image_url?: string | null
     description?: string | null
-    food_items?: NullableJsonNullValueInput | InputJsonValue
     created_at?: Date | string | null
     meal_logs?: meal_logsCreateNestedManyWithoutMealsInput
-    meal_plan_items?: meal_plan_itemsCreateNestedManyWithoutMealsInput
   }
 
   export type mealsUncheckedCreateInput = {
@@ -18818,10 +13992,8 @@ export namespace Prisma {
     fats?: Decimal | DecimalJsLike | number | string | null
     image_url?: string | null
     description?: string | null
-    food_items?: NullableJsonNullValueInput | InputJsonValue
     created_at?: Date | string | null
     meal_logs?: meal_logsUncheckedCreateNestedManyWithoutMealsInput
-    meal_plan_items?: meal_plan_itemsUncheckedCreateNestedManyWithoutMealsInput
   }
 
   export type mealsUpdateInput = {
@@ -18834,10 +14006,8 @@ export namespace Prisma {
     fats?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     image_url?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
-    food_items?: NullableJsonNullValueInput | InputJsonValue
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     meal_logs?: meal_logsUpdateManyWithoutMealsNestedInput
-    meal_plan_items?: meal_plan_itemsUpdateManyWithoutMealsNestedInput
   }
 
   export type mealsUncheckedUpdateInput = {
@@ -18850,10 +14020,8 @@ export namespace Prisma {
     fats?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     image_url?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
-    food_items?: NullableJsonNullValueInput | InputJsonValue
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     meal_logs?: meal_logsUncheckedUpdateManyWithoutMealsNestedInput
-    meal_plan_items?: meal_plan_itemsUncheckedUpdateManyWithoutMealsNestedInput
   }
 
   export type mealsCreateManyInput = {
@@ -18866,7 +14034,6 @@ export namespace Prisma {
     fats?: Decimal | DecimalJsLike | number | string | null
     image_url?: string | null
     description?: string | null
-    food_items?: NullableJsonNullValueInput | InputJsonValue
     created_at?: Date | string | null
   }
 
@@ -18880,7 +14047,6 @@ export namespace Prisma {
     fats?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     image_url?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
-    food_items?: NullableJsonNullValueInput | InputJsonValue
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
@@ -18894,111 +14060,7 @@ export namespace Prisma {
     fats?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     image_url?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
-    food_items?: NullableJsonNullValueInput | InputJsonValue
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  }
-
-  export type progress_trackingCreateInput = {
-    id?: string
-    week_number: number
-    exercises_completed?: number | null
-    exercises_total?: number | null
-    meals_completed?: number | null
-    meals_total?: number | null
-    start_date: Date | string
-    end_date: Date | string
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-    users: usersCreateNestedOneWithoutProgress_trackingInput
-    workout_plans?: workout_plansCreateNestedOneWithoutProgress_trackingInput
-  }
-
-  export type progress_trackingUncheckedCreateInput = {
-    id?: string
-    user_id: string
-    workout_plan_id?: string | null
-    week_number: number
-    exercises_completed?: number | null
-    exercises_total?: number | null
-    meals_completed?: number | null
-    meals_total?: number | null
-    start_date: Date | string
-    end_date: Date | string
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-  }
-
-  export type progress_trackingUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    week_number?: IntFieldUpdateOperationsInput | number
-    exercises_completed?: NullableIntFieldUpdateOperationsInput | number | null
-    exercises_total?: NullableIntFieldUpdateOperationsInput | number | null
-    meals_completed?: NullableIntFieldUpdateOperationsInput | number | null
-    meals_total?: NullableIntFieldUpdateOperationsInput | number | null
-    start_date?: DateTimeFieldUpdateOperationsInput | Date | string
-    end_date?: DateTimeFieldUpdateOperationsInput | Date | string
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    users?: usersUpdateOneRequiredWithoutProgress_trackingNestedInput
-    workout_plans?: workout_plansUpdateOneWithoutProgress_trackingNestedInput
-  }
-
-  export type progress_trackingUncheckedUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    user_id?: StringFieldUpdateOperationsInput | string
-    workout_plan_id?: NullableStringFieldUpdateOperationsInput | string | null
-    week_number?: IntFieldUpdateOperationsInput | number
-    exercises_completed?: NullableIntFieldUpdateOperationsInput | number | null
-    exercises_total?: NullableIntFieldUpdateOperationsInput | number | null
-    meals_completed?: NullableIntFieldUpdateOperationsInput | number | null
-    meals_total?: NullableIntFieldUpdateOperationsInput | number | null
-    start_date?: DateTimeFieldUpdateOperationsInput | Date | string
-    end_date?: DateTimeFieldUpdateOperationsInput | Date | string
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  }
-
-  export type progress_trackingCreateManyInput = {
-    id?: string
-    user_id: string
-    workout_plan_id?: string | null
-    week_number: number
-    exercises_completed?: number | null
-    exercises_total?: number | null
-    meals_completed?: number | null
-    meals_total?: number | null
-    start_date: Date | string
-    end_date: Date | string
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-  }
-
-  export type progress_trackingUpdateManyMutationInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    week_number?: IntFieldUpdateOperationsInput | number
-    exercises_completed?: NullableIntFieldUpdateOperationsInput | number | null
-    exercises_total?: NullableIntFieldUpdateOperationsInput | number | null
-    meals_completed?: NullableIntFieldUpdateOperationsInput | number | null
-    meals_total?: NullableIntFieldUpdateOperationsInput | number | null
-    start_date?: DateTimeFieldUpdateOperationsInput | Date | string
-    end_date?: DateTimeFieldUpdateOperationsInput | Date | string
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  }
-
-  export type progress_trackingUncheckedUpdateManyInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    user_id?: StringFieldUpdateOperationsInput | string
-    workout_plan_id?: NullableStringFieldUpdateOperationsInput | string | null
-    week_number?: IntFieldUpdateOperationsInput | number
-    exercises_completed?: NullableIntFieldUpdateOperationsInput | number | null
-    exercises_total?: NullableIntFieldUpdateOperationsInput | number | null
-    meals_completed?: NullableIntFieldUpdateOperationsInput | number | null
-    meals_total?: NullableIntFieldUpdateOperationsInput | number | null
-    start_date?: DateTimeFieldUpdateOperationsInput | Date | string
-    end_date?: DateTimeFieldUpdateOperationsInput | Date | string
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type usersCreateInput = {
@@ -19020,8 +14082,6 @@ export namespace Prisma {
     age_range?: string
     exercise_logs?: exercise_logsCreateNestedManyWithoutUsersInput
     meal_logs?: meal_logsCreateNestedManyWithoutUsersInput
-    meal_plans?: meal_plansCreateNestedManyWithoutUsersInput
-    progress_tracking?: progress_trackingCreateNestedManyWithoutUsersInput
     water_logs?: water_logsCreateNestedManyWithoutUsersInput
     weight_logs?: weight_logsCreateNestedManyWithoutUsersInput
     workout_plans?: workout_plansCreateNestedManyWithoutUsersInput
@@ -19046,8 +14106,6 @@ export namespace Prisma {
     age_range?: string
     exercise_logs?: exercise_logsUncheckedCreateNestedManyWithoutUsersInput
     meal_logs?: meal_logsUncheckedCreateNestedManyWithoutUsersInput
-    meal_plans?: meal_plansUncheckedCreateNestedManyWithoutUsersInput
-    progress_tracking?: progress_trackingUncheckedCreateNestedManyWithoutUsersInput
     water_logs?: water_logsUncheckedCreateNestedManyWithoutUsersInput
     weight_logs?: weight_logsUncheckedCreateNestedManyWithoutUsersInput
     workout_plans?: workout_plansUncheckedCreateNestedManyWithoutUsersInput
@@ -19072,8 +14130,6 @@ export namespace Prisma {
     age_range?: StringFieldUpdateOperationsInput | string
     exercise_logs?: exercise_logsUpdateManyWithoutUsersNestedInput
     meal_logs?: meal_logsUpdateManyWithoutUsersNestedInput
-    meal_plans?: meal_plansUpdateManyWithoutUsersNestedInput
-    progress_tracking?: progress_trackingUpdateManyWithoutUsersNestedInput
     water_logs?: water_logsUpdateManyWithoutUsersNestedInput
     weight_logs?: weight_logsUpdateManyWithoutUsersNestedInput
     workout_plans?: workout_plansUpdateManyWithoutUsersNestedInput
@@ -19098,8 +14154,6 @@ export namespace Prisma {
     age_range?: StringFieldUpdateOperationsInput | string
     exercise_logs?: exercise_logsUncheckedUpdateManyWithoutUsersNestedInput
     meal_logs?: meal_logsUncheckedUpdateManyWithoutUsersNestedInput
-    meal_plans?: meal_plansUncheckedUpdateManyWithoutUsersNestedInput
-    progress_tracking?: progress_trackingUncheckedUpdateManyWithoutUsersNestedInput
     water_logs?: water_logsUncheckedUpdateManyWithoutUsersNestedInput
     weight_logs?: weight_logsUncheckedUpdateManyWithoutUsersNestedInput
     workout_plans?: workout_plansUncheckedUpdateManyWithoutUsersNestedInput
@@ -19280,7 +14334,6 @@ export namespace Prisma {
     reps?: number | null
     weight?: Decimal | DecimalJsLike | number | string | null
     duration?: number | null
-    created_at?: Date | string | null
     completed?: boolean | null
     completion_date?: Date | string | null
     actual_sets?: number | null
@@ -19288,6 +14341,7 @@ export namespace Prisma {
     actual_weight?: Decimal | DecimalJsLike | number | string | null
     actual_duration?: number | null
     notes?: string | null
+    created_at?: Date | string | null
     updated_at?: Date | string | null
     exercises?: exercisesCreateNestedOneWithoutWorkout_plan_exercisesInput
     workout_plans: workout_plansCreateNestedOneWithoutWorkout_plan_exercisesInput
@@ -19303,7 +14357,6 @@ export namespace Prisma {
     reps?: number | null
     weight?: Decimal | DecimalJsLike | number | string | null
     duration?: number | null
-    created_at?: Date | string | null
     completed?: boolean | null
     completion_date?: Date | string | null
     actual_sets?: number | null
@@ -19311,6 +14364,7 @@ export namespace Prisma {
     actual_weight?: Decimal | DecimalJsLike | number | string | null
     actual_duration?: number | null
     notes?: string | null
+    created_at?: Date | string | null
     updated_at?: Date | string | null
   }
 
@@ -19322,7 +14376,6 @@ export namespace Prisma {
     reps?: NullableIntFieldUpdateOperationsInput | number | null
     weight?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     duration?: NullableIntFieldUpdateOperationsInput | number | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     completed?: NullableBoolFieldUpdateOperationsInput | boolean | null
     completion_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     actual_sets?: NullableIntFieldUpdateOperationsInput | number | null
@@ -19330,6 +14383,7 @@ export namespace Prisma {
     actual_weight?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     actual_duration?: NullableIntFieldUpdateOperationsInput | number | null
     notes?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     exercises?: exercisesUpdateOneWithoutWorkout_plan_exercisesNestedInput
     workout_plans?: workout_plansUpdateOneRequiredWithoutWorkout_plan_exercisesNestedInput
@@ -19345,7 +14399,6 @@ export namespace Prisma {
     reps?: NullableIntFieldUpdateOperationsInput | number | null
     weight?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     duration?: NullableIntFieldUpdateOperationsInput | number | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     completed?: NullableBoolFieldUpdateOperationsInput | boolean | null
     completion_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     actual_sets?: NullableIntFieldUpdateOperationsInput | number | null
@@ -19353,6 +14406,7 @@ export namespace Prisma {
     actual_weight?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     actual_duration?: NullableIntFieldUpdateOperationsInput | number | null
     notes?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
@@ -19366,7 +14420,6 @@ export namespace Prisma {
     reps?: number | null
     weight?: Decimal | DecimalJsLike | number | string | null
     duration?: number | null
-    created_at?: Date | string | null
     completed?: boolean | null
     completion_date?: Date | string | null
     actual_sets?: number | null
@@ -19374,6 +14427,7 @@ export namespace Prisma {
     actual_weight?: Decimal | DecimalJsLike | number | string | null
     actual_duration?: number | null
     notes?: string | null
+    created_at?: Date | string | null
     updated_at?: Date | string | null
   }
 
@@ -19385,7 +14439,6 @@ export namespace Prisma {
     reps?: NullableIntFieldUpdateOperationsInput | number | null
     weight?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     duration?: NullableIntFieldUpdateOperationsInput | number | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     completed?: NullableBoolFieldUpdateOperationsInput | boolean | null
     completion_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     actual_sets?: NullableIntFieldUpdateOperationsInput | number | null
@@ -19393,6 +14446,7 @@ export namespace Prisma {
     actual_weight?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     actual_duration?: NullableIntFieldUpdateOperationsInput | number | null
     notes?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
@@ -19406,7 +14460,6 @@ export namespace Prisma {
     reps?: NullableIntFieldUpdateOperationsInput | number | null
     weight?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     duration?: NullableIntFieldUpdateOperationsInput | number | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     completed?: NullableBoolFieldUpdateOperationsInput | boolean | null
     completion_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     actual_sets?: NullableIntFieldUpdateOperationsInput | number | null
@@ -19414,6 +14467,7 @@ export namespace Prisma {
     actual_weight?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     actual_duration?: NullableIntFieldUpdateOperationsInput | number | null
     notes?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
@@ -19427,8 +14481,6 @@ export namespace Prisma {
     active?: boolean | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
-    meal_plans?: meal_plansCreateNestedManyWithoutWorkout_plansInput
-    progress_tracking?: progress_trackingCreateNestedManyWithoutWorkout_plansInput
     workout_plan_exercises?: workout_plan_exercisesCreateNestedManyWithoutWorkout_plansInput
     users: usersCreateNestedOneWithoutWorkout_plansInput
   }
@@ -19444,8 +14496,6 @@ export namespace Prisma {
     active?: boolean | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
-    meal_plans?: meal_plansUncheckedCreateNestedManyWithoutWorkout_plansInput
-    progress_tracking?: progress_trackingUncheckedCreateNestedManyWithoutWorkout_plansInput
     workout_plan_exercises?: workout_plan_exercisesUncheckedCreateNestedManyWithoutWorkout_plansInput
   }
 
@@ -19459,8 +14509,6 @@ export namespace Prisma {
     active?: NullableBoolFieldUpdateOperationsInput | boolean | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    meal_plans?: meal_plansUpdateManyWithoutWorkout_plansNestedInput
-    progress_tracking?: progress_trackingUpdateManyWithoutWorkout_plansNestedInput
     workout_plan_exercises?: workout_plan_exercisesUpdateManyWithoutWorkout_plansNestedInput
     users?: usersUpdateOneRequiredWithoutWorkout_plansNestedInput
   }
@@ -19476,8 +14524,6 @@ export namespace Prisma {
     active?: NullableBoolFieldUpdateOperationsInput | boolean | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    meal_plans?: meal_plansUncheckedUpdateManyWithoutWorkout_plansNestedInput
-    progress_tracking?: progress_trackingUncheckedUpdateManyWithoutWorkout_plansNestedInput
     workout_plan_exercises?: workout_plan_exercisesUncheckedUpdateManyWithoutWorkout_plansNestedInput
   }
 
@@ -19943,181 +14989,6 @@ export namespace Prisma {
     fats?: SortOrder
   }
 
-  export type BoolNullableFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
-    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
-  }
-
-  export type Meal_plansScalarRelationFilter = {
-    is?: meal_plansWhereInput
-    isNot?: meal_plansWhereInput
-  }
-
-  export type meal_plan_itemsCountOrderByAggregateInput = {
-    id?: SortOrder
-    meal_plan_id?: SortOrder
-    meal_id?: SortOrder
-    name?: SortOrder
-    meal_time?: SortOrder
-    calories?: SortOrder
-    protein?: SortOrder
-    carbs?: SortOrder
-    fats?: SortOrder
-    completed?: SortOrder
-    completion_date?: SortOrder
-    day_number?: SortOrder
-    portion?: SortOrder
-    notes?: SortOrder
-    created_at?: SortOrder
-    updated_at?: SortOrder
-  }
-
-  export type meal_plan_itemsAvgOrderByAggregateInput = {
-    calories?: SortOrder
-    protein?: SortOrder
-    carbs?: SortOrder
-    fats?: SortOrder
-    day_number?: SortOrder
-    portion?: SortOrder
-  }
-
-  export type meal_plan_itemsMaxOrderByAggregateInput = {
-    id?: SortOrder
-    meal_plan_id?: SortOrder
-    meal_id?: SortOrder
-    name?: SortOrder
-    meal_time?: SortOrder
-    calories?: SortOrder
-    protein?: SortOrder
-    carbs?: SortOrder
-    fats?: SortOrder
-    completed?: SortOrder
-    completion_date?: SortOrder
-    day_number?: SortOrder
-    portion?: SortOrder
-    notes?: SortOrder
-    created_at?: SortOrder
-    updated_at?: SortOrder
-  }
-
-  export type meal_plan_itemsMinOrderByAggregateInput = {
-    id?: SortOrder
-    meal_plan_id?: SortOrder
-    meal_id?: SortOrder
-    name?: SortOrder
-    meal_time?: SortOrder
-    calories?: SortOrder
-    protein?: SortOrder
-    carbs?: SortOrder
-    fats?: SortOrder
-    completed?: SortOrder
-    completion_date?: SortOrder
-    day_number?: SortOrder
-    portion?: SortOrder
-    notes?: SortOrder
-    created_at?: SortOrder
-    updated_at?: SortOrder
-  }
-
-  export type meal_plan_itemsSumOrderByAggregateInput = {
-    calories?: SortOrder
-    protein?: SortOrder
-    carbs?: SortOrder
-    fats?: SortOrder
-    day_number?: SortOrder
-    portion?: SortOrder
-  }
-
-  export type BoolNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
-    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedBoolNullableFilter<$PrismaModel>
-    _max?: NestedBoolNullableFilter<$PrismaModel>
-  }
-
-  export type Meal_plan_itemsListRelationFilter = {
-    every?: meal_plan_itemsWhereInput
-    some?: meal_plan_itemsWhereInput
-    none?: meal_plan_itemsWhereInput
-  }
-
-  export type Workout_plansNullableScalarRelationFilter = {
-    is?: workout_plansWhereInput | null
-    isNot?: workout_plansWhereInput | null
-  }
-
-  export type meal_plan_itemsOrderByRelationAggregateInput = {
-    _count?: SortOrder
-  }
-
-  export type meal_plansCountOrderByAggregateInput = {
-    id?: SortOrder
-    user_id?: SortOrder
-    name?: SortOrder
-    description?: SortOrder
-    date?: SortOrder
-    workout_plan_id?: SortOrder
-    created_at?: SortOrder
-    updated_at?: SortOrder
-    daily_calories?: SortOrder
-  }
-
-  export type meal_plansAvgOrderByAggregateInput = {
-    daily_calories?: SortOrder
-  }
-
-  export type meal_plansMaxOrderByAggregateInput = {
-    id?: SortOrder
-    user_id?: SortOrder
-    name?: SortOrder
-    description?: SortOrder
-    date?: SortOrder
-    workout_plan_id?: SortOrder
-    created_at?: SortOrder
-    updated_at?: SortOrder
-    daily_calories?: SortOrder
-  }
-
-  export type meal_plansMinOrderByAggregateInput = {
-    id?: SortOrder
-    user_id?: SortOrder
-    name?: SortOrder
-    description?: SortOrder
-    date?: SortOrder
-    workout_plan_id?: SortOrder
-    created_at?: SortOrder
-    updated_at?: SortOrder
-    daily_calories?: SortOrder
-  }
-
-  export type meal_plansSumOrderByAggregateInput = {
-    daily_calories?: SortOrder
-  }
-  export type JsonNullableFilter<$PrismaModel = never> =
-    | PatchUndefined<
-        Either<Required<JsonNullableFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonNullableFilterBase<$PrismaModel>>, 'path'>>,
-        Required<JsonNullableFilterBase<$PrismaModel>>
-      >
-    | OptionalFlat<Omit<Required<JsonNullableFilterBase<$PrismaModel>>, 'path'>>
-
-  export type JsonNullableFilterBase<$PrismaModel = never> = {
-    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-    path?: string[]
-    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
-    string_contains?: string | StringFieldRefInput<$PrismaModel>
-    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
-    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
-    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-  }
-
   export type Meal_logsListRelationFilter = {
     every?: meal_logsWhereInput
     some?: meal_logsWhereInput
@@ -20138,7 +15009,6 @@ export namespace Prisma {
     fats?: SortOrder
     image_url?: SortOrder
     description?: SortOrder
-    food_items?: SortOrder
     created_at?: SortOrder
   }
 
@@ -20181,132 +15051,6 @@ export namespace Prisma {
     carbs?: SortOrder
     fats?: SortOrder
   }
-  export type JsonNullableWithAggregatesFilter<$PrismaModel = never> =
-    | PatchUndefined<
-        Either<Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>, 'path'>>,
-        Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>
-      >
-    | OptionalFlat<Omit<Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>, 'path'>>
-
-  export type JsonNullableWithAggregatesFilterBase<$PrismaModel = never> = {
-    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-    path?: string[]
-    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
-    string_contains?: string | StringFieldRefInput<$PrismaModel>
-    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
-    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
-    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedJsonNullableFilter<$PrismaModel>
-    _max?: NestedJsonNullableFilter<$PrismaModel>
-  }
-
-  export type IntFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntFilter<$PrismaModel> | number
-  }
-
-  export type progress_trackingCountOrderByAggregateInput = {
-    id?: SortOrder
-    user_id?: SortOrder
-    workout_plan_id?: SortOrder
-    week_number?: SortOrder
-    exercises_completed?: SortOrder
-    exercises_total?: SortOrder
-    meals_completed?: SortOrder
-    meals_total?: SortOrder
-    start_date?: SortOrder
-    end_date?: SortOrder
-    created_at?: SortOrder
-    updated_at?: SortOrder
-  }
-
-  export type progress_trackingAvgOrderByAggregateInput = {
-    week_number?: SortOrder
-    exercises_completed?: SortOrder
-    exercises_total?: SortOrder
-    meals_completed?: SortOrder
-    meals_total?: SortOrder
-  }
-
-  export type progress_trackingMaxOrderByAggregateInput = {
-    id?: SortOrder
-    user_id?: SortOrder
-    workout_plan_id?: SortOrder
-    week_number?: SortOrder
-    exercises_completed?: SortOrder
-    exercises_total?: SortOrder
-    meals_completed?: SortOrder
-    meals_total?: SortOrder
-    start_date?: SortOrder
-    end_date?: SortOrder
-    created_at?: SortOrder
-    updated_at?: SortOrder
-  }
-
-  export type progress_trackingMinOrderByAggregateInput = {
-    id?: SortOrder
-    user_id?: SortOrder
-    workout_plan_id?: SortOrder
-    week_number?: SortOrder
-    exercises_completed?: SortOrder
-    exercises_total?: SortOrder
-    meals_completed?: SortOrder
-    meals_total?: SortOrder
-    start_date?: SortOrder
-    end_date?: SortOrder
-    created_at?: SortOrder
-    updated_at?: SortOrder
-  }
-
-  export type progress_trackingSumOrderByAggregateInput = {
-    week_number?: SortOrder
-    exercises_completed?: SortOrder
-    exercises_total?: SortOrder
-    meals_completed?: SortOrder
-    meals_total?: SortOrder
-  }
-
-  export type IntWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedIntFilter<$PrismaModel>
-    _min?: NestedIntFilter<$PrismaModel>
-    _max?: NestedIntFilter<$PrismaModel>
-  }
-
-  export type Meal_plansListRelationFilter = {
-    every?: meal_plansWhereInput
-    some?: meal_plansWhereInput
-    none?: meal_plansWhereInput
-  }
-
-  export type Progress_trackingListRelationFilter = {
-    every?: progress_trackingWhereInput
-    some?: progress_trackingWhereInput
-    none?: progress_trackingWhereInput
-  }
 
   export type Water_logsListRelationFilter = {
     every?: water_logsWhereInput
@@ -20324,14 +15068,6 @@ export namespace Prisma {
     every?: workout_plansWhereInput
     some?: workout_plansWhereInput
     none?: workout_plansWhereInput
-  }
-
-  export type meal_plansOrderByRelationAggregateInput = {
-    _count?: SortOrder
-  }
-
-  export type progress_trackingOrderByRelationAggregateInput = {
-    _count?: SortOrder
   }
 
   export type water_logsOrderByRelationAggregateInput = {
@@ -20415,6 +15151,17 @@ export namespace Prisma {
     bmi?: SortOrder
   }
 
+  export type IntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
+  }
+
   export type water_logsCountOrderByAggregateInput = {
     id?: SortOrder
     user_id?: SortOrder
@@ -20445,6 +15192,22 @@ export namespace Prisma {
 
   export type water_logsSumOrderByAggregateInput = {
     amount_ml?: SortOrder
+  }
+
+  export type IntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
   }
 
   export type DecimalFilter<$PrismaModel = never> = {
@@ -20506,6 +15269,11 @@ export namespace Prisma {
     _max?: NestedDecimalFilter<$PrismaModel>
   }
 
+  export type BoolNullableFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
+  }
+
   export type Workout_plansScalarRelationFilter = {
     is?: workout_plansWhereInput
     isNot?: workout_plansWhereInput
@@ -20521,7 +15289,6 @@ export namespace Prisma {
     reps?: SortOrder
     weight?: SortOrder
     duration?: SortOrder
-    created_at?: SortOrder
     completed?: SortOrder
     completion_date?: SortOrder
     actual_sets?: SortOrder
@@ -20529,6 +15296,7 @@ export namespace Prisma {
     actual_weight?: SortOrder
     actual_duration?: SortOrder
     notes?: SortOrder
+    created_at?: SortOrder
     updated_at?: SortOrder
   }
 
@@ -20554,7 +15322,6 @@ export namespace Prisma {
     reps?: SortOrder
     weight?: SortOrder
     duration?: SortOrder
-    created_at?: SortOrder
     completed?: SortOrder
     completion_date?: SortOrder
     actual_sets?: SortOrder
@@ -20562,6 +15329,7 @@ export namespace Prisma {
     actual_weight?: SortOrder
     actual_duration?: SortOrder
     notes?: SortOrder
+    created_at?: SortOrder
     updated_at?: SortOrder
   }
 
@@ -20575,7 +15343,6 @@ export namespace Prisma {
     reps?: SortOrder
     weight?: SortOrder
     duration?: SortOrder
-    created_at?: SortOrder
     completed?: SortOrder
     completion_date?: SortOrder
     actual_sets?: SortOrder
@@ -20583,6 +15350,7 @@ export namespace Prisma {
     actual_weight?: SortOrder
     actual_duration?: SortOrder
     notes?: SortOrder
+    created_at?: SortOrder
     updated_at?: SortOrder
   }
 
@@ -20596,6 +15364,14 @@ export namespace Prisma {
     actual_reps?: SortOrder
     actual_weight?: SortOrder
     actual_duration?: SortOrder
+  }
+
+  export type BoolNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedBoolNullableFilter<$PrismaModel>
+    _max?: NestedBoolNullableFilter<$PrismaModel>
   }
 
   export type workout_plansCountOrderByAggregateInput = {
@@ -20841,112 +15617,6 @@ export namespace Prisma {
     update?: XOR<XOR<usersUpdateToOneWithWhereWithoutMeal_logsInput, usersUpdateWithoutMeal_logsInput>, usersUncheckedUpdateWithoutMeal_logsInput>
   }
 
-  export type meal_plansCreateNestedOneWithoutMeal_plan_itemsInput = {
-    create?: XOR<meal_plansCreateWithoutMeal_plan_itemsInput, meal_plansUncheckedCreateWithoutMeal_plan_itemsInput>
-    connectOrCreate?: meal_plansCreateOrConnectWithoutMeal_plan_itemsInput
-    connect?: meal_plansWhereUniqueInput
-  }
-
-  export type mealsCreateNestedOneWithoutMeal_plan_itemsInput = {
-    create?: XOR<mealsCreateWithoutMeal_plan_itemsInput, mealsUncheckedCreateWithoutMeal_plan_itemsInput>
-    connectOrCreate?: mealsCreateOrConnectWithoutMeal_plan_itemsInput
-    connect?: mealsWhereUniqueInput
-  }
-
-  export type NullableBoolFieldUpdateOperationsInput = {
-    set?: boolean | null
-  }
-
-  export type meal_plansUpdateOneRequiredWithoutMeal_plan_itemsNestedInput = {
-    create?: XOR<meal_plansCreateWithoutMeal_plan_itemsInput, meal_plansUncheckedCreateWithoutMeal_plan_itemsInput>
-    connectOrCreate?: meal_plansCreateOrConnectWithoutMeal_plan_itemsInput
-    upsert?: meal_plansUpsertWithoutMeal_plan_itemsInput
-    connect?: meal_plansWhereUniqueInput
-    update?: XOR<XOR<meal_plansUpdateToOneWithWhereWithoutMeal_plan_itemsInput, meal_plansUpdateWithoutMeal_plan_itemsInput>, meal_plansUncheckedUpdateWithoutMeal_plan_itemsInput>
-  }
-
-  export type mealsUpdateOneWithoutMeal_plan_itemsNestedInput = {
-    create?: XOR<mealsCreateWithoutMeal_plan_itemsInput, mealsUncheckedCreateWithoutMeal_plan_itemsInput>
-    connectOrCreate?: mealsCreateOrConnectWithoutMeal_plan_itemsInput
-    upsert?: mealsUpsertWithoutMeal_plan_itemsInput
-    disconnect?: mealsWhereInput | boolean
-    delete?: mealsWhereInput | boolean
-    connect?: mealsWhereUniqueInput
-    update?: XOR<XOR<mealsUpdateToOneWithWhereWithoutMeal_plan_itemsInput, mealsUpdateWithoutMeal_plan_itemsInput>, mealsUncheckedUpdateWithoutMeal_plan_itemsInput>
-  }
-
-  export type meal_plan_itemsCreateNestedManyWithoutMeal_plansInput = {
-    create?: XOR<meal_plan_itemsCreateWithoutMeal_plansInput, meal_plan_itemsUncheckedCreateWithoutMeal_plansInput> | meal_plan_itemsCreateWithoutMeal_plansInput[] | meal_plan_itemsUncheckedCreateWithoutMeal_plansInput[]
-    connectOrCreate?: meal_plan_itemsCreateOrConnectWithoutMeal_plansInput | meal_plan_itemsCreateOrConnectWithoutMeal_plansInput[]
-    createMany?: meal_plan_itemsCreateManyMeal_plansInputEnvelope
-    connect?: meal_plan_itemsWhereUniqueInput | meal_plan_itemsWhereUniqueInput[]
-  }
-
-  export type usersCreateNestedOneWithoutMeal_plansInput = {
-    create?: XOR<usersCreateWithoutMeal_plansInput, usersUncheckedCreateWithoutMeal_plansInput>
-    connectOrCreate?: usersCreateOrConnectWithoutMeal_plansInput
-    connect?: usersWhereUniqueInput
-  }
-
-  export type workout_plansCreateNestedOneWithoutMeal_plansInput = {
-    create?: XOR<workout_plansCreateWithoutMeal_plansInput, workout_plansUncheckedCreateWithoutMeal_plansInput>
-    connectOrCreate?: workout_plansCreateOrConnectWithoutMeal_plansInput
-    connect?: workout_plansWhereUniqueInput
-  }
-
-  export type meal_plan_itemsUncheckedCreateNestedManyWithoutMeal_plansInput = {
-    create?: XOR<meal_plan_itemsCreateWithoutMeal_plansInput, meal_plan_itemsUncheckedCreateWithoutMeal_plansInput> | meal_plan_itemsCreateWithoutMeal_plansInput[] | meal_plan_itemsUncheckedCreateWithoutMeal_plansInput[]
-    connectOrCreate?: meal_plan_itemsCreateOrConnectWithoutMeal_plansInput | meal_plan_itemsCreateOrConnectWithoutMeal_plansInput[]
-    createMany?: meal_plan_itemsCreateManyMeal_plansInputEnvelope
-    connect?: meal_plan_itemsWhereUniqueInput | meal_plan_itemsWhereUniqueInput[]
-  }
-
-  export type meal_plan_itemsUpdateManyWithoutMeal_plansNestedInput = {
-    create?: XOR<meal_plan_itemsCreateWithoutMeal_plansInput, meal_plan_itemsUncheckedCreateWithoutMeal_plansInput> | meal_plan_itemsCreateWithoutMeal_plansInput[] | meal_plan_itemsUncheckedCreateWithoutMeal_plansInput[]
-    connectOrCreate?: meal_plan_itemsCreateOrConnectWithoutMeal_plansInput | meal_plan_itemsCreateOrConnectWithoutMeal_plansInput[]
-    upsert?: meal_plan_itemsUpsertWithWhereUniqueWithoutMeal_plansInput | meal_plan_itemsUpsertWithWhereUniqueWithoutMeal_plansInput[]
-    createMany?: meal_plan_itemsCreateManyMeal_plansInputEnvelope
-    set?: meal_plan_itemsWhereUniqueInput | meal_plan_itemsWhereUniqueInput[]
-    disconnect?: meal_plan_itemsWhereUniqueInput | meal_plan_itemsWhereUniqueInput[]
-    delete?: meal_plan_itemsWhereUniqueInput | meal_plan_itemsWhereUniqueInput[]
-    connect?: meal_plan_itemsWhereUniqueInput | meal_plan_itemsWhereUniqueInput[]
-    update?: meal_plan_itemsUpdateWithWhereUniqueWithoutMeal_plansInput | meal_plan_itemsUpdateWithWhereUniqueWithoutMeal_plansInput[]
-    updateMany?: meal_plan_itemsUpdateManyWithWhereWithoutMeal_plansInput | meal_plan_itemsUpdateManyWithWhereWithoutMeal_plansInput[]
-    deleteMany?: meal_plan_itemsScalarWhereInput | meal_plan_itemsScalarWhereInput[]
-  }
-
-  export type usersUpdateOneRequiredWithoutMeal_plansNestedInput = {
-    create?: XOR<usersCreateWithoutMeal_plansInput, usersUncheckedCreateWithoutMeal_plansInput>
-    connectOrCreate?: usersCreateOrConnectWithoutMeal_plansInput
-    upsert?: usersUpsertWithoutMeal_plansInput
-    connect?: usersWhereUniqueInput
-    update?: XOR<XOR<usersUpdateToOneWithWhereWithoutMeal_plansInput, usersUpdateWithoutMeal_plansInput>, usersUncheckedUpdateWithoutMeal_plansInput>
-  }
-
-  export type workout_plansUpdateOneWithoutMeal_plansNestedInput = {
-    create?: XOR<workout_plansCreateWithoutMeal_plansInput, workout_plansUncheckedCreateWithoutMeal_plansInput>
-    connectOrCreate?: workout_plansCreateOrConnectWithoutMeal_plansInput
-    upsert?: workout_plansUpsertWithoutMeal_plansInput
-    disconnect?: workout_plansWhereInput | boolean
-    delete?: workout_plansWhereInput | boolean
-    connect?: workout_plansWhereUniqueInput
-    update?: XOR<XOR<workout_plansUpdateToOneWithWhereWithoutMeal_plansInput, workout_plansUpdateWithoutMeal_plansInput>, workout_plansUncheckedUpdateWithoutMeal_plansInput>
-  }
-
-  export type meal_plan_itemsUncheckedUpdateManyWithoutMeal_plansNestedInput = {
-    create?: XOR<meal_plan_itemsCreateWithoutMeal_plansInput, meal_plan_itemsUncheckedCreateWithoutMeal_plansInput> | meal_plan_itemsCreateWithoutMeal_plansInput[] | meal_plan_itemsUncheckedCreateWithoutMeal_plansInput[]
-    connectOrCreate?: meal_plan_itemsCreateOrConnectWithoutMeal_plansInput | meal_plan_itemsCreateOrConnectWithoutMeal_plansInput[]
-    upsert?: meal_plan_itemsUpsertWithWhereUniqueWithoutMeal_plansInput | meal_plan_itemsUpsertWithWhereUniqueWithoutMeal_plansInput[]
-    createMany?: meal_plan_itemsCreateManyMeal_plansInputEnvelope
-    set?: meal_plan_itemsWhereUniqueInput | meal_plan_itemsWhereUniqueInput[]
-    disconnect?: meal_plan_itemsWhereUniqueInput | meal_plan_itemsWhereUniqueInput[]
-    delete?: meal_plan_itemsWhereUniqueInput | meal_plan_itemsWhereUniqueInput[]
-    connect?: meal_plan_itemsWhereUniqueInput | meal_plan_itemsWhereUniqueInput[]
-    update?: meal_plan_itemsUpdateWithWhereUniqueWithoutMeal_plansInput | meal_plan_itemsUpdateWithWhereUniqueWithoutMeal_plansInput[]
-    updateMany?: meal_plan_itemsUpdateManyWithWhereWithoutMeal_plansInput | meal_plan_itemsUpdateManyWithWhereWithoutMeal_plansInput[]
-    deleteMany?: meal_plan_itemsScalarWhereInput | meal_plan_itemsScalarWhereInput[]
-  }
-
   export type meal_logsCreateNestedManyWithoutMealsInput = {
     create?: XOR<meal_logsCreateWithoutMealsInput, meal_logsUncheckedCreateWithoutMealsInput> | meal_logsCreateWithoutMealsInput[] | meal_logsUncheckedCreateWithoutMealsInput[]
     connectOrCreate?: meal_logsCreateOrConnectWithoutMealsInput | meal_logsCreateOrConnectWithoutMealsInput[]
@@ -20954,25 +15624,11 @@ export namespace Prisma {
     connect?: meal_logsWhereUniqueInput | meal_logsWhereUniqueInput[]
   }
 
-  export type meal_plan_itemsCreateNestedManyWithoutMealsInput = {
-    create?: XOR<meal_plan_itemsCreateWithoutMealsInput, meal_plan_itemsUncheckedCreateWithoutMealsInput> | meal_plan_itemsCreateWithoutMealsInput[] | meal_plan_itemsUncheckedCreateWithoutMealsInput[]
-    connectOrCreate?: meal_plan_itemsCreateOrConnectWithoutMealsInput | meal_plan_itemsCreateOrConnectWithoutMealsInput[]
-    createMany?: meal_plan_itemsCreateManyMealsInputEnvelope
-    connect?: meal_plan_itemsWhereUniqueInput | meal_plan_itemsWhereUniqueInput[]
-  }
-
   export type meal_logsUncheckedCreateNestedManyWithoutMealsInput = {
     create?: XOR<meal_logsCreateWithoutMealsInput, meal_logsUncheckedCreateWithoutMealsInput> | meal_logsCreateWithoutMealsInput[] | meal_logsUncheckedCreateWithoutMealsInput[]
     connectOrCreate?: meal_logsCreateOrConnectWithoutMealsInput | meal_logsCreateOrConnectWithoutMealsInput[]
     createMany?: meal_logsCreateManyMealsInputEnvelope
     connect?: meal_logsWhereUniqueInput | meal_logsWhereUniqueInput[]
-  }
-
-  export type meal_plan_itemsUncheckedCreateNestedManyWithoutMealsInput = {
-    create?: XOR<meal_plan_itemsCreateWithoutMealsInput, meal_plan_itemsUncheckedCreateWithoutMealsInput> | meal_plan_itemsCreateWithoutMealsInput[] | meal_plan_itemsUncheckedCreateWithoutMealsInput[]
-    connectOrCreate?: meal_plan_itemsCreateOrConnectWithoutMealsInput | meal_plan_itemsCreateOrConnectWithoutMealsInput[]
-    createMany?: meal_plan_itemsCreateManyMealsInputEnvelope
-    connect?: meal_plan_itemsWhereUniqueInput | meal_plan_itemsWhereUniqueInput[]
   }
 
   export type meal_logsUpdateManyWithoutMealsNestedInput = {
@@ -20989,20 +15645,6 @@ export namespace Prisma {
     deleteMany?: meal_logsScalarWhereInput | meal_logsScalarWhereInput[]
   }
 
-  export type meal_plan_itemsUpdateManyWithoutMealsNestedInput = {
-    create?: XOR<meal_plan_itemsCreateWithoutMealsInput, meal_plan_itemsUncheckedCreateWithoutMealsInput> | meal_plan_itemsCreateWithoutMealsInput[] | meal_plan_itemsUncheckedCreateWithoutMealsInput[]
-    connectOrCreate?: meal_plan_itemsCreateOrConnectWithoutMealsInput | meal_plan_itemsCreateOrConnectWithoutMealsInput[]
-    upsert?: meal_plan_itemsUpsertWithWhereUniqueWithoutMealsInput | meal_plan_itemsUpsertWithWhereUniqueWithoutMealsInput[]
-    createMany?: meal_plan_itemsCreateManyMealsInputEnvelope
-    set?: meal_plan_itemsWhereUniqueInput | meal_plan_itemsWhereUniqueInput[]
-    disconnect?: meal_plan_itemsWhereUniqueInput | meal_plan_itemsWhereUniqueInput[]
-    delete?: meal_plan_itemsWhereUniqueInput | meal_plan_itemsWhereUniqueInput[]
-    connect?: meal_plan_itemsWhereUniqueInput | meal_plan_itemsWhereUniqueInput[]
-    update?: meal_plan_itemsUpdateWithWhereUniqueWithoutMealsInput | meal_plan_itemsUpdateWithWhereUniqueWithoutMealsInput[]
-    updateMany?: meal_plan_itemsUpdateManyWithWhereWithoutMealsInput | meal_plan_itemsUpdateManyWithWhereWithoutMealsInput[]
-    deleteMany?: meal_plan_itemsScalarWhereInput | meal_plan_itemsScalarWhereInput[]
-  }
-
   export type meal_logsUncheckedUpdateManyWithoutMealsNestedInput = {
     create?: XOR<meal_logsCreateWithoutMealsInput, meal_logsUncheckedCreateWithoutMealsInput> | meal_logsCreateWithoutMealsInput[] | meal_logsUncheckedCreateWithoutMealsInput[]
     connectOrCreate?: meal_logsCreateOrConnectWithoutMealsInput | meal_logsCreateOrConnectWithoutMealsInput[]
@@ -21015,58 +15657,6 @@ export namespace Prisma {
     update?: meal_logsUpdateWithWhereUniqueWithoutMealsInput | meal_logsUpdateWithWhereUniqueWithoutMealsInput[]
     updateMany?: meal_logsUpdateManyWithWhereWithoutMealsInput | meal_logsUpdateManyWithWhereWithoutMealsInput[]
     deleteMany?: meal_logsScalarWhereInput | meal_logsScalarWhereInput[]
-  }
-
-  export type meal_plan_itemsUncheckedUpdateManyWithoutMealsNestedInput = {
-    create?: XOR<meal_plan_itemsCreateWithoutMealsInput, meal_plan_itemsUncheckedCreateWithoutMealsInput> | meal_plan_itemsCreateWithoutMealsInput[] | meal_plan_itemsUncheckedCreateWithoutMealsInput[]
-    connectOrCreate?: meal_plan_itemsCreateOrConnectWithoutMealsInput | meal_plan_itemsCreateOrConnectWithoutMealsInput[]
-    upsert?: meal_plan_itemsUpsertWithWhereUniqueWithoutMealsInput | meal_plan_itemsUpsertWithWhereUniqueWithoutMealsInput[]
-    createMany?: meal_plan_itemsCreateManyMealsInputEnvelope
-    set?: meal_plan_itemsWhereUniqueInput | meal_plan_itemsWhereUniqueInput[]
-    disconnect?: meal_plan_itemsWhereUniqueInput | meal_plan_itemsWhereUniqueInput[]
-    delete?: meal_plan_itemsWhereUniqueInput | meal_plan_itemsWhereUniqueInput[]
-    connect?: meal_plan_itemsWhereUniqueInput | meal_plan_itemsWhereUniqueInput[]
-    update?: meal_plan_itemsUpdateWithWhereUniqueWithoutMealsInput | meal_plan_itemsUpdateWithWhereUniqueWithoutMealsInput[]
-    updateMany?: meal_plan_itemsUpdateManyWithWhereWithoutMealsInput | meal_plan_itemsUpdateManyWithWhereWithoutMealsInput[]
-    deleteMany?: meal_plan_itemsScalarWhereInput | meal_plan_itemsScalarWhereInput[]
-  }
-
-  export type usersCreateNestedOneWithoutProgress_trackingInput = {
-    create?: XOR<usersCreateWithoutProgress_trackingInput, usersUncheckedCreateWithoutProgress_trackingInput>
-    connectOrCreate?: usersCreateOrConnectWithoutProgress_trackingInput
-    connect?: usersWhereUniqueInput
-  }
-
-  export type workout_plansCreateNestedOneWithoutProgress_trackingInput = {
-    create?: XOR<workout_plansCreateWithoutProgress_trackingInput, workout_plansUncheckedCreateWithoutProgress_trackingInput>
-    connectOrCreate?: workout_plansCreateOrConnectWithoutProgress_trackingInput
-    connect?: workout_plansWhereUniqueInput
-  }
-
-  export type IntFieldUpdateOperationsInput = {
-    set?: number
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
-  }
-
-  export type usersUpdateOneRequiredWithoutProgress_trackingNestedInput = {
-    create?: XOR<usersCreateWithoutProgress_trackingInput, usersUncheckedCreateWithoutProgress_trackingInput>
-    connectOrCreate?: usersCreateOrConnectWithoutProgress_trackingInput
-    upsert?: usersUpsertWithoutProgress_trackingInput
-    connect?: usersWhereUniqueInput
-    update?: XOR<XOR<usersUpdateToOneWithWhereWithoutProgress_trackingInput, usersUpdateWithoutProgress_trackingInput>, usersUncheckedUpdateWithoutProgress_trackingInput>
-  }
-
-  export type workout_plansUpdateOneWithoutProgress_trackingNestedInput = {
-    create?: XOR<workout_plansCreateWithoutProgress_trackingInput, workout_plansUncheckedCreateWithoutProgress_trackingInput>
-    connectOrCreate?: workout_plansCreateOrConnectWithoutProgress_trackingInput
-    upsert?: workout_plansUpsertWithoutProgress_trackingInput
-    disconnect?: workout_plansWhereInput | boolean
-    delete?: workout_plansWhereInput | boolean
-    connect?: workout_plansWhereUniqueInput
-    update?: XOR<XOR<workout_plansUpdateToOneWithWhereWithoutProgress_trackingInput, workout_plansUpdateWithoutProgress_trackingInput>, workout_plansUncheckedUpdateWithoutProgress_trackingInput>
   }
 
   export type usersCreatedietary_restrictionsInput = {
@@ -21085,20 +15675,6 @@ export namespace Prisma {
     connectOrCreate?: meal_logsCreateOrConnectWithoutUsersInput | meal_logsCreateOrConnectWithoutUsersInput[]
     createMany?: meal_logsCreateManyUsersInputEnvelope
     connect?: meal_logsWhereUniqueInput | meal_logsWhereUniqueInput[]
-  }
-
-  export type meal_plansCreateNestedManyWithoutUsersInput = {
-    create?: XOR<meal_plansCreateWithoutUsersInput, meal_plansUncheckedCreateWithoutUsersInput> | meal_plansCreateWithoutUsersInput[] | meal_plansUncheckedCreateWithoutUsersInput[]
-    connectOrCreate?: meal_plansCreateOrConnectWithoutUsersInput | meal_plansCreateOrConnectWithoutUsersInput[]
-    createMany?: meal_plansCreateManyUsersInputEnvelope
-    connect?: meal_plansWhereUniqueInput | meal_plansWhereUniqueInput[]
-  }
-
-  export type progress_trackingCreateNestedManyWithoutUsersInput = {
-    create?: XOR<progress_trackingCreateWithoutUsersInput, progress_trackingUncheckedCreateWithoutUsersInput> | progress_trackingCreateWithoutUsersInput[] | progress_trackingUncheckedCreateWithoutUsersInput[]
-    connectOrCreate?: progress_trackingCreateOrConnectWithoutUsersInput | progress_trackingCreateOrConnectWithoutUsersInput[]
-    createMany?: progress_trackingCreateManyUsersInputEnvelope
-    connect?: progress_trackingWhereUniqueInput | progress_trackingWhereUniqueInput[]
   }
 
   export type water_logsCreateNestedManyWithoutUsersInput = {
@@ -21134,20 +15710,6 @@ export namespace Prisma {
     connectOrCreate?: meal_logsCreateOrConnectWithoutUsersInput | meal_logsCreateOrConnectWithoutUsersInput[]
     createMany?: meal_logsCreateManyUsersInputEnvelope
     connect?: meal_logsWhereUniqueInput | meal_logsWhereUniqueInput[]
-  }
-
-  export type meal_plansUncheckedCreateNestedManyWithoutUsersInput = {
-    create?: XOR<meal_plansCreateWithoutUsersInput, meal_plansUncheckedCreateWithoutUsersInput> | meal_plansCreateWithoutUsersInput[] | meal_plansUncheckedCreateWithoutUsersInput[]
-    connectOrCreate?: meal_plansCreateOrConnectWithoutUsersInput | meal_plansCreateOrConnectWithoutUsersInput[]
-    createMany?: meal_plansCreateManyUsersInputEnvelope
-    connect?: meal_plansWhereUniqueInput | meal_plansWhereUniqueInput[]
-  }
-
-  export type progress_trackingUncheckedCreateNestedManyWithoutUsersInput = {
-    create?: XOR<progress_trackingCreateWithoutUsersInput, progress_trackingUncheckedCreateWithoutUsersInput> | progress_trackingCreateWithoutUsersInput[] | progress_trackingUncheckedCreateWithoutUsersInput[]
-    connectOrCreate?: progress_trackingCreateOrConnectWithoutUsersInput | progress_trackingCreateOrConnectWithoutUsersInput[]
-    createMany?: progress_trackingCreateManyUsersInputEnvelope
-    connect?: progress_trackingWhereUniqueInput | progress_trackingWhereUniqueInput[]
   }
 
   export type water_logsUncheckedCreateNestedManyWithoutUsersInput = {
@@ -21202,34 +15764,6 @@ export namespace Prisma {
     update?: meal_logsUpdateWithWhereUniqueWithoutUsersInput | meal_logsUpdateWithWhereUniqueWithoutUsersInput[]
     updateMany?: meal_logsUpdateManyWithWhereWithoutUsersInput | meal_logsUpdateManyWithWhereWithoutUsersInput[]
     deleteMany?: meal_logsScalarWhereInput | meal_logsScalarWhereInput[]
-  }
-
-  export type meal_plansUpdateManyWithoutUsersNestedInput = {
-    create?: XOR<meal_plansCreateWithoutUsersInput, meal_plansUncheckedCreateWithoutUsersInput> | meal_plansCreateWithoutUsersInput[] | meal_plansUncheckedCreateWithoutUsersInput[]
-    connectOrCreate?: meal_plansCreateOrConnectWithoutUsersInput | meal_plansCreateOrConnectWithoutUsersInput[]
-    upsert?: meal_plansUpsertWithWhereUniqueWithoutUsersInput | meal_plansUpsertWithWhereUniqueWithoutUsersInput[]
-    createMany?: meal_plansCreateManyUsersInputEnvelope
-    set?: meal_plansWhereUniqueInput | meal_plansWhereUniqueInput[]
-    disconnect?: meal_plansWhereUniqueInput | meal_plansWhereUniqueInput[]
-    delete?: meal_plansWhereUniqueInput | meal_plansWhereUniqueInput[]
-    connect?: meal_plansWhereUniqueInput | meal_plansWhereUniqueInput[]
-    update?: meal_plansUpdateWithWhereUniqueWithoutUsersInput | meal_plansUpdateWithWhereUniqueWithoutUsersInput[]
-    updateMany?: meal_plansUpdateManyWithWhereWithoutUsersInput | meal_plansUpdateManyWithWhereWithoutUsersInput[]
-    deleteMany?: meal_plansScalarWhereInput | meal_plansScalarWhereInput[]
-  }
-
-  export type progress_trackingUpdateManyWithoutUsersNestedInput = {
-    create?: XOR<progress_trackingCreateWithoutUsersInput, progress_trackingUncheckedCreateWithoutUsersInput> | progress_trackingCreateWithoutUsersInput[] | progress_trackingUncheckedCreateWithoutUsersInput[]
-    connectOrCreate?: progress_trackingCreateOrConnectWithoutUsersInput | progress_trackingCreateOrConnectWithoutUsersInput[]
-    upsert?: progress_trackingUpsertWithWhereUniqueWithoutUsersInput | progress_trackingUpsertWithWhereUniqueWithoutUsersInput[]
-    createMany?: progress_trackingCreateManyUsersInputEnvelope
-    set?: progress_trackingWhereUniqueInput | progress_trackingWhereUniqueInput[]
-    disconnect?: progress_trackingWhereUniqueInput | progress_trackingWhereUniqueInput[]
-    delete?: progress_trackingWhereUniqueInput | progress_trackingWhereUniqueInput[]
-    connect?: progress_trackingWhereUniqueInput | progress_trackingWhereUniqueInput[]
-    update?: progress_trackingUpdateWithWhereUniqueWithoutUsersInput | progress_trackingUpdateWithWhereUniqueWithoutUsersInput[]
-    updateMany?: progress_trackingUpdateManyWithWhereWithoutUsersInput | progress_trackingUpdateManyWithWhereWithoutUsersInput[]
-    deleteMany?: progress_trackingScalarWhereInput | progress_trackingScalarWhereInput[]
   }
 
   export type water_logsUpdateManyWithoutUsersNestedInput = {
@@ -21302,34 +15836,6 @@ export namespace Prisma {
     deleteMany?: meal_logsScalarWhereInput | meal_logsScalarWhereInput[]
   }
 
-  export type meal_plansUncheckedUpdateManyWithoutUsersNestedInput = {
-    create?: XOR<meal_plansCreateWithoutUsersInput, meal_plansUncheckedCreateWithoutUsersInput> | meal_plansCreateWithoutUsersInput[] | meal_plansUncheckedCreateWithoutUsersInput[]
-    connectOrCreate?: meal_plansCreateOrConnectWithoutUsersInput | meal_plansCreateOrConnectWithoutUsersInput[]
-    upsert?: meal_plansUpsertWithWhereUniqueWithoutUsersInput | meal_plansUpsertWithWhereUniqueWithoutUsersInput[]
-    createMany?: meal_plansCreateManyUsersInputEnvelope
-    set?: meal_plansWhereUniqueInput | meal_plansWhereUniqueInput[]
-    disconnect?: meal_plansWhereUniqueInput | meal_plansWhereUniqueInput[]
-    delete?: meal_plansWhereUniqueInput | meal_plansWhereUniqueInput[]
-    connect?: meal_plansWhereUniqueInput | meal_plansWhereUniqueInput[]
-    update?: meal_plansUpdateWithWhereUniqueWithoutUsersInput | meal_plansUpdateWithWhereUniqueWithoutUsersInput[]
-    updateMany?: meal_plansUpdateManyWithWhereWithoutUsersInput | meal_plansUpdateManyWithWhereWithoutUsersInput[]
-    deleteMany?: meal_plansScalarWhereInput | meal_plansScalarWhereInput[]
-  }
-
-  export type progress_trackingUncheckedUpdateManyWithoutUsersNestedInput = {
-    create?: XOR<progress_trackingCreateWithoutUsersInput, progress_trackingUncheckedCreateWithoutUsersInput> | progress_trackingCreateWithoutUsersInput[] | progress_trackingUncheckedCreateWithoutUsersInput[]
-    connectOrCreate?: progress_trackingCreateOrConnectWithoutUsersInput | progress_trackingCreateOrConnectWithoutUsersInput[]
-    upsert?: progress_trackingUpsertWithWhereUniqueWithoutUsersInput | progress_trackingUpsertWithWhereUniqueWithoutUsersInput[]
-    createMany?: progress_trackingCreateManyUsersInputEnvelope
-    set?: progress_trackingWhereUniqueInput | progress_trackingWhereUniqueInput[]
-    disconnect?: progress_trackingWhereUniqueInput | progress_trackingWhereUniqueInput[]
-    delete?: progress_trackingWhereUniqueInput | progress_trackingWhereUniqueInput[]
-    connect?: progress_trackingWhereUniqueInput | progress_trackingWhereUniqueInput[]
-    update?: progress_trackingUpdateWithWhereUniqueWithoutUsersInput | progress_trackingUpdateWithWhereUniqueWithoutUsersInput[]
-    updateMany?: progress_trackingUpdateManyWithWhereWithoutUsersInput | progress_trackingUpdateManyWithWhereWithoutUsersInput[]
-    deleteMany?: progress_trackingScalarWhereInput | progress_trackingScalarWhereInput[]
-  }
-
   export type water_logsUncheckedUpdateManyWithoutUsersNestedInput = {
     create?: XOR<water_logsCreateWithoutUsersInput, water_logsUncheckedCreateWithoutUsersInput> | water_logsCreateWithoutUsersInput[] | water_logsUncheckedCreateWithoutUsersInput[]
     connectOrCreate?: water_logsCreateOrConnectWithoutUsersInput | water_logsCreateOrConnectWithoutUsersInput[]
@@ -21378,6 +15884,14 @@ export namespace Prisma {
     connect?: usersWhereUniqueInput
   }
 
+  export type IntFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
   export type usersUpdateOneRequiredWithoutWater_logsNestedInput = {
     create?: XOR<usersCreateWithoutWater_logsInput, usersUncheckedCreateWithoutWater_logsInput>
     connectOrCreate?: usersCreateOrConnectWithoutWater_logsInput
@@ -21420,6 +15934,10 @@ export namespace Prisma {
     connect?: workout_plansWhereUniqueInput
   }
 
+  export type NullableBoolFieldUpdateOperationsInput = {
+    set?: boolean | null
+  }
+
   export type exercisesUpdateOneWithoutWorkout_plan_exercisesNestedInput = {
     create?: XOR<exercisesCreateWithoutWorkout_plan_exercisesInput, exercisesUncheckedCreateWithoutWorkout_plan_exercisesInput>
     connectOrCreate?: exercisesCreateOrConnectWithoutWorkout_plan_exercisesInput
@@ -21438,20 +15956,6 @@ export namespace Prisma {
     update?: XOR<XOR<workout_plansUpdateToOneWithWhereWithoutWorkout_plan_exercisesInput, workout_plansUpdateWithoutWorkout_plan_exercisesInput>, workout_plansUncheckedUpdateWithoutWorkout_plan_exercisesInput>
   }
 
-  export type meal_plansCreateNestedManyWithoutWorkout_plansInput = {
-    create?: XOR<meal_plansCreateWithoutWorkout_plansInput, meal_plansUncheckedCreateWithoutWorkout_plansInput> | meal_plansCreateWithoutWorkout_plansInput[] | meal_plansUncheckedCreateWithoutWorkout_plansInput[]
-    connectOrCreate?: meal_plansCreateOrConnectWithoutWorkout_plansInput | meal_plansCreateOrConnectWithoutWorkout_plansInput[]
-    createMany?: meal_plansCreateManyWorkout_plansInputEnvelope
-    connect?: meal_plansWhereUniqueInput | meal_plansWhereUniqueInput[]
-  }
-
-  export type progress_trackingCreateNestedManyWithoutWorkout_plansInput = {
-    create?: XOR<progress_trackingCreateWithoutWorkout_plansInput, progress_trackingUncheckedCreateWithoutWorkout_plansInput> | progress_trackingCreateWithoutWorkout_plansInput[] | progress_trackingUncheckedCreateWithoutWorkout_plansInput[]
-    connectOrCreate?: progress_trackingCreateOrConnectWithoutWorkout_plansInput | progress_trackingCreateOrConnectWithoutWorkout_plansInput[]
-    createMany?: progress_trackingCreateManyWorkout_plansInputEnvelope
-    connect?: progress_trackingWhereUniqueInput | progress_trackingWhereUniqueInput[]
-  }
-
   export type workout_plan_exercisesCreateNestedManyWithoutWorkout_plansInput = {
     create?: XOR<workout_plan_exercisesCreateWithoutWorkout_plansInput, workout_plan_exercisesUncheckedCreateWithoutWorkout_plansInput> | workout_plan_exercisesCreateWithoutWorkout_plansInput[] | workout_plan_exercisesUncheckedCreateWithoutWorkout_plansInput[]
     connectOrCreate?: workout_plan_exercisesCreateOrConnectWithoutWorkout_plansInput | workout_plan_exercisesCreateOrConnectWithoutWorkout_plansInput[]
@@ -21465,53 +15969,11 @@ export namespace Prisma {
     connect?: usersWhereUniqueInput
   }
 
-  export type meal_plansUncheckedCreateNestedManyWithoutWorkout_plansInput = {
-    create?: XOR<meal_plansCreateWithoutWorkout_plansInput, meal_plansUncheckedCreateWithoutWorkout_plansInput> | meal_plansCreateWithoutWorkout_plansInput[] | meal_plansUncheckedCreateWithoutWorkout_plansInput[]
-    connectOrCreate?: meal_plansCreateOrConnectWithoutWorkout_plansInput | meal_plansCreateOrConnectWithoutWorkout_plansInput[]
-    createMany?: meal_plansCreateManyWorkout_plansInputEnvelope
-    connect?: meal_plansWhereUniqueInput | meal_plansWhereUniqueInput[]
-  }
-
-  export type progress_trackingUncheckedCreateNestedManyWithoutWorkout_plansInput = {
-    create?: XOR<progress_trackingCreateWithoutWorkout_plansInput, progress_trackingUncheckedCreateWithoutWorkout_plansInput> | progress_trackingCreateWithoutWorkout_plansInput[] | progress_trackingUncheckedCreateWithoutWorkout_plansInput[]
-    connectOrCreate?: progress_trackingCreateOrConnectWithoutWorkout_plansInput | progress_trackingCreateOrConnectWithoutWorkout_plansInput[]
-    createMany?: progress_trackingCreateManyWorkout_plansInputEnvelope
-    connect?: progress_trackingWhereUniqueInput | progress_trackingWhereUniqueInput[]
-  }
-
   export type workout_plan_exercisesUncheckedCreateNestedManyWithoutWorkout_plansInput = {
     create?: XOR<workout_plan_exercisesCreateWithoutWorkout_plansInput, workout_plan_exercisesUncheckedCreateWithoutWorkout_plansInput> | workout_plan_exercisesCreateWithoutWorkout_plansInput[] | workout_plan_exercisesUncheckedCreateWithoutWorkout_plansInput[]
     connectOrCreate?: workout_plan_exercisesCreateOrConnectWithoutWorkout_plansInput | workout_plan_exercisesCreateOrConnectWithoutWorkout_plansInput[]
     createMany?: workout_plan_exercisesCreateManyWorkout_plansInputEnvelope
     connect?: workout_plan_exercisesWhereUniqueInput | workout_plan_exercisesWhereUniqueInput[]
-  }
-
-  export type meal_plansUpdateManyWithoutWorkout_plansNestedInput = {
-    create?: XOR<meal_plansCreateWithoutWorkout_plansInput, meal_plansUncheckedCreateWithoutWorkout_plansInput> | meal_plansCreateWithoutWorkout_plansInput[] | meal_plansUncheckedCreateWithoutWorkout_plansInput[]
-    connectOrCreate?: meal_plansCreateOrConnectWithoutWorkout_plansInput | meal_plansCreateOrConnectWithoutWorkout_plansInput[]
-    upsert?: meal_plansUpsertWithWhereUniqueWithoutWorkout_plansInput | meal_plansUpsertWithWhereUniqueWithoutWorkout_plansInput[]
-    createMany?: meal_plansCreateManyWorkout_plansInputEnvelope
-    set?: meal_plansWhereUniqueInput | meal_plansWhereUniqueInput[]
-    disconnect?: meal_plansWhereUniqueInput | meal_plansWhereUniqueInput[]
-    delete?: meal_plansWhereUniqueInput | meal_plansWhereUniqueInput[]
-    connect?: meal_plansWhereUniqueInput | meal_plansWhereUniqueInput[]
-    update?: meal_plansUpdateWithWhereUniqueWithoutWorkout_plansInput | meal_plansUpdateWithWhereUniqueWithoutWorkout_plansInput[]
-    updateMany?: meal_plansUpdateManyWithWhereWithoutWorkout_plansInput | meal_plansUpdateManyWithWhereWithoutWorkout_plansInput[]
-    deleteMany?: meal_plansScalarWhereInput | meal_plansScalarWhereInput[]
-  }
-
-  export type progress_trackingUpdateManyWithoutWorkout_plansNestedInput = {
-    create?: XOR<progress_trackingCreateWithoutWorkout_plansInput, progress_trackingUncheckedCreateWithoutWorkout_plansInput> | progress_trackingCreateWithoutWorkout_plansInput[] | progress_trackingUncheckedCreateWithoutWorkout_plansInput[]
-    connectOrCreate?: progress_trackingCreateOrConnectWithoutWorkout_plansInput | progress_trackingCreateOrConnectWithoutWorkout_plansInput[]
-    upsert?: progress_trackingUpsertWithWhereUniqueWithoutWorkout_plansInput | progress_trackingUpsertWithWhereUniqueWithoutWorkout_plansInput[]
-    createMany?: progress_trackingCreateManyWorkout_plansInputEnvelope
-    set?: progress_trackingWhereUniqueInput | progress_trackingWhereUniqueInput[]
-    disconnect?: progress_trackingWhereUniqueInput | progress_trackingWhereUniqueInput[]
-    delete?: progress_trackingWhereUniqueInput | progress_trackingWhereUniqueInput[]
-    connect?: progress_trackingWhereUniqueInput | progress_trackingWhereUniqueInput[]
-    update?: progress_trackingUpdateWithWhereUniqueWithoutWorkout_plansInput | progress_trackingUpdateWithWhereUniqueWithoutWorkout_plansInput[]
-    updateMany?: progress_trackingUpdateManyWithWhereWithoutWorkout_plansInput | progress_trackingUpdateManyWithWhereWithoutWorkout_plansInput[]
-    deleteMany?: progress_trackingScalarWhereInput | progress_trackingScalarWhereInput[]
   }
 
   export type workout_plan_exercisesUpdateManyWithoutWorkout_plansNestedInput = {
@@ -21534,34 +15996,6 @@ export namespace Prisma {
     upsert?: usersUpsertWithoutWorkout_plansInput
     connect?: usersWhereUniqueInput
     update?: XOR<XOR<usersUpdateToOneWithWhereWithoutWorkout_plansInput, usersUpdateWithoutWorkout_plansInput>, usersUncheckedUpdateWithoutWorkout_plansInput>
-  }
-
-  export type meal_plansUncheckedUpdateManyWithoutWorkout_plansNestedInput = {
-    create?: XOR<meal_plansCreateWithoutWorkout_plansInput, meal_plansUncheckedCreateWithoutWorkout_plansInput> | meal_plansCreateWithoutWorkout_plansInput[] | meal_plansUncheckedCreateWithoutWorkout_plansInput[]
-    connectOrCreate?: meal_plansCreateOrConnectWithoutWorkout_plansInput | meal_plansCreateOrConnectWithoutWorkout_plansInput[]
-    upsert?: meal_plansUpsertWithWhereUniqueWithoutWorkout_plansInput | meal_plansUpsertWithWhereUniqueWithoutWorkout_plansInput[]
-    createMany?: meal_plansCreateManyWorkout_plansInputEnvelope
-    set?: meal_plansWhereUniqueInput | meal_plansWhereUniqueInput[]
-    disconnect?: meal_plansWhereUniqueInput | meal_plansWhereUniqueInput[]
-    delete?: meal_plansWhereUniqueInput | meal_plansWhereUniqueInput[]
-    connect?: meal_plansWhereUniqueInput | meal_plansWhereUniqueInput[]
-    update?: meal_plansUpdateWithWhereUniqueWithoutWorkout_plansInput | meal_plansUpdateWithWhereUniqueWithoutWorkout_plansInput[]
-    updateMany?: meal_plansUpdateManyWithWhereWithoutWorkout_plansInput | meal_plansUpdateManyWithWhereWithoutWorkout_plansInput[]
-    deleteMany?: meal_plansScalarWhereInput | meal_plansScalarWhereInput[]
-  }
-
-  export type progress_trackingUncheckedUpdateManyWithoutWorkout_plansNestedInput = {
-    create?: XOR<progress_trackingCreateWithoutWorkout_plansInput, progress_trackingUncheckedCreateWithoutWorkout_plansInput> | progress_trackingCreateWithoutWorkout_plansInput[] | progress_trackingUncheckedCreateWithoutWorkout_plansInput[]
-    connectOrCreate?: progress_trackingCreateOrConnectWithoutWorkout_plansInput | progress_trackingCreateOrConnectWithoutWorkout_plansInput[]
-    upsert?: progress_trackingUpsertWithWhereUniqueWithoutWorkout_plansInput | progress_trackingUpsertWithWhereUniqueWithoutWorkout_plansInput[]
-    createMany?: progress_trackingCreateManyWorkout_plansInputEnvelope
-    set?: progress_trackingWhereUniqueInput | progress_trackingWhereUniqueInput[]
-    disconnect?: progress_trackingWhereUniqueInput | progress_trackingWhereUniqueInput[]
-    delete?: progress_trackingWhereUniqueInput | progress_trackingWhereUniqueInput[]
-    connect?: progress_trackingWhereUniqueInput | progress_trackingWhereUniqueInput[]
-    update?: progress_trackingUpdateWithWhereUniqueWithoutWorkout_plansInput | progress_trackingUpdateWithWhereUniqueWithoutWorkout_plansInput[]
-    updateMany?: progress_trackingUpdateManyWithWhereWithoutWorkout_plansInput | progress_trackingUpdateManyWithWhereWithoutWorkout_plansInput[]
-    deleteMany?: progress_trackingScalarWhereInput | progress_trackingScalarWhereInput[]
   }
 
   export type workout_plan_exercisesUncheckedUpdateManyWithoutWorkout_plansNestedInput = {
@@ -21816,42 +16250,6 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
-  export type NestedBoolNullableFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
-    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
-  }
-
-  export type NestedBoolNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
-    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedBoolNullableFilter<$PrismaModel>
-    _max?: NestedBoolNullableFilter<$PrismaModel>
-  }
-  export type NestedJsonNullableFilter<$PrismaModel = never> =
-    | PatchUndefined<
-        Either<Required<NestedJsonNullableFilterBase<$PrismaModel>>, Exclude<keyof Required<NestedJsonNullableFilterBase<$PrismaModel>>, 'path'>>,
-        Required<NestedJsonNullableFilterBase<$PrismaModel>>
-      >
-    | OptionalFlat<Omit<Required<NestedJsonNullableFilterBase<$PrismaModel>>, 'path'>>
-
-  export type NestedJsonNullableFilterBase<$PrismaModel = never> = {
-    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-    path?: string[]
-    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
-    string_contains?: string | StringFieldRefInput<$PrismaModel>
-    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
-    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
-    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-  }
-
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[] | ListIntFieldRefInput<$PrismaModel>
@@ -21906,6 +16304,19 @@ export namespace Prisma {
     _max?: NestedDecimalFilter<$PrismaModel>
   }
 
+  export type NestedBoolNullableFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
+  }
+
+  export type NestedBoolNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedBoolNullableFilter<$PrismaModel>
+    _max?: NestedBoolNullableFilter<$PrismaModel>
+  }
+
   export type exercisesCreateWithoutExercise_logsInput = {
     id?: string
     name: string
@@ -21953,8 +16364,6 @@ export namespace Prisma {
     updated_at?: Date | string | null
     age_range?: string
     meal_logs?: meal_logsCreateNestedManyWithoutUsersInput
-    meal_plans?: meal_plansCreateNestedManyWithoutUsersInput
-    progress_tracking?: progress_trackingCreateNestedManyWithoutUsersInput
     water_logs?: water_logsCreateNestedManyWithoutUsersInput
     weight_logs?: weight_logsCreateNestedManyWithoutUsersInput
     workout_plans?: workout_plansCreateNestedManyWithoutUsersInput
@@ -21978,8 +16387,6 @@ export namespace Prisma {
     updated_at?: Date | string | null
     age_range?: string
     meal_logs?: meal_logsUncheckedCreateNestedManyWithoutUsersInput
-    meal_plans?: meal_plansUncheckedCreateNestedManyWithoutUsersInput
-    progress_tracking?: progress_trackingUncheckedCreateNestedManyWithoutUsersInput
     water_logs?: water_logsUncheckedCreateNestedManyWithoutUsersInput
     weight_logs?: weight_logsUncheckedCreateNestedManyWithoutUsersInput
     workout_plans?: workout_plansUncheckedCreateNestedManyWithoutUsersInput
@@ -22054,8 +16461,6 @@ export namespace Prisma {
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     age_range?: StringFieldUpdateOperationsInput | string
     meal_logs?: meal_logsUpdateManyWithoutUsersNestedInput
-    meal_plans?: meal_plansUpdateManyWithoutUsersNestedInput
-    progress_tracking?: progress_trackingUpdateManyWithoutUsersNestedInput
     water_logs?: water_logsUpdateManyWithoutUsersNestedInput
     weight_logs?: weight_logsUpdateManyWithoutUsersNestedInput
     workout_plans?: workout_plansUpdateManyWithoutUsersNestedInput
@@ -22079,8 +16484,6 @@ export namespace Prisma {
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     age_range?: StringFieldUpdateOperationsInput | string
     meal_logs?: meal_logsUncheckedUpdateManyWithoutUsersNestedInput
-    meal_plans?: meal_plansUncheckedUpdateManyWithoutUsersNestedInput
-    progress_tracking?: progress_trackingUncheckedUpdateManyWithoutUsersNestedInput
     water_logs?: water_logsUncheckedUpdateManyWithoutUsersNestedInput
     weight_logs?: weight_logsUncheckedUpdateManyWithoutUsersNestedInput
     workout_plans?: workout_plansUncheckedUpdateManyWithoutUsersNestedInput
@@ -22132,7 +16535,6 @@ export namespace Prisma {
     reps?: number | null
     weight?: Decimal | DecimalJsLike | number | string | null
     duration?: number | null
-    created_at?: Date | string | null
     completed?: boolean | null
     completion_date?: Date | string | null
     actual_sets?: number | null
@@ -22140,6 +16542,7 @@ export namespace Prisma {
     actual_weight?: Decimal | DecimalJsLike | number | string | null
     actual_duration?: number | null
     notes?: string | null
+    created_at?: Date | string | null
     updated_at?: Date | string | null
     workout_plans: workout_plansCreateNestedOneWithoutWorkout_plan_exercisesInput
   }
@@ -22153,7 +16556,6 @@ export namespace Prisma {
     reps?: number | null
     weight?: Decimal | DecimalJsLike | number | string | null
     duration?: number | null
-    created_at?: Date | string | null
     completed?: boolean | null
     completion_date?: Date | string | null
     actual_sets?: number | null
@@ -22161,6 +16563,7 @@ export namespace Prisma {
     actual_weight?: Decimal | DecimalJsLike | number | string | null
     actual_duration?: number | null
     notes?: string | null
+    created_at?: Date | string | null
     updated_at?: Date | string | null
   }
 
@@ -22237,7 +16640,6 @@ export namespace Prisma {
     reps?: IntNullableFilter<"workout_plan_exercises"> | number | null
     weight?: DecimalNullableFilter<"workout_plan_exercises"> | Decimal | DecimalJsLike | number | string | null
     duration?: IntNullableFilter<"workout_plan_exercises"> | number | null
-    created_at?: DateTimeNullableFilter<"workout_plan_exercises"> | Date | string | null
     completed?: BoolNullableFilter<"workout_plan_exercises"> | boolean | null
     completion_date?: DateTimeNullableFilter<"workout_plan_exercises"> | Date | string | null
     actual_sets?: IntNullableFilter<"workout_plan_exercises"> | number | null
@@ -22245,6 +16647,7 @@ export namespace Prisma {
     actual_weight?: DecimalNullableFilter<"workout_plan_exercises"> | Decimal | DecimalJsLike | number | string | null
     actual_duration?: IntNullableFilter<"workout_plan_exercises"> | number | null
     notes?: StringNullableFilter<"workout_plan_exercises"> | string | null
+    created_at?: DateTimeNullableFilter<"workout_plan_exercises"> | Date | string | null
     updated_at?: DateTimeNullableFilter<"workout_plan_exercises"> | Date | string | null
   }
 
@@ -22258,9 +16661,7 @@ export namespace Prisma {
     fats?: Decimal | DecimalJsLike | number | string | null
     image_url?: string | null
     description?: string | null
-    food_items?: NullableJsonNullValueInput | InputJsonValue
     created_at?: Date | string | null
-    meal_plan_items?: meal_plan_itemsCreateNestedManyWithoutMealsInput
   }
 
   export type mealsUncheckedCreateWithoutMeal_logsInput = {
@@ -22273,9 +16674,7 @@ export namespace Prisma {
     fats?: Decimal | DecimalJsLike | number | string | null
     image_url?: string | null
     description?: string | null
-    food_items?: NullableJsonNullValueInput | InputJsonValue
     created_at?: Date | string | null
-    meal_plan_items?: meal_plan_itemsUncheckedCreateNestedManyWithoutMealsInput
   }
 
   export type mealsCreateOrConnectWithoutMeal_logsInput = {
@@ -22301,8 +16700,6 @@ export namespace Prisma {
     updated_at?: Date | string | null
     age_range?: string
     exercise_logs?: exercise_logsCreateNestedManyWithoutUsersInput
-    meal_plans?: meal_plansCreateNestedManyWithoutUsersInput
-    progress_tracking?: progress_trackingCreateNestedManyWithoutUsersInput
     water_logs?: water_logsCreateNestedManyWithoutUsersInput
     weight_logs?: weight_logsCreateNestedManyWithoutUsersInput
     workout_plans?: workout_plansCreateNestedManyWithoutUsersInput
@@ -22326,8 +16723,6 @@ export namespace Prisma {
     updated_at?: Date | string | null
     age_range?: string
     exercise_logs?: exercise_logsUncheckedCreateNestedManyWithoutUsersInput
-    meal_plans?: meal_plansUncheckedCreateNestedManyWithoutUsersInput
-    progress_tracking?: progress_trackingUncheckedCreateNestedManyWithoutUsersInput
     water_logs?: water_logsUncheckedCreateNestedManyWithoutUsersInput
     weight_logs?: weight_logsUncheckedCreateNestedManyWithoutUsersInput
     workout_plans?: workout_plansUncheckedCreateNestedManyWithoutUsersInput
@@ -22359,9 +16754,7 @@ export namespace Prisma {
     fats?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     image_url?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
-    food_items?: NullableJsonNullValueInput | InputJsonValue
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    meal_plan_items?: meal_plan_itemsUpdateManyWithoutMealsNestedInput
   }
 
   export type mealsUncheckedUpdateWithoutMeal_logsInput = {
@@ -22374,9 +16767,7 @@ export namespace Prisma {
     fats?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     image_url?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
-    food_items?: NullableJsonNullValueInput | InputJsonValue
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    meal_plan_items?: meal_plan_itemsUncheckedUpdateManyWithoutMealsNestedInput
   }
 
   export type usersUpsertWithoutMeal_logsInput = {
@@ -22408,8 +16799,6 @@ export namespace Prisma {
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     age_range?: StringFieldUpdateOperationsInput | string
     exercise_logs?: exercise_logsUpdateManyWithoutUsersNestedInput
-    meal_plans?: meal_plansUpdateManyWithoutUsersNestedInput
-    progress_tracking?: progress_trackingUpdateManyWithoutUsersNestedInput
     water_logs?: water_logsUpdateManyWithoutUsersNestedInput
     weight_logs?: weight_logsUpdateManyWithoutUsersNestedInput
     workout_plans?: workout_plansUpdateManyWithoutUsersNestedInput
@@ -22433,427 +16822,9 @@ export namespace Prisma {
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     age_range?: StringFieldUpdateOperationsInput | string
     exercise_logs?: exercise_logsUncheckedUpdateManyWithoutUsersNestedInput
-    meal_plans?: meal_plansUncheckedUpdateManyWithoutUsersNestedInput
-    progress_tracking?: progress_trackingUncheckedUpdateManyWithoutUsersNestedInput
     water_logs?: water_logsUncheckedUpdateManyWithoutUsersNestedInput
     weight_logs?: weight_logsUncheckedUpdateManyWithoutUsersNestedInput
     workout_plans?: workout_plansUncheckedUpdateManyWithoutUsersNestedInput
-  }
-
-  export type meal_plansCreateWithoutMeal_plan_itemsInput = {
-    id?: string
-    name: string
-    description?: string | null
-    date?: Date | string | null
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-    daily_calories?: number | null
-    users: usersCreateNestedOneWithoutMeal_plansInput
-    workout_plans?: workout_plansCreateNestedOneWithoutMeal_plansInput
-  }
-
-  export type meal_plansUncheckedCreateWithoutMeal_plan_itemsInput = {
-    id?: string
-    user_id: string
-    name: string
-    description?: string | null
-    date?: Date | string | null
-    workout_plan_id?: string | null
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-    daily_calories?: number | null
-  }
-
-  export type meal_plansCreateOrConnectWithoutMeal_plan_itemsInput = {
-    where: meal_plansWhereUniqueInput
-    create: XOR<meal_plansCreateWithoutMeal_plan_itemsInput, meal_plansUncheckedCreateWithoutMeal_plan_itemsInput>
-  }
-
-  export type mealsCreateWithoutMeal_plan_itemsInput = {
-    id?: string
-    name: string
-    category?: string | null
-    calories?: number | null
-    protein?: Decimal | DecimalJsLike | number | string | null
-    carbs?: Decimal | DecimalJsLike | number | string | null
-    fats?: Decimal | DecimalJsLike | number | string | null
-    image_url?: string | null
-    description?: string | null
-    food_items?: NullableJsonNullValueInput | InputJsonValue
-    created_at?: Date | string | null
-    meal_logs?: meal_logsCreateNestedManyWithoutMealsInput
-  }
-
-  export type mealsUncheckedCreateWithoutMeal_plan_itemsInput = {
-    id?: string
-    name: string
-    category?: string | null
-    calories?: number | null
-    protein?: Decimal | DecimalJsLike | number | string | null
-    carbs?: Decimal | DecimalJsLike | number | string | null
-    fats?: Decimal | DecimalJsLike | number | string | null
-    image_url?: string | null
-    description?: string | null
-    food_items?: NullableJsonNullValueInput | InputJsonValue
-    created_at?: Date | string | null
-    meal_logs?: meal_logsUncheckedCreateNestedManyWithoutMealsInput
-  }
-
-  export type mealsCreateOrConnectWithoutMeal_plan_itemsInput = {
-    where: mealsWhereUniqueInput
-    create: XOR<mealsCreateWithoutMeal_plan_itemsInput, mealsUncheckedCreateWithoutMeal_plan_itemsInput>
-  }
-
-  export type meal_plansUpsertWithoutMeal_plan_itemsInput = {
-    update: XOR<meal_plansUpdateWithoutMeal_plan_itemsInput, meal_plansUncheckedUpdateWithoutMeal_plan_itemsInput>
-    create: XOR<meal_plansCreateWithoutMeal_plan_itemsInput, meal_plansUncheckedCreateWithoutMeal_plan_itemsInput>
-    where?: meal_plansWhereInput
-  }
-
-  export type meal_plansUpdateToOneWithWhereWithoutMeal_plan_itemsInput = {
-    where?: meal_plansWhereInput
-    data: XOR<meal_plansUpdateWithoutMeal_plan_itemsInput, meal_plansUncheckedUpdateWithoutMeal_plan_itemsInput>
-  }
-
-  export type meal_plansUpdateWithoutMeal_plan_itemsInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    daily_calories?: NullableIntFieldUpdateOperationsInput | number | null
-    users?: usersUpdateOneRequiredWithoutMeal_plansNestedInput
-    workout_plans?: workout_plansUpdateOneWithoutMeal_plansNestedInput
-  }
-
-  export type meal_plansUncheckedUpdateWithoutMeal_plan_itemsInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    user_id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    workout_plan_id?: NullableStringFieldUpdateOperationsInput | string | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    daily_calories?: NullableIntFieldUpdateOperationsInput | number | null
-  }
-
-  export type mealsUpsertWithoutMeal_plan_itemsInput = {
-    update: XOR<mealsUpdateWithoutMeal_plan_itemsInput, mealsUncheckedUpdateWithoutMeal_plan_itemsInput>
-    create: XOR<mealsCreateWithoutMeal_plan_itemsInput, mealsUncheckedCreateWithoutMeal_plan_itemsInput>
-    where?: mealsWhereInput
-  }
-
-  export type mealsUpdateToOneWithWhereWithoutMeal_plan_itemsInput = {
-    where?: mealsWhereInput
-    data: XOR<mealsUpdateWithoutMeal_plan_itemsInput, mealsUncheckedUpdateWithoutMeal_plan_itemsInput>
-  }
-
-  export type mealsUpdateWithoutMeal_plan_itemsInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    category?: NullableStringFieldUpdateOperationsInput | string | null
-    calories?: NullableIntFieldUpdateOperationsInput | number | null
-    protein?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    carbs?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    fats?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    image_url?: NullableStringFieldUpdateOperationsInput | string | null
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    food_items?: NullableJsonNullValueInput | InputJsonValue
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    meal_logs?: meal_logsUpdateManyWithoutMealsNestedInput
-  }
-
-  export type mealsUncheckedUpdateWithoutMeal_plan_itemsInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    category?: NullableStringFieldUpdateOperationsInput | string | null
-    calories?: NullableIntFieldUpdateOperationsInput | number | null
-    protein?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    carbs?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    fats?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    image_url?: NullableStringFieldUpdateOperationsInput | string | null
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    food_items?: NullableJsonNullValueInput | InputJsonValue
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    meal_logs?: meal_logsUncheckedUpdateManyWithoutMealsNestedInput
-  }
-
-  export type meal_plan_itemsCreateWithoutMeal_plansInput = {
-    id?: string
-    name: string
-    meal_time: string
-    calories?: number | null
-    protein?: Decimal | DecimalJsLike | number | string | null
-    carbs?: Decimal | DecimalJsLike | number | string | null
-    fats?: Decimal | DecimalJsLike | number | string | null
-    completed?: boolean | null
-    completion_date?: Date | string | null
-    day_number?: number | null
-    portion?: Decimal | DecimalJsLike | number | string | null
-    notes?: string | null
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-    meals?: mealsCreateNestedOneWithoutMeal_plan_itemsInput
-  }
-
-  export type meal_plan_itemsUncheckedCreateWithoutMeal_plansInput = {
-    id?: string
-    meal_id?: string | null
-    name: string
-    meal_time: string
-    calories?: number | null
-    protein?: Decimal | DecimalJsLike | number | string | null
-    carbs?: Decimal | DecimalJsLike | number | string | null
-    fats?: Decimal | DecimalJsLike | number | string | null
-    completed?: boolean | null
-    completion_date?: Date | string | null
-    day_number?: number | null
-    portion?: Decimal | DecimalJsLike | number | string | null
-    notes?: string | null
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-  }
-
-  export type meal_plan_itemsCreateOrConnectWithoutMeal_plansInput = {
-    where: meal_plan_itemsWhereUniqueInput
-    create: XOR<meal_plan_itemsCreateWithoutMeal_plansInput, meal_plan_itemsUncheckedCreateWithoutMeal_plansInput>
-  }
-
-  export type meal_plan_itemsCreateManyMeal_plansInputEnvelope = {
-    data: meal_plan_itemsCreateManyMeal_plansInput | meal_plan_itemsCreateManyMeal_plansInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type usersCreateWithoutMeal_plansInput = {
-    id?: string
-    name: string
-    email: string
-    password: string
-    age?: number | null
-    gender?: string | null
-    weight?: Decimal | DecimalJsLike | number | string | null
-    height?: Decimal | DecimalJsLike | number | string | null
-    bmi?: Decimal | DecimalJsLike | number | string | null
-    fitness_goal?: string | null
-    dietary_preference?: string | null
-    dietary_restrictions?: usersCreatedietary_restrictionsInput | string[]
-    avatar_url?: string | null
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-    age_range?: string
-    exercise_logs?: exercise_logsCreateNestedManyWithoutUsersInput
-    meal_logs?: meal_logsCreateNestedManyWithoutUsersInput
-    progress_tracking?: progress_trackingCreateNestedManyWithoutUsersInput
-    water_logs?: water_logsCreateNestedManyWithoutUsersInput
-    weight_logs?: weight_logsCreateNestedManyWithoutUsersInput
-    workout_plans?: workout_plansCreateNestedManyWithoutUsersInput
-  }
-
-  export type usersUncheckedCreateWithoutMeal_plansInput = {
-    id?: string
-    name: string
-    email: string
-    password: string
-    age?: number | null
-    gender?: string | null
-    weight?: Decimal | DecimalJsLike | number | string | null
-    height?: Decimal | DecimalJsLike | number | string | null
-    bmi?: Decimal | DecimalJsLike | number | string | null
-    fitness_goal?: string | null
-    dietary_preference?: string | null
-    dietary_restrictions?: usersCreatedietary_restrictionsInput | string[]
-    avatar_url?: string | null
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-    age_range?: string
-    exercise_logs?: exercise_logsUncheckedCreateNestedManyWithoutUsersInput
-    meal_logs?: meal_logsUncheckedCreateNestedManyWithoutUsersInput
-    progress_tracking?: progress_trackingUncheckedCreateNestedManyWithoutUsersInput
-    water_logs?: water_logsUncheckedCreateNestedManyWithoutUsersInput
-    weight_logs?: weight_logsUncheckedCreateNestedManyWithoutUsersInput
-    workout_plans?: workout_plansUncheckedCreateNestedManyWithoutUsersInput
-  }
-
-  export type usersCreateOrConnectWithoutMeal_plansInput = {
-    where: usersWhereUniqueInput
-    create: XOR<usersCreateWithoutMeal_plansInput, usersUncheckedCreateWithoutMeal_plansInput>
-  }
-
-  export type workout_plansCreateWithoutMeal_plansInput = {
-    id?: string
-    name: string
-    description?: string | null
-    goal?: string | null
-    frequency?: number | null
-    duration_weeks?: number | null
-    active?: boolean | null
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-    progress_tracking?: progress_trackingCreateNestedManyWithoutWorkout_plansInput
-    workout_plan_exercises?: workout_plan_exercisesCreateNestedManyWithoutWorkout_plansInput
-    users: usersCreateNestedOneWithoutWorkout_plansInput
-  }
-
-  export type workout_plansUncheckedCreateWithoutMeal_plansInput = {
-    id?: string
-    user_id: string
-    name: string
-    description?: string | null
-    goal?: string | null
-    frequency?: number | null
-    duration_weeks?: number | null
-    active?: boolean | null
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-    progress_tracking?: progress_trackingUncheckedCreateNestedManyWithoutWorkout_plansInput
-    workout_plan_exercises?: workout_plan_exercisesUncheckedCreateNestedManyWithoutWorkout_plansInput
-  }
-
-  export type workout_plansCreateOrConnectWithoutMeal_plansInput = {
-    where: workout_plansWhereUniqueInput
-    create: XOR<workout_plansCreateWithoutMeal_plansInput, workout_plansUncheckedCreateWithoutMeal_plansInput>
-  }
-
-  export type meal_plan_itemsUpsertWithWhereUniqueWithoutMeal_plansInput = {
-    where: meal_plan_itemsWhereUniqueInput
-    update: XOR<meal_plan_itemsUpdateWithoutMeal_plansInput, meal_plan_itemsUncheckedUpdateWithoutMeal_plansInput>
-    create: XOR<meal_plan_itemsCreateWithoutMeal_plansInput, meal_plan_itemsUncheckedCreateWithoutMeal_plansInput>
-  }
-
-  export type meal_plan_itemsUpdateWithWhereUniqueWithoutMeal_plansInput = {
-    where: meal_plan_itemsWhereUniqueInput
-    data: XOR<meal_plan_itemsUpdateWithoutMeal_plansInput, meal_plan_itemsUncheckedUpdateWithoutMeal_plansInput>
-  }
-
-  export type meal_plan_itemsUpdateManyWithWhereWithoutMeal_plansInput = {
-    where: meal_plan_itemsScalarWhereInput
-    data: XOR<meal_plan_itemsUpdateManyMutationInput, meal_plan_itemsUncheckedUpdateManyWithoutMeal_plansInput>
-  }
-
-  export type meal_plan_itemsScalarWhereInput = {
-    AND?: meal_plan_itemsScalarWhereInput | meal_plan_itemsScalarWhereInput[]
-    OR?: meal_plan_itemsScalarWhereInput[]
-    NOT?: meal_plan_itemsScalarWhereInput | meal_plan_itemsScalarWhereInput[]
-    id?: UuidFilter<"meal_plan_items"> | string
-    meal_plan_id?: UuidFilter<"meal_plan_items"> | string
-    meal_id?: UuidNullableFilter<"meal_plan_items"> | string | null
-    name?: StringFilter<"meal_plan_items"> | string
-    meal_time?: StringFilter<"meal_plan_items"> | string
-    calories?: IntNullableFilter<"meal_plan_items"> | number | null
-    protein?: DecimalNullableFilter<"meal_plan_items"> | Decimal | DecimalJsLike | number | string | null
-    carbs?: DecimalNullableFilter<"meal_plan_items"> | Decimal | DecimalJsLike | number | string | null
-    fats?: DecimalNullableFilter<"meal_plan_items"> | Decimal | DecimalJsLike | number | string | null
-    completed?: BoolNullableFilter<"meal_plan_items"> | boolean | null
-    completion_date?: DateTimeNullableFilter<"meal_plan_items"> | Date | string | null
-    day_number?: IntNullableFilter<"meal_plan_items"> | number | null
-    portion?: DecimalNullableFilter<"meal_plan_items"> | Decimal | DecimalJsLike | number | string | null
-    notes?: StringNullableFilter<"meal_plan_items"> | string | null
-    created_at?: DateTimeNullableFilter<"meal_plan_items"> | Date | string | null
-    updated_at?: DateTimeNullableFilter<"meal_plan_items"> | Date | string | null
-  }
-
-  export type usersUpsertWithoutMeal_plansInput = {
-    update: XOR<usersUpdateWithoutMeal_plansInput, usersUncheckedUpdateWithoutMeal_plansInput>
-    create: XOR<usersCreateWithoutMeal_plansInput, usersUncheckedCreateWithoutMeal_plansInput>
-    where?: usersWhereInput
-  }
-
-  export type usersUpdateToOneWithWhereWithoutMeal_plansInput = {
-    where?: usersWhereInput
-    data: XOR<usersUpdateWithoutMeal_plansInput, usersUncheckedUpdateWithoutMeal_plansInput>
-  }
-
-  export type usersUpdateWithoutMeal_plansInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    age?: NullableIntFieldUpdateOperationsInput | number | null
-    gender?: NullableStringFieldUpdateOperationsInput | string | null
-    weight?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    height?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    bmi?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    fitness_goal?: NullableStringFieldUpdateOperationsInput | string | null
-    dietary_preference?: NullableStringFieldUpdateOperationsInput | string | null
-    dietary_restrictions?: usersUpdatedietary_restrictionsInput | string[]
-    avatar_url?: NullableStringFieldUpdateOperationsInput | string | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    age_range?: StringFieldUpdateOperationsInput | string
-    exercise_logs?: exercise_logsUpdateManyWithoutUsersNestedInput
-    meal_logs?: meal_logsUpdateManyWithoutUsersNestedInput
-    progress_tracking?: progress_trackingUpdateManyWithoutUsersNestedInput
-    water_logs?: water_logsUpdateManyWithoutUsersNestedInput
-    weight_logs?: weight_logsUpdateManyWithoutUsersNestedInput
-    workout_plans?: workout_plansUpdateManyWithoutUsersNestedInput
-  }
-
-  export type usersUncheckedUpdateWithoutMeal_plansInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    age?: NullableIntFieldUpdateOperationsInput | number | null
-    gender?: NullableStringFieldUpdateOperationsInput | string | null
-    weight?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    height?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    bmi?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    fitness_goal?: NullableStringFieldUpdateOperationsInput | string | null
-    dietary_preference?: NullableStringFieldUpdateOperationsInput | string | null
-    dietary_restrictions?: usersUpdatedietary_restrictionsInput | string[]
-    avatar_url?: NullableStringFieldUpdateOperationsInput | string | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    age_range?: StringFieldUpdateOperationsInput | string
-    exercise_logs?: exercise_logsUncheckedUpdateManyWithoutUsersNestedInput
-    meal_logs?: meal_logsUncheckedUpdateManyWithoutUsersNestedInput
-    progress_tracking?: progress_trackingUncheckedUpdateManyWithoutUsersNestedInput
-    water_logs?: water_logsUncheckedUpdateManyWithoutUsersNestedInput
-    weight_logs?: weight_logsUncheckedUpdateManyWithoutUsersNestedInput
-    workout_plans?: workout_plansUncheckedUpdateManyWithoutUsersNestedInput
-  }
-
-  export type workout_plansUpsertWithoutMeal_plansInput = {
-    update: XOR<workout_plansUpdateWithoutMeal_plansInput, workout_plansUncheckedUpdateWithoutMeal_plansInput>
-    create: XOR<workout_plansCreateWithoutMeal_plansInput, workout_plansUncheckedCreateWithoutMeal_plansInput>
-    where?: workout_plansWhereInput
-  }
-
-  export type workout_plansUpdateToOneWithWhereWithoutMeal_plansInput = {
-    where?: workout_plansWhereInput
-    data: XOR<workout_plansUpdateWithoutMeal_plansInput, workout_plansUncheckedUpdateWithoutMeal_plansInput>
-  }
-
-  export type workout_plansUpdateWithoutMeal_plansInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    goal?: NullableStringFieldUpdateOperationsInput | string | null
-    frequency?: NullableIntFieldUpdateOperationsInput | number | null
-    duration_weeks?: NullableIntFieldUpdateOperationsInput | number | null
-    active?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    progress_tracking?: progress_trackingUpdateManyWithoutWorkout_plansNestedInput
-    workout_plan_exercises?: workout_plan_exercisesUpdateManyWithoutWorkout_plansNestedInput
-    users?: usersUpdateOneRequiredWithoutWorkout_plansNestedInput
-  }
-
-  export type workout_plansUncheckedUpdateWithoutMeal_plansInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    user_id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    goal?: NullableStringFieldUpdateOperationsInput | string | null
-    frequency?: NullableIntFieldUpdateOperationsInput | number | null
-    duration_weeks?: NullableIntFieldUpdateOperationsInput | number | null
-    active?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    progress_tracking?: progress_trackingUncheckedUpdateManyWithoutWorkout_plansNestedInput
-    workout_plan_exercises?: workout_plan_exercisesUncheckedUpdateManyWithoutWorkout_plansNestedInput
   }
 
   export type meal_logsCreateWithoutMealsInput = {
@@ -22896,52 +16867,6 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type meal_plan_itemsCreateWithoutMealsInput = {
-    id?: string
-    name: string
-    meal_time: string
-    calories?: number | null
-    protein?: Decimal | DecimalJsLike | number | string | null
-    carbs?: Decimal | DecimalJsLike | number | string | null
-    fats?: Decimal | DecimalJsLike | number | string | null
-    completed?: boolean | null
-    completion_date?: Date | string | null
-    day_number?: number | null
-    portion?: Decimal | DecimalJsLike | number | string | null
-    notes?: string | null
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-    meal_plans: meal_plansCreateNestedOneWithoutMeal_plan_itemsInput
-  }
-
-  export type meal_plan_itemsUncheckedCreateWithoutMealsInput = {
-    id?: string
-    meal_plan_id: string
-    name: string
-    meal_time: string
-    calories?: number | null
-    protein?: Decimal | DecimalJsLike | number | string | null
-    carbs?: Decimal | DecimalJsLike | number | string | null
-    fats?: Decimal | DecimalJsLike | number | string | null
-    completed?: boolean | null
-    completion_date?: Date | string | null
-    day_number?: number | null
-    portion?: Decimal | DecimalJsLike | number | string | null
-    notes?: string | null
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-  }
-
-  export type meal_plan_itemsCreateOrConnectWithoutMealsInput = {
-    where: meal_plan_itemsWhereUniqueInput
-    create: XOR<meal_plan_itemsCreateWithoutMealsInput, meal_plan_itemsUncheckedCreateWithoutMealsInput>
-  }
-
-  export type meal_plan_itemsCreateManyMealsInputEnvelope = {
-    data: meal_plan_itemsCreateManyMealsInput | meal_plan_itemsCreateManyMealsInput[]
-    skipDuplicates?: boolean
-  }
-
   export type meal_logsUpsertWithWhereUniqueWithoutMealsInput = {
     where: meal_logsWhereUniqueInput
     update: XOR<meal_logsUpdateWithoutMealsInput, meal_logsUncheckedUpdateWithoutMealsInput>
@@ -22975,214 +16900,6 @@ export namespace Prisma {
     notes?: StringNullableFilter<"meal_logs"> | string | null
     consumed_at?: DateTimeFilter<"meal_logs"> | Date | string
     created_at?: DateTimeNullableFilter<"meal_logs"> | Date | string | null
-  }
-
-  export type meal_plan_itemsUpsertWithWhereUniqueWithoutMealsInput = {
-    where: meal_plan_itemsWhereUniqueInput
-    update: XOR<meal_plan_itemsUpdateWithoutMealsInput, meal_plan_itemsUncheckedUpdateWithoutMealsInput>
-    create: XOR<meal_plan_itemsCreateWithoutMealsInput, meal_plan_itemsUncheckedCreateWithoutMealsInput>
-  }
-
-  export type meal_plan_itemsUpdateWithWhereUniqueWithoutMealsInput = {
-    where: meal_plan_itemsWhereUniqueInput
-    data: XOR<meal_plan_itemsUpdateWithoutMealsInput, meal_plan_itemsUncheckedUpdateWithoutMealsInput>
-  }
-
-  export type meal_plan_itemsUpdateManyWithWhereWithoutMealsInput = {
-    where: meal_plan_itemsScalarWhereInput
-    data: XOR<meal_plan_itemsUpdateManyMutationInput, meal_plan_itemsUncheckedUpdateManyWithoutMealsInput>
-  }
-
-  export type usersCreateWithoutProgress_trackingInput = {
-    id?: string
-    name: string
-    email: string
-    password: string
-    age?: number | null
-    gender?: string | null
-    weight?: Decimal | DecimalJsLike | number | string | null
-    height?: Decimal | DecimalJsLike | number | string | null
-    bmi?: Decimal | DecimalJsLike | number | string | null
-    fitness_goal?: string | null
-    dietary_preference?: string | null
-    dietary_restrictions?: usersCreatedietary_restrictionsInput | string[]
-    avatar_url?: string | null
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-    age_range?: string
-    exercise_logs?: exercise_logsCreateNestedManyWithoutUsersInput
-    meal_logs?: meal_logsCreateNestedManyWithoutUsersInput
-    meal_plans?: meal_plansCreateNestedManyWithoutUsersInput
-    water_logs?: water_logsCreateNestedManyWithoutUsersInput
-    weight_logs?: weight_logsCreateNestedManyWithoutUsersInput
-    workout_plans?: workout_plansCreateNestedManyWithoutUsersInput
-  }
-
-  export type usersUncheckedCreateWithoutProgress_trackingInput = {
-    id?: string
-    name: string
-    email: string
-    password: string
-    age?: number | null
-    gender?: string | null
-    weight?: Decimal | DecimalJsLike | number | string | null
-    height?: Decimal | DecimalJsLike | number | string | null
-    bmi?: Decimal | DecimalJsLike | number | string | null
-    fitness_goal?: string | null
-    dietary_preference?: string | null
-    dietary_restrictions?: usersCreatedietary_restrictionsInput | string[]
-    avatar_url?: string | null
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-    age_range?: string
-    exercise_logs?: exercise_logsUncheckedCreateNestedManyWithoutUsersInput
-    meal_logs?: meal_logsUncheckedCreateNestedManyWithoutUsersInput
-    meal_plans?: meal_plansUncheckedCreateNestedManyWithoutUsersInput
-    water_logs?: water_logsUncheckedCreateNestedManyWithoutUsersInput
-    weight_logs?: weight_logsUncheckedCreateNestedManyWithoutUsersInput
-    workout_plans?: workout_plansUncheckedCreateNestedManyWithoutUsersInput
-  }
-
-  export type usersCreateOrConnectWithoutProgress_trackingInput = {
-    where: usersWhereUniqueInput
-    create: XOR<usersCreateWithoutProgress_trackingInput, usersUncheckedCreateWithoutProgress_trackingInput>
-  }
-
-  export type workout_plansCreateWithoutProgress_trackingInput = {
-    id?: string
-    name: string
-    description?: string | null
-    goal?: string | null
-    frequency?: number | null
-    duration_weeks?: number | null
-    active?: boolean | null
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-    meal_plans?: meal_plansCreateNestedManyWithoutWorkout_plansInput
-    workout_plan_exercises?: workout_plan_exercisesCreateNestedManyWithoutWorkout_plansInput
-    users: usersCreateNestedOneWithoutWorkout_plansInput
-  }
-
-  export type workout_plansUncheckedCreateWithoutProgress_trackingInput = {
-    id?: string
-    user_id: string
-    name: string
-    description?: string | null
-    goal?: string | null
-    frequency?: number | null
-    duration_weeks?: number | null
-    active?: boolean | null
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-    meal_plans?: meal_plansUncheckedCreateNestedManyWithoutWorkout_plansInput
-    workout_plan_exercises?: workout_plan_exercisesUncheckedCreateNestedManyWithoutWorkout_plansInput
-  }
-
-  export type workout_plansCreateOrConnectWithoutProgress_trackingInput = {
-    where: workout_plansWhereUniqueInput
-    create: XOR<workout_plansCreateWithoutProgress_trackingInput, workout_plansUncheckedCreateWithoutProgress_trackingInput>
-  }
-
-  export type usersUpsertWithoutProgress_trackingInput = {
-    update: XOR<usersUpdateWithoutProgress_trackingInput, usersUncheckedUpdateWithoutProgress_trackingInput>
-    create: XOR<usersCreateWithoutProgress_trackingInput, usersUncheckedCreateWithoutProgress_trackingInput>
-    where?: usersWhereInput
-  }
-
-  export type usersUpdateToOneWithWhereWithoutProgress_trackingInput = {
-    where?: usersWhereInput
-    data: XOR<usersUpdateWithoutProgress_trackingInput, usersUncheckedUpdateWithoutProgress_trackingInput>
-  }
-
-  export type usersUpdateWithoutProgress_trackingInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    age?: NullableIntFieldUpdateOperationsInput | number | null
-    gender?: NullableStringFieldUpdateOperationsInput | string | null
-    weight?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    height?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    bmi?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    fitness_goal?: NullableStringFieldUpdateOperationsInput | string | null
-    dietary_preference?: NullableStringFieldUpdateOperationsInput | string | null
-    dietary_restrictions?: usersUpdatedietary_restrictionsInput | string[]
-    avatar_url?: NullableStringFieldUpdateOperationsInput | string | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    age_range?: StringFieldUpdateOperationsInput | string
-    exercise_logs?: exercise_logsUpdateManyWithoutUsersNestedInput
-    meal_logs?: meal_logsUpdateManyWithoutUsersNestedInput
-    meal_plans?: meal_plansUpdateManyWithoutUsersNestedInput
-    water_logs?: water_logsUpdateManyWithoutUsersNestedInput
-    weight_logs?: weight_logsUpdateManyWithoutUsersNestedInput
-    workout_plans?: workout_plansUpdateManyWithoutUsersNestedInput
-  }
-
-  export type usersUncheckedUpdateWithoutProgress_trackingInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    age?: NullableIntFieldUpdateOperationsInput | number | null
-    gender?: NullableStringFieldUpdateOperationsInput | string | null
-    weight?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    height?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    bmi?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    fitness_goal?: NullableStringFieldUpdateOperationsInput | string | null
-    dietary_preference?: NullableStringFieldUpdateOperationsInput | string | null
-    dietary_restrictions?: usersUpdatedietary_restrictionsInput | string[]
-    avatar_url?: NullableStringFieldUpdateOperationsInput | string | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    age_range?: StringFieldUpdateOperationsInput | string
-    exercise_logs?: exercise_logsUncheckedUpdateManyWithoutUsersNestedInput
-    meal_logs?: meal_logsUncheckedUpdateManyWithoutUsersNestedInput
-    meal_plans?: meal_plansUncheckedUpdateManyWithoutUsersNestedInput
-    water_logs?: water_logsUncheckedUpdateManyWithoutUsersNestedInput
-    weight_logs?: weight_logsUncheckedUpdateManyWithoutUsersNestedInput
-    workout_plans?: workout_plansUncheckedUpdateManyWithoutUsersNestedInput
-  }
-
-  export type workout_plansUpsertWithoutProgress_trackingInput = {
-    update: XOR<workout_plansUpdateWithoutProgress_trackingInput, workout_plansUncheckedUpdateWithoutProgress_trackingInput>
-    create: XOR<workout_plansCreateWithoutProgress_trackingInput, workout_plansUncheckedCreateWithoutProgress_trackingInput>
-    where?: workout_plansWhereInput
-  }
-
-  export type workout_plansUpdateToOneWithWhereWithoutProgress_trackingInput = {
-    where?: workout_plansWhereInput
-    data: XOR<workout_plansUpdateWithoutProgress_trackingInput, workout_plansUncheckedUpdateWithoutProgress_trackingInput>
-  }
-
-  export type workout_plansUpdateWithoutProgress_trackingInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    goal?: NullableStringFieldUpdateOperationsInput | string | null
-    frequency?: NullableIntFieldUpdateOperationsInput | number | null
-    duration_weeks?: NullableIntFieldUpdateOperationsInput | number | null
-    active?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    meal_plans?: meal_plansUpdateManyWithoutWorkout_plansNestedInput
-    workout_plan_exercises?: workout_plan_exercisesUpdateManyWithoutWorkout_plansNestedInput
-    users?: usersUpdateOneRequiredWithoutWorkout_plansNestedInput
-  }
-
-  export type workout_plansUncheckedUpdateWithoutProgress_trackingInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    user_id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    goal?: NullableStringFieldUpdateOperationsInput | string | null
-    frequency?: NullableIntFieldUpdateOperationsInput | number | null
-    duration_weeks?: NullableIntFieldUpdateOperationsInput | number | null
-    active?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    meal_plans?: meal_plansUncheckedUpdateManyWithoutWorkout_plansNestedInput
-    workout_plan_exercises?: workout_plan_exercisesUncheckedUpdateManyWithoutWorkout_plansNestedInput
   }
 
   export type exercise_logsCreateWithoutUsersInput = {
@@ -23263,78 +16980,6 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type meal_plansCreateWithoutUsersInput = {
-    id?: string
-    name: string
-    description?: string | null
-    date?: Date | string | null
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-    daily_calories?: number | null
-    meal_plan_items?: meal_plan_itemsCreateNestedManyWithoutMeal_plansInput
-    workout_plans?: workout_plansCreateNestedOneWithoutMeal_plansInput
-  }
-
-  export type meal_plansUncheckedCreateWithoutUsersInput = {
-    id?: string
-    name: string
-    description?: string | null
-    date?: Date | string | null
-    workout_plan_id?: string | null
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-    daily_calories?: number | null
-    meal_plan_items?: meal_plan_itemsUncheckedCreateNestedManyWithoutMeal_plansInput
-  }
-
-  export type meal_plansCreateOrConnectWithoutUsersInput = {
-    where: meal_plansWhereUniqueInput
-    create: XOR<meal_plansCreateWithoutUsersInput, meal_plansUncheckedCreateWithoutUsersInput>
-  }
-
-  export type meal_plansCreateManyUsersInputEnvelope = {
-    data: meal_plansCreateManyUsersInput | meal_plansCreateManyUsersInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type progress_trackingCreateWithoutUsersInput = {
-    id?: string
-    week_number: number
-    exercises_completed?: number | null
-    exercises_total?: number | null
-    meals_completed?: number | null
-    meals_total?: number | null
-    start_date: Date | string
-    end_date: Date | string
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-    workout_plans?: workout_plansCreateNestedOneWithoutProgress_trackingInput
-  }
-
-  export type progress_trackingUncheckedCreateWithoutUsersInput = {
-    id?: string
-    workout_plan_id?: string | null
-    week_number: number
-    exercises_completed?: number | null
-    exercises_total?: number | null
-    meals_completed?: number | null
-    meals_total?: number | null
-    start_date: Date | string
-    end_date: Date | string
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-  }
-
-  export type progress_trackingCreateOrConnectWithoutUsersInput = {
-    where: progress_trackingWhereUniqueInput
-    create: XOR<progress_trackingCreateWithoutUsersInput, progress_trackingUncheckedCreateWithoutUsersInput>
-  }
-
-  export type progress_trackingCreateManyUsersInputEnvelope = {
-    data: progress_trackingCreateManyUsersInput | progress_trackingCreateManyUsersInput[]
-    skipDuplicates?: boolean
-  }
-
   export type water_logsCreateWithoutUsersInput = {
     id?: string
     amount_ml: number
@@ -23393,8 +17038,6 @@ export namespace Prisma {
     active?: boolean | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
-    meal_plans?: meal_plansCreateNestedManyWithoutWorkout_plansInput
-    progress_tracking?: progress_trackingCreateNestedManyWithoutWorkout_plansInput
     workout_plan_exercises?: workout_plan_exercisesCreateNestedManyWithoutWorkout_plansInput
   }
 
@@ -23408,8 +17051,6 @@ export namespace Prisma {
     active?: boolean | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
-    meal_plans?: meal_plansUncheckedCreateNestedManyWithoutWorkout_plansInput
-    progress_tracking?: progress_trackingUncheckedCreateNestedManyWithoutWorkout_plansInput
     workout_plan_exercises?: workout_plan_exercisesUncheckedCreateNestedManyWithoutWorkout_plansInput
   }
 
@@ -23453,71 +17094,6 @@ export namespace Prisma {
   export type meal_logsUpdateManyWithWhereWithoutUsersInput = {
     where: meal_logsScalarWhereInput
     data: XOR<meal_logsUpdateManyMutationInput, meal_logsUncheckedUpdateManyWithoutUsersInput>
-  }
-
-  export type meal_plansUpsertWithWhereUniqueWithoutUsersInput = {
-    where: meal_plansWhereUniqueInput
-    update: XOR<meal_plansUpdateWithoutUsersInput, meal_plansUncheckedUpdateWithoutUsersInput>
-    create: XOR<meal_plansCreateWithoutUsersInput, meal_plansUncheckedCreateWithoutUsersInput>
-  }
-
-  export type meal_plansUpdateWithWhereUniqueWithoutUsersInput = {
-    where: meal_plansWhereUniqueInput
-    data: XOR<meal_plansUpdateWithoutUsersInput, meal_plansUncheckedUpdateWithoutUsersInput>
-  }
-
-  export type meal_plansUpdateManyWithWhereWithoutUsersInput = {
-    where: meal_plansScalarWhereInput
-    data: XOR<meal_plansUpdateManyMutationInput, meal_plansUncheckedUpdateManyWithoutUsersInput>
-  }
-
-  export type meal_plansScalarWhereInput = {
-    AND?: meal_plansScalarWhereInput | meal_plansScalarWhereInput[]
-    OR?: meal_plansScalarWhereInput[]
-    NOT?: meal_plansScalarWhereInput | meal_plansScalarWhereInput[]
-    id?: UuidFilter<"meal_plans"> | string
-    user_id?: UuidFilter<"meal_plans"> | string
-    name?: StringFilter<"meal_plans"> | string
-    description?: StringNullableFilter<"meal_plans"> | string | null
-    date?: DateTimeNullableFilter<"meal_plans"> | Date | string | null
-    workout_plan_id?: UuidNullableFilter<"meal_plans"> | string | null
-    created_at?: DateTimeNullableFilter<"meal_plans"> | Date | string | null
-    updated_at?: DateTimeNullableFilter<"meal_plans"> | Date | string | null
-    daily_calories?: IntNullableFilter<"meal_plans"> | number | null
-  }
-
-  export type progress_trackingUpsertWithWhereUniqueWithoutUsersInput = {
-    where: progress_trackingWhereUniqueInput
-    update: XOR<progress_trackingUpdateWithoutUsersInput, progress_trackingUncheckedUpdateWithoutUsersInput>
-    create: XOR<progress_trackingCreateWithoutUsersInput, progress_trackingUncheckedCreateWithoutUsersInput>
-  }
-
-  export type progress_trackingUpdateWithWhereUniqueWithoutUsersInput = {
-    where: progress_trackingWhereUniqueInput
-    data: XOR<progress_trackingUpdateWithoutUsersInput, progress_trackingUncheckedUpdateWithoutUsersInput>
-  }
-
-  export type progress_trackingUpdateManyWithWhereWithoutUsersInput = {
-    where: progress_trackingScalarWhereInput
-    data: XOR<progress_trackingUpdateManyMutationInput, progress_trackingUncheckedUpdateManyWithoutUsersInput>
-  }
-
-  export type progress_trackingScalarWhereInput = {
-    AND?: progress_trackingScalarWhereInput | progress_trackingScalarWhereInput[]
-    OR?: progress_trackingScalarWhereInput[]
-    NOT?: progress_trackingScalarWhereInput | progress_trackingScalarWhereInput[]
-    id?: UuidFilter<"progress_tracking"> | string
-    user_id?: UuidFilter<"progress_tracking"> | string
-    workout_plan_id?: UuidNullableFilter<"progress_tracking"> | string | null
-    week_number?: IntFilter<"progress_tracking"> | number
-    exercises_completed?: IntNullableFilter<"progress_tracking"> | number | null
-    exercises_total?: IntNullableFilter<"progress_tracking"> | number | null
-    meals_completed?: IntNullableFilter<"progress_tracking"> | number | null
-    meals_total?: IntNullableFilter<"progress_tracking"> | number | null
-    start_date?: DateTimeFilter<"progress_tracking"> | Date | string
-    end_date?: DateTimeFilter<"progress_tracking"> | Date | string
-    created_at?: DateTimeNullableFilter<"progress_tracking"> | Date | string | null
-    updated_at?: DateTimeNullableFilter<"progress_tracking"> | Date | string | null
   }
 
   export type water_logsUpsertWithWhereUniqueWithoutUsersInput = {
@@ -23625,8 +17201,6 @@ export namespace Prisma {
     age_range?: string
     exercise_logs?: exercise_logsCreateNestedManyWithoutUsersInput
     meal_logs?: meal_logsCreateNestedManyWithoutUsersInput
-    meal_plans?: meal_plansCreateNestedManyWithoutUsersInput
-    progress_tracking?: progress_trackingCreateNestedManyWithoutUsersInput
     weight_logs?: weight_logsCreateNestedManyWithoutUsersInput
     workout_plans?: workout_plansCreateNestedManyWithoutUsersInput
   }
@@ -23650,8 +17224,6 @@ export namespace Prisma {
     age_range?: string
     exercise_logs?: exercise_logsUncheckedCreateNestedManyWithoutUsersInput
     meal_logs?: meal_logsUncheckedCreateNestedManyWithoutUsersInput
-    meal_plans?: meal_plansUncheckedCreateNestedManyWithoutUsersInput
-    progress_tracking?: progress_trackingUncheckedCreateNestedManyWithoutUsersInput
     weight_logs?: weight_logsUncheckedCreateNestedManyWithoutUsersInput
     workout_plans?: workout_plansUncheckedCreateNestedManyWithoutUsersInput
   }
@@ -23691,8 +17263,6 @@ export namespace Prisma {
     age_range?: StringFieldUpdateOperationsInput | string
     exercise_logs?: exercise_logsUpdateManyWithoutUsersNestedInput
     meal_logs?: meal_logsUpdateManyWithoutUsersNestedInput
-    meal_plans?: meal_plansUpdateManyWithoutUsersNestedInput
-    progress_tracking?: progress_trackingUpdateManyWithoutUsersNestedInput
     weight_logs?: weight_logsUpdateManyWithoutUsersNestedInput
     workout_plans?: workout_plansUpdateManyWithoutUsersNestedInput
   }
@@ -23716,8 +17286,6 @@ export namespace Prisma {
     age_range?: StringFieldUpdateOperationsInput | string
     exercise_logs?: exercise_logsUncheckedUpdateManyWithoutUsersNestedInput
     meal_logs?: meal_logsUncheckedUpdateManyWithoutUsersNestedInput
-    meal_plans?: meal_plansUncheckedUpdateManyWithoutUsersNestedInput
-    progress_tracking?: progress_trackingUncheckedUpdateManyWithoutUsersNestedInput
     weight_logs?: weight_logsUncheckedUpdateManyWithoutUsersNestedInput
     workout_plans?: workout_plansUncheckedUpdateManyWithoutUsersNestedInput
   }
@@ -23741,8 +17309,6 @@ export namespace Prisma {
     age_range?: string
     exercise_logs?: exercise_logsCreateNestedManyWithoutUsersInput
     meal_logs?: meal_logsCreateNestedManyWithoutUsersInput
-    meal_plans?: meal_plansCreateNestedManyWithoutUsersInput
-    progress_tracking?: progress_trackingCreateNestedManyWithoutUsersInput
     water_logs?: water_logsCreateNestedManyWithoutUsersInput
     workout_plans?: workout_plansCreateNestedManyWithoutUsersInput
   }
@@ -23766,8 +17332,6 @@ export namespace Prisma {
     age_range?: string
     exercise_logs?: exercise_logsUncheckedCreateNestedManyWithoutUsersInput
     meal_logs?: meal_logsUncheckedCreateNestedManyWithoutUsersInput
-    meal_plans?: meal_plansUncheckedCreateNestedManyWithoutUsersInput
-    progress_tracking?: progress_trackingUncheckedCreateNestedManyWithoutUsersInput
     water_logs?: water_logsUncheckedCreateNestedManyWithoutUsersInput
     workout_plans?: workout_plansUncheckedCreateNestedManyWithoutUsersInput
   }
@@ -23807,8 +17371,6 @@ export namespace Prisma {
     age_range?: StringFieldUpdateOperationsInput | string
     exercise_logs?: exercise_logsUpdateManyWithoutUsersNestedInput
     meal_logs?: meal_logsUpdateManyWithoutUsersNestedInput
-    meal_plans?: meal_plansUpdateManyWithoutUsersNestedInput
-    progress_tracking?: progress_trackingUpdateManyWithoutUsersNestedInput
     water_logs?: water_logsUpdateManyWithoutUsersNestedInput
     workout_plans?: workout_plansUpdateManyWithoutUsersNestedInput
   }
@@ -23832,8 +17394,6 @@ export namespace Prisma {
     age_range?: StringFieldUpdateOperationsInput | string
     exercise_logs?: exercise_logsUncheckedUpdateManyWithoutUsersNestedInput
     meal_logs?: meal_logsUncheckedUpdateManyWithoutUsersNestedInput
-    meal_plans?: meal_plansUncheckedUpdateManyWithoutUsersNestedInput
-    progress_tracking?: progress_trackingUncheckedUpdateManyWithoutUsersNestedInput
     water_logs?: water_logsUncheckedUpdateManyWithoutUsersNestedInput
     workout_plans?: workout_plansUncheckedUpdateManyWithoutUsersNestedInput
   }
@@ -23877,8 +17437,6 @@ export namespace Prisma {
     active?: boolean | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
-    meal_plans?: meal_plansCreateNestedManyWithoutWorkout_plansInput
-    progress_tracking?: progress_trackingCreateNestedManyWithoutWorkout_plansInput
     users: usersCreateNestedOneWithoutWorkout_plansInput
   }
 
@@ -23893,8 +17451,6 @@ export namespace Prisma {
     active?: boolean | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
-    meal_plans?: meal_plansUncheckedCreateNestedManyWithoutWorkout_plansInput
-    progress_tracking?: progress_trackingUncheckedCreateNestedManyWithoutWorkout_plansInput
   }
 
   export type workout_plansCreateOrConnectWithoutWorkout_plan_exercisesInput = {
@@ -23958,8 +17514,6 @@ export namespace Prisma {
     active?: NullableBoolFieldUpdateOperationsInput | boolean | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    meal_plans?: meal_plansUpdateManyWithoutWorkout_plansNestedInput
-    progress_tracking?: progress_trackingUpdateManyWithoutWorkout_plansNestedInput
     users?: usersUpdateOneRequiredWithoutWorkout_plansNestedInput
   }
 
@@ -23974,80 +17528,6 @@ export namespace Prisma {
     active?: NullableBoolFieldUpdateOperationsInput | boolean | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    meal_plans?: meal_plansUncheckedUpdateManyWithoutWorkout_plansNestedInput
-    progress_tracking?: progress_trackingUncheckedUpdateManyWithoutWorkout_plansNestedInput
-  }
-
-  export type meal_plansCreateWithoutWorkout_plansInput = {
-    id?: string
-    name: string
-    description?: string | null
-    date?: Date | string | null
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-    daily_calories?: number | null
-    meal_plan_items?: meal_plan_itemsCreateNestedManyWithoutMeal_plansInput
-    users: usersCreateNestedOneWithoutMeal_plansInput
-  }
-
-  export type meal_plansUncheckedCreateWithoutWorkout_plansInput = {
-    id?: string
-    user_id: string
-    name: string
-    description?: string | null
-    date?: Date | string | null
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-    daily_calories?: number | null
-    meal_plan_items?: meal_plan_itemsUncheckedCreateNestedManyWithoutMeal_plansInput
-  }
-
-  export type meal_plansCreateOrConnectWithoutWorkout_plansInput = {
-    where: meal_plansWhereUniqueInput
-    create: XOR<meal_plansCreateWithoutWorkout_plansInput, meal_plansUncheckedCreateWithoutWorkout_plansInput>
-  }
-
-  export type meal_plansCreateManyWorkout_plansInputEnvelope = {
-    data: meal_plansCreateManyWorkout_plansInput | meal_plansCreateManyWorkout_plansInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type progress_trackingCreateWithoutWorkout_plansInput = {
-    id?: string
-    week_number: number
-    exercises_completed?: number | null
-    exercises_total?: number | null
-    meals_completed?: number | null
-    meals_total?: number | null
-    start_date: Date | string
-    end_date: Date | string
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-    users: usersCreateNestedOneWithoutProgress_trackingInput
-  }
-
-  export type progress_trackingUncheckedCreateWithoutWorkout_plansInput = {
-    id?: string
-    user_id: string
-    week_number: number
-    exercises_completed?: number | null
-    exercises_total?: number | null
-    meals_completed?: number | null
-    meals_total?: number | null
-    start_date: Date | string
-    end_date: Date | string
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-  }
-
-  export type progress_trackingCreateOrConnectWithoutWorkout_plansInput = {
-    where: progress_trackingWhereUniqueInput
-    create: XOR<progress_trackingCreateWithoutWorkout_plansInput, progress_trackingUncheckedCreateWithoutWorkout_plansInput>
-  }
-
-  export type progress_trackingCreateManyWorkout_plansInputEnvelope = {
-    data: progress_trackingCreateManyWorkout_plansInput | progress_trackingCreateManyWorkout_plansInput[]
-    skipDuplicates?: boolean
   }
 
   export type workout_plan_exercisesCreateWithoutWorkout_plansInput = {
@@ -24058,7 +17538,6 @@ export namespace Prisma {
     reps?: number | null
     weight?: Decimal | DecimalJsLike | number | string | null
     duration?: number | null
-    created_at?: Date | string | null
     completed?: boolean | null
     completion_date?: Date | string | null
     actual_sets?: number | null
@@ -24066,6 +17545,7 @@ export namespace Prisma {
     actual_weight?: Decimal | DecimalJsLike | number | string | null
     actual_duration?: number | null
     notes?: string | null
+    created_at?: Date | string | null
     updated_at?: Date | string | null
     exercises?: exercisesCreateNestedOneWithoutWorkout_plan_exercisesInput
   }
@@ -24079,7 +17559,6 @@ export namespace Prisma {
     reps?: number | null
     weight?: Decimal | DecimalJsLike | number | string | null
     duration?: number | null
-    created_at?: Date | string | null
     completed?: boolean | null
     completion_date?: Date | string | null
     actual_sets?: number | null
@@ -24087,6 +17566,7 @@ export namespace Prisma {
     actual_weight?: Decimal | DecimalJsLike | number | string | null
     actual_duration?: number | null
     notes?: string | null
+    created_at?: Date | string | null
     updated_at?: Date | string | null
   }
 
@@ -24119,8 +17599,6 @@ export namespace Prisma {
     age_range?: string
     exercise_logs?: exercise_logsCreateNestedManyWithoutUsersInput
     meal_logs?: meal_logsCreateNestedManyWithoutUsersInput
-    meal_plans?: meal_plansCreateNestedManyWithoutUsersInput
-    progress_tracking?: progress_trackingCreateNestedManyWithoutUsersInput
     water_logs?: water_logsCreateNestedManyWithoutUsersInput
     weight_logs?: weight_logsCreateNestedManyWithoutUsersInput
   }
@@ -24144,8 +17622,6 @@ export namespace Prisma {
     age_range?: string
     exercise_logs?: exercise_logsUncheckedCreateNestedManyWithoutUsersInput
     meal_logs?: meal_logsUncheckedCreateNestedManyWithoutUsersInput
-    meal_plans?: meal_plansUncheckedCreateNestedManyWithoutUsersInput
-    progress_tracking?: progress_trackingUncheckedCreateNestedManyWithoutUsersInput
     water_logs?: water_logsUncheckedCreateNestedManyWithoutUsersInput
     weight_logs?: weight_logsUncheckedCreateNestedManyWithoutUsersInput
   }
@@ -24153,38 +17629,6 @@ export namespace Prisma {
   export type usersCreateOrConnectWithoutWorkout_plansInput = {
     where: usersWhereUniqueInput
     create: XOR<usersCreateWithoutWorkout_plansInput, usersUncheckedCreateWithoutWorkout_plansInput>
-  }
-
-  export type meal_plansUpsertWithWhereUniqueWithoutWorkout_plansInput = {
-    where: meal_plansWhereUniqueInput
-    update: XOR<meal_plansUpdateWithoutWorkout_plansInput, meal_plansUncheckedUpdateWithoutWorkout_plansInput>
-    create: XOR<meal_plansCreateWithoutWorkout_plansInput, meal_plansUncheckedCreateWithoutWorkout_plansInput>
-  }
-
-  export type meal_plansUpdateWithWhereUniqueWithoutWorkout_plansInput = {
-    where: meal_plansWhereUniqueInput
-    data: XOR<meal_plansUpdateWithoutWorkout_plansInput, meal_plansUncheckedUpdateWithoutWorkout_plansInput>
-  }
-
-  export type meal_plansUpdateManyWithWhereWithoutWorkout_plansInput = {
-    where: meal_plansScalarWhereInput
-    data: XOR<meal_plansUpdateManyMutationInput, meal_plansUncheckedUpdateManyWithoutWorkout_plansInput>
-  }
-
-  export type progress_trackingUpsertWithWhereUniqueWithoutWorkout_plansInput = {
-    where: progress_trackingWhereUniqueInput
-    update: XOR<progress_trackingUpdateWithoutWorkout_plansInput, progress_trackingUncheckedUpdateWithoutWorkout_plansInput>
-    create: XOR<progress_trackingCreateWithoutWorkout_plansInput, progress_trackingUncheckedCreateWithoutWorkout_plansInput>
-  }
-
-  export type progress_trackingUpdateWithWhereUniqueWithoutWorkout_plansInput = {
-    where: progress_trackingWhereUniqueInput
-    data: XOR<progress_trackingUpdateWithoutWorkout_plansInput, progress_trackingUncheckedUpdateWithoutWorkout_plansInput>
-  }
-
-  export type progress_trackingUpdateManyWithWhereWithoutWorkout_plansInput = {
-    where: progress_trackingScalarWhereInput
-    data: XOR<progress_trackingUpdateManyMutationInput, progress_trackingUncheckedUpdateManyWithoutWorkout_plansInput>
   }
 
   export type workout_plan_exercisesUpsertWithWhereUniqueWithoutWorkout_plansInput = {
@@ -24233,8 +17677,6 @@ export namespace Prisma {
     age_range?: StringFieldUpdateOperationsInput | string
     exercise_logs?: exercise_logsUpdateManyWithoutUsersNestedInput
     meal_logs?: meal_logsUpdateManyWithoutUsersNestedInput
-    meal_plans?: meal_plansUpdateManyWithoutUsersNestedInput
-    progress_tracking?: progress_trackingUpdateManyWithoutUsersNestedInput
     water_logs?: water_logsUpdateManyWithoutUsersNestedInput
     weight_logs?: weight_logsUpdateManyWithoutUsersNestedInput
   }
@@ -24258,8 +17700,6 @@ export namespace Prisma {
     age_range?: StringFieldUpdateOperationsInput | string
     exercise_logs?: exercise_logsUncheckedUpdateManyWithoutUsersNestedInput
     meal_logs?: meal_logsUncheckedUpdateManyWithoutUsersNestedInput
-    meal_plans?: meal_plansUncheckedUpdateManyWithoutUsersNestedInput
-    progress_tracking?: progress_trackingUncheckedUpdateManyWithoutUsersNestedInput
     water_logs?: water_logsUncheckedUpdateManyWithoutUsersNestedInput
     weight_logs?: weight_logsUncheckedUpdateManyWithoutUsersNestedInput
   }
@@ -24287,7 +17727,6 @@ export namespace Prisma {
     reps?: number | null
     weight?: Decimal | DecimalJsLike | number | string | null
     duration?: number | null
-    created_at?: Date | string | null
     completed?: boolean | null
     completion_date?: Date | string | null
     actual_sets?: number | null
@@ -24295,6 +17734,7 @@ export namespace Prisma {
     actual_weight?: Decimal | DecimalJsLike | number | string | null
     actual_duration?: number | null
     notes?: string | null
+    created_at?: Date | string | null
     updated_at?: Date | string | null
   }
 
@@ -24348,7 +17788,6 @@ export namespace Prisma {
     reps?: NullableIntFieldUpdateOperationsInput | number | null
     weight?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     duration?: NullableIntFieldUpdateOperationsInput | number | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     completed?: NullableBoolFieldUpdateOperationsInput | boolean | null
     completion_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     actual_sets?: NullableIntFieldUpdateOperationsInput | number | null
@@ -24356,6 +17795,7 @@ export namespace Prisma {
     actual_weight?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     actual_duration?: NullableIntFieldUpdateOperationsInput | number | null
     notes?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     workout_plans?: workout_plansUpdateOneRequiredWithoutWorkout_plan_exercisesNestedInput
   }
@@ -24369,7 +17809,6 @@ export namespace Prisma {
     reps?: NullableIntFieldUpdateOperationsInput | number | null
     weight?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     duration?: NullableIntFieldUpdateOperationsInput | number | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     completed?: NullableBoolFieldUpdateOperationsInput | boolean | null
     completion_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     actual_sets?: NullableIntFieldUpdateOperationsInput | number | null
@@ -24377,6 +17816,7 @@ export namespace Prisma {
     actual_weight?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     actual_duration?: NullableIntFieldUpdateOperationsInput | number | null
     notes?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
@@ -24389,84 +17829,12 @@ export namespace Prisma {
     reps?: NullableIntFieldUpdateOperationsInput | number | null
     weight?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     duration?: NullableIntFieldUpdateOperationsInput | number | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     completed?: NullableBoolFieldUpdateOperationsInput | boolean | null
     completion_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     actual_sets?: NullableIntFieldUpdateOperationsInput | number | null
     actual_reps?: NullableIntFieldUpdateOperationsInput | number | null
     actual_weight?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     actual_duration?: NullableIntFieldUpdateOperationsInput | number | null
-    notes?: NullableStringFieldUpdateOperationsInput | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  }
-
-  export type meal_plan_itemsCreateManyMeal_plansInput = {
-    id?: string
-    meal_id?: string | null
-    name: string
-    meal_time: string
-    calories?: number | null
-    protein?: Decimal | DecimalJsLike | number | string | null
-    carbs?: Decimal | DecimalJsLike | number | string | null
-    fats?: Decimal | DecimalJsLike | number | string | null
-    completed?: boolean | null
-    completion_date?: Date | string | null
-    day_number?: number | null
-    portion?: Decimal | DecimalJsLike | number | string | null
-    notes?: string | null
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-  }
-
-  export type meal_plan_itemsUpdateWithoutMeal_plansInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    meal_time?: StringFieldUpdateOperationsInput | string
-    calories?: NullableIntFieldUpdateOperationsInput | number | null
-    protein?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    carbs?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    fats?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    completed?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    completion_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    day_number?: NullableIntFieldUpdateOperationsInput | number | null
-    portion?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    notes?: NullableStringFieldUpdateOperationsInput | string | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    meals?: mealsUpdateOneWithoutMeal_plan_itemsNestedInput
-  }
-
-  export type meal_plan_itemsUncheckedUpdateWithoutMeal_plansInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    meal_id?: NullableStringFieldUpdateOperationsInput | string | null
-    name?: StringFieldUpdateOperationsInput | string
-    meal_time?: StringFieldUpdateOperationsInput | string
-    calories?: NullableIntFieldUpdateOperationsInput | number | null
-    protein?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    carbs?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    fats?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    completed?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    completion_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    day_number?: NullableIntFieldUpdateOperationsInput | number | null
-    portion?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    notes?: NullableStringFieldUpdateOperationsInput | string | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  }
-
-  export type meal_plan_itemsUncheckedUpdateManyWithoutMeal_plansInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    meal_id?: NullableStringFieldUpdateOperationsInput | string | null
-    name?: StringFieldUpdateOperationsInput | string
-    meal_time?: StringFieldUpdateOperationsInput | string
-    calories?: NullableIntFieldUpdateOperationsInput | number | null
-    protein?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    carbs?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    fats?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    completed?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    completion_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    day_number?: NullableIntFieldUpdateOperationsInput | number | null
-    portion?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     notes?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -24485,24 +17853,6 @@ export namespace Prisma {
     notes?: string | null
     consumed_at?: Date | string
     created_at?: Date | string | null
-  }
-
-  export type meal_plan_itemsCreateManyMealsInput = {
-    id?: string
-    meal_plan_id: string
-    name: string
-    meal_time: string
-    calories?: number | null
-    protein?: Decimal | DecimalJsLike | number | string | null
-    carbs?: Decimal | DecimalJsLike | number | string | null
-    fats?: Decimal | DecimalJsLike | number | string | null
-    completed?: boolean | null
-    completion_date?: Date | string | null
-    day_number?: number | null
-    portion?: Decimal | DecimalJsLike | number | string | null
-    notes?: string | null
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
   }
 
   export type meal_logsUpdateWithoutMealsInput = {
@@ -24550,60 +17900,6 @@ export namespace Prisma {
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
-  export type meal_plan_itemsUpdateWithoutMealsInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    meal_time?: StringFieldUpdateOperationsInput | string
-    calories?: NullableIntFieldUpdateOperationsInput | number | null
-    protein?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    carbs?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    fats?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    completed?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    completion_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    day_number?: NullableIntFieldUpdateOperationsInput | number | null
-    portion?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    notes?: NullableStringFieldUpdateOperationsInput | string | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    meal_plans?: meal_plansUpdateOneRequiredWithoutMeal_plan_itemsNestedInput
-  }
-
-  export type meal_plan_itemsUncheckedUpdateWithoutMealsInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    meal_plan_id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    meal_time?: StringFieldUpdateOperationsInput | string
-    calories?: NullableIntFieldUpdateOperationsInput | number | null
-    protein?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    carbs?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    fats?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    completed?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    completion_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    day_number?: NullableIntFieldUpdateOperationsInput | number | null
-    portion?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    notes?: NullableStringFieldUpdateOperationsInput | string | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  }
-
-  export type meal_plan_itemsUncheckedUpdateManyWithoutMealsInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    meal_plan_id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    meal_time?: StringFieldUpdateOperationsInput | string
-    calories?: NullableIntFieldUpdateOperationsInput | number | null
-    protein?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    carbs?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    fats?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    completed?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    completion_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    day_number?: NullableIntFieldUpdateOperationsInput | number | null
-    portion?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    notes?: NullableStringFieldUpdateOperationsInput | string | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  }
-
   export type exercise_logsCreateManyUsersInput = {
     id?: string
     exercise_id?: string | null
@@ -24631,31 +17927,6 @@ export namespace Prisma {
     notes?: string | null
     consumed_at?: Date | string
     created_at?: Date | string | null
-  }
-
-  export type meal_plansCreateManyUsersInput = {
-    id?: string
-    name: string
-    description?: string | null
-    date?: Date | string | null
-    workout_plan_id?: string | null
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-    daily_calories?: number | null
-  }
-
-  export type progress_trackingCreateManyUsersInput = {
-    id?: string
-    workout_plan_id?: string | null
-    week_number: number
-    exercises_completed?: number | null
-    exercises_total?: number | null
-    meals_completed?: number | null
-    meals_total?: number | null
-    start_date: Date | string
-    end_date: Date | string
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
   }
 
   export type water_logsCreateManyUsersInput = {
@@ -24771,83 +18042,6 @@ export namespace Prisma {
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
-  export type meal_plansUpdateWithoutUsersInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    daily_calories?: NullableIntFieldUpdateOperationsInput | number | null
-    meal_plan_items?: meal_plan_itemsUpdateManyWithoutMeal_plansNestedInput
-    workout_plans?: workout_plansUpdateOneWithoutMeal_plansNestedInput
-  }
-
-  export type meal_plansUncheckedUpdateWithoutUsersInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    workout_plan_id?: NullableStringFieldUpdateOperationsInput | string | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    daily_calories?: NullableIntFieldUpdateOperationsInput | number | null
-    meal_plan_items?: meal_plan_itemsUncheckedUpdateManyWithoutMeal_plansNestedInput
-  }
-
-  export type meal_plansUncheckedUpdateManyWithoutUsersInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    workout_plan_id?: NullableStringFieldUpdateOperationsInput | string | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    daily_calories?: NullableIntFieldUpdateOperationsInput | number | null
-  }
-
-  export type progress_trackingUpdateWithoutUsersInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    week_number?: IntFieldUpdateOperationsInput | number
-    exercises_completed?: NullableIntFieldUpdateOperationsInput | number | null
-    exercises_total?: NullableIntFieldUpdateOperationsInput | number | null
-    meals_completed?: NullableIntFieldUpdateOperationsInput | number | null
-    meals_total?: NullableIntFieldUpdateOperationsInput | number | null
-    start_date?: DateTimeFieldUpdateOperationsInput | Date | string
-    end_date?: DateTimeFieldUpdateOperationsInput | Date | string
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    workout_plans?: workout_plansUpdateOneWithoutProgress_trackingNestedInput
-  }
-
-  export type progress_trackingUncheckedUpdateWithoutUsersInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    workout_plan_id?: NullableStringFieldUpdateOperationsInput | string | null
-    week_number?: IntFieldUpdateOperationsInput | number
-    exercises_completed?: NullableIntFieldUpdateOperationsInput | number | null
-    exercises_total?: NullableIntFieldUpdateOperationsInput | number | null
-    meals_completed?: NullableIntFieldUpdateOperationsInput | number | null
-    meals_total?: NullableIntFieldUpdateOperationsInput | number | null
-    start_date?: DateTimeFieldUpdateOperationsInput | Date | string
-    end_date?: DateTimeFieldUpdateOperationsInput | Date | string
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  }
-
-  export type progress_trackingUncheckedUpdateManyWithoutUsersInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    workout_plan_id?: NullableStringFieldUpdateOperationsInput | string | null
-    week_number?: IntFieldUpdateOperationsInput | number
-    exercises_completed?: NullableIntFieldUpdateOperationsInput | number | null
-    exercises_total?: NullableIntFieldUpdateOperationsInput | number | null
-    meals_completed?: NullableIntFieldUpdateOperationsInput | number | null
-    meals_total?: NullableIntFieldUpdateOperationsInput | number | null
-    start_date?: DateTimeFieldUpdateOperationsInput | Date | string
-    end_date?: DateTimeFieldUpdateOperationsInput | Date | string
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  }
-
   export type water_logsUpdateWithoutUsersInput = {
     id?: StringFieldUpdateOperationsInput | string
     amount_ml?: IntFieldUpdateOperationsInput | number
@@ -24900,8 +18094,6 @@ export namespace Prisma {
     active?: NullableBoolFieldUpdateOperationsInput | boolean | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    meal_plans?: meal_plansUpdateManyWithoutWorkout_plansNestedInput
-    progress_tracking?: progress_trackingUpdateManyWithoutWorkout_plansNestedInput
     workout_plan_exercises?: workout_plan_exercisesUpdateManyWithoutWorkout_plansNestedInput
   }
 
@@ -24915,8 +18107,6 @@ export namespace Prisma {
     active?: NullableBoolFieldUpdateOperationsInput | boolean | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    meal_plans?: meal_plansUncheckedUpdateManyWithoutWorkout_plansNestedInput
-    progress_tracking?: progress_trackingUncheckedUpdateManyWithoutWorkout_plansNestedInput
     workout_plan_exercises?: workout_plan_exercisesUncheckedUpdateManyWithoutWorkout_plansNestedInput
   }
 
@@ -24932,31 +18122,6 @@ export namespace Prisma {
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
-  export type meal_plansCreateManyWorkout_plansInput = {
-    id?: string
-    user_id: string
-    name: string
-    description?: string | null
-    date?: Date | string | null
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-    daily_calories?: number | null
-  }
-
-  export type progress_trackingCreateManyWorkout_plansInput = {
-    id?: string
-    user_id: string
-    week_number: number
-    exercises_completed?: number | null
-    exercises_total?: number | null
-    meals_completed?: number | null
-    meals_total?: number | null
-    start_date: Date | string
-    end_date: Date | string
-    created_at?: Date | string | null
-    updated_at?: Date | string | null
-  }
-
   export type workout_plan_exercisesCreateManyWorkout_plansInput = {
     id?: string
     exercise_id?: string | null
@@ -24966,7 +18131,6 @@ export namespace Prisma {
     reps?: number | null
     weight?: Decimal | DecimalJsLike | number | string | null
     duration?: number | null
-    created_at?: Date | string | null
     completed?: boolean | null
     completion_date?: Date | string | null
     actual_sets?: number | null
@@ -24974,84 +18138,8 @@ export namespace Prisma {
     actual_weight?: Decimal | DecimalJsLike | number | string | null
     actual_duration?: number | null
     notes?: string | null
+    created_at?: Date | string | null
     updated_at?: Date | string | null
-  }
-
-  export type meal_plansUpdateWithoutWorkout_plansInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    daily_calories?: NullableIntFieldUpdateOperationsInput | number | null
-    meal_plan_items?: meal_plan_itemsUpdateManyWithoutMeal_plansNestedInput
-    users?: usersUpdateOneRequiredWithoutMeal_plansNestedInput
-  }
-
-  export type meal_plansUncheckedUpdateWithoutWorkout_plansInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    user_id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    daily_calories?: NullableIntFieldUpdateOperationsInput | number | null
-    meal_plan_items?: meal_plan_itemsUncheckedUpdateManyWithoutMeal_plansNestedInput
-  }
-
-  export type meal_plansUncheckedUpdateManyWithoutWorkout_plansInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    user_id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    daily_calories?: NullableIntFieldUpdateOperationsInput | number | null
-  }
-
-  export type progress_trackingUpdateWithoutWorkout_plansInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    week_number?: IntFieldUpdateOperationsInput | number
-    exercises_completed?: NullableIntFieldUpdateOperationsInput | number | null
-    exercises_total?: NullableIntFieldUpdateOperationsInput | number | null
-    meals_completed?: NullableIntFieldUpdateOperationsInput | number | null
-    meals_total?: NullableIntFieldUpdateOperationsInput | number | null
-    start_date?: DateTimeFieldUpdateOperationsInput | Date | string
-    end_date?: DateTimeFieldUpdateOperationsInput | Date | string
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    users?: usersUpdateOneRequiredWithoutProgress_trackingNestedInput
-  }
-
-  export type progress_trackingUncheckedUpdateWithoutWorkout_plansInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    user_id?: StringFieldUpdateOperationsInput | string
-    week_number?: IntFieldUpdateOperationsInput | number
-    exercises_completed?: NullableIntFieldUpdateOperationsInput | number | null
-    exercises_total?: NullableIntFieldUpdateOperationsInput | number | null
-    meals_completed?: NullableIntFieldUpdateOperationsInput | number | null
-    meals_total?: NullableIntFieldUpdateOperationsInput | number | null
-    start_date?: DateTimeFieldUpdateOperationsInput | Date | string
-    end_date?: DateTimeFieldUpdateOperationsInput | Date | string
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  }
-
-  export type progress_trackingUncheckedUpdateManyWithoutWorkout_plansInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    user_id?: StringFieldUpdateOperationsInput | string
-    week_number?: IntFieldUpdateOperationsInput | number
-    exercises_completed?: NullableIntFieldUpdateOperationsInput | number | null
-    exercises_total?: NullableIntFieldUpdateOperationsInput | number | null
-    meals_completed?: NullableIntFieldUpdateOperationsInput | number | null
-    meals_total?: NullableIntFieldUpdateOperationsInput | number | null
-    start_date?: DateTimeFieldUpdateOperationsInput | Date | string
-    end_date?: DateTimeFieldUpdateOperationsInput | Date | string
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type workout_plan_exercisesUpdateWithoutWorkout_plansInput = {
@@ -25062,7 +18150,6 @@ export namespace Prisma {
     reps?: NullableIntFieldUpdateOperationsInput | number | null
     weight?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     duration?: NullableIntFieldUpdateOperationsInput | number | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     completed?: NullableBoolFieldUpdateOperationsInput | boolean | null
     completion_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     actual_sets?: NullableIntFieldUpdateOperationsInput | number | null
@@ -25070,6 +18157,7 @@ export namespace Prisma {
     actual_weight?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     actual_duration?: NullableIntFieldUpdateOperationsInput | number | null
     notes?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     exercises?: exercisesUpdateOneWithoutWorkout_plan_exercisesNestedInput
   }
@@ -25083,7 +18171,6 @@ export namespace Prisma {
     reps?: NullableIntFieldUpdateOperationsInput | number | null
     weight?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     duration?: NullableIntFieldUpdateOperationsInput | number | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     completed?: NullableBoolFieldUpdateOperationsInput | boolean | null
     completion_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     actual_sets?: NullableIntFieldUpdateOperationsInput | number | null
@@ -25091,6 +18178,7 @@ export namespace Prisma {
     actual_weight?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     actual_duration?: NullableIntFieldUpdateOperationsInput | number | null
     notes?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
@@ -25103,7 +18191,6 @@ export namespace Prisma {
     reps?: NullableIntFieldUpdateOperationsInput | number | null
     weight?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     duration?: NullableIntFieldUpdateOperationsInput | number | null
-    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     completed?: NullableBoolFieldUpdateOperationsInput | boolean | null
     completion_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     actual_sets?: NullableIntFieldUpdateOperationsInput | number | null
@@ -25111,6 +18198,7 @@ export namespace Prisma {
     actual_weight?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     actual_duration?: NullableIntFieldUpdateOperationsInput | number | null
     notes?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
